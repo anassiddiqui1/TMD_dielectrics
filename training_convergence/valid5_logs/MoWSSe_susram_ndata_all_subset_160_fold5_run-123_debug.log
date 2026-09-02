@@ -1,0 +1,1115 @@
+2025-07-17 02:44:16.996 INFO: ===========VERIFYING SETTINGS===========
+2025-07-17 02:44:16.996 INFO: MACE version: 0.3.13
+2025-07-17 02:44:16.996 DEBUG: Configuration: Namespace(config=None, name='MoWSSe_susram_ndata_all_subset_160_fold5', seed=123, work_dir='.', log_dir='./logs', model_dir='.', checkpoints_dir='./checkpoints', results_dir='./results', downloads_dir='./downloads', device='cuda', default_dtype='float64', distributed=False, log_level='INFO', plot=True, plot_frequency=0, error_table='DipolePolarizabilityDerivRMSE', model='AtomicDipolesMACE', r_max=5.0, radial_type='bessel', num_radial_basis=8, num_cutoff_basis=5, pair_repulsion=False, distance_transform='None', interaction='RealAgnosticResidualInteractionBlock', interaction_first='RealAgnosticResidualInteractionBlock', max_ell=3, correlation=3, num_interactions=2, MLP_irreps='16x0e', radial_MLP='[64, 64, 64]', hidden_irreps='128x0e + 128x1o + 128x2e', num_channels=128, max_L=2, gate='silu', scaling='rms_forces_scaling', avg_num_neighbors=1, compute_avg_num_neighbors=True, compute_stress=False, compute_forces=False, train_file='all_subset_160_1234.xyz', valid_file=None, valid_fraction=0.05, test_file='all_subset_160_5.xyz', test_dir=None, multi_processed_test=False, num_workers=0, pin_memory=True, atomic_numbers=None, mean=None, std=None, statistics_file=None, E0s=None, foundation_filter_elements=True, heads=None, multiheads_finetuning=True, foundation_head=None, weight_pt_head=1.0, num_samples_pt=10000, force_mh_ft_lr=False, subselect_pt='random', filter_type_pt='none', pt_train_file=None, pt_valid_file=None, foundation_model_elements=False, keep_isolated_atoms=False, energy_key='None', forces_key='None', virials_key='REF_virials', stress_key='None', dipole_key='dipole', dipole_deriv_key='dipole_deriv', polarizability_key='susceptibility_tensor', polarizability_deriv_key='raman_tensor', head_key='head', skip_evaluate_heads='pt_head', loss='dipole_polarizability_deriv', forces_weight=100.0, swa_forces_weight=100.0, energy_weight=1.0, swa_energy_weight=1000.0, virials_weight=1.0, swa_virials_weight=10.0, stress_weight=1.0, swa_stress_weight=10.0, dipole_weight=0.0, swa_dipole_weight=1.0, dipole_deriv_weight=0.0, swa_dipole_deriv_weight=1.0, polarizability_weight=10.0, swa_polarizability_weight=1.0, polarizability_deriv_weight=1.0, swa_polarizability_deriv_weight=1.0, config_type_weights='{"Default":1.0}', huber_delta=0.01, optimizer='adam', beta=0.9, batch_size=10, valid_batch_size=10, lr=0.01, swa_lr=0.001, weight_decay=5e-07, amsgrad=True, scheduler='ReduceLROnPlateau', lr_factor=0.8, scheduler_patience=50, lr_scheduler_gamma=0.9993, swa=False, start_swa=None, lbfgs=False, ema=False, ema_decay=0.99, max_num_epochs=800, patience=2048, foundation_model=None, foundation_model_readout=True, eval_interval=1, keep_checkpoints=False, save_all_checkpoints=False, restart_latest=True, save_cpu=False, clip_grad=10.0, dry_run=False, enable_cueq=False, wandb=False, wandb_dir=None, wandb_project='', wandb_entity='', wandb_name='', wandb_log_hypers=['num_channels', 'max_L', 'correlation', 'lr', 'swa_lr', 'weight_decay', 'batch_size', 'max_num_epochs', 'start_swa', 'energy_weight', 'forces_weight'], key_specification=KeySpecification(info_keys={'energy': 'None', 'stress': 'None', 'virials': 'REF_virials', 'dipole': 'dipole', 'polarizability': 'susceptibility_tensor', 'head': 'head'}, arrays_keys={'forces': 'None', 'dipole_deriv': 'dipole_deriv', 'polarizability_deriv': 'raman_tensor'}))
+2025-07-17 02:44:17.090 INFO: CUDA version: 12.4, CUDA device: 0
+2025-07-17 02:44:17.154 DEBUG: Popen(['git', 'version'], cwd=/gpfs/home/theory/phrrpq/dielectrics/valid5, stdin=None, shell=False, universal_newlines=False)
+2025-07-17 02:44:17.206 DEBUG: Popen(['git', 'version'], cwd=/gpfs/home/theory/phrrpq/dielectrics/valid5, stdin=None, shell=False, universal_newlines=False)
+2025-07-17 02:44:17.289 DEBUG: Error accessing Git repository: /gpfs/home/theory/phrrpq/dielectrics/valid5
+2025-07-17 02:44:17.290 INFO: ===========LOADING INPUT DATA===========
+2025-07-17 02:44:17.290 INFO: Using heads: ['Default']
+2025-07-17 02:44:17.290 INFO: Using the key specifications to parse data:
+2025-07-17 02:44:17.290 INFO: Default: KeySpecification(info_keys={'energy': 'None', 'stress': 'None', 'virials': 'REF_virials', 'dipole': 'dipole', 'polarizability': 'susceptibility_tensor', 'head': 'head'}, arrays_keys={'forces': 'None', 'dipole_deriv': 'dipole_deriv', 'polarizability_deriv': 'raman_tensor'})
+2025-07-17 02:44:17.290 INFO: =============    Processing head Default     ===========
+2025-07-17 02:44:17.293 DEBUG: Loading training file: all_subset_160_1234.xyz
+2025-07-17 02:44:17.415 INFO: Training set 1/1 [energy: 0, stress: 0, virials: 0, dipole components: 0, polarizability: 128, head: 128, forces: 0, dipole_deriv: 0, polarizability_deriv: 128]
+2025-07-17 02:44:17.416 INFO: Total Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, polarizability: 128, head: 128, forces: 0, dipole_deriv: 0, polarizability_deriv: 128]
+2025-07-17 02:44:17.416 INFO: No validation set provided, splitting training data instead.
+2025-07-17 02:44:17.416 INFO: Using random 5% of training set for validation with following indices: [46, 22, 91, 35, 25, 77]
+2025-07-17 02:44:17.417 INFO: Random Split Training set [energy: 0, stress: 0, virials: 0, dipole components: 0, polarizability: 122, head: 122, forces: 0, dipole_deriv: 0, polarizability_deriv: 122]
+2025-07-17 02:44:17.417 INFO: Random Split Validation set [energy: 0, stress: 0, virials: 0, dipole components: 0, polarizability: 6, head: 6, forces: 0, dipole_deriv: 0, polarizability_deriv: 6]
+2025-07-17 02:44:17.462 INFO: Test set 1/1 [energy: 0, stress: 0, virials: 0, dipole components: 0, polarizability: 32, head: 32, forces: 0, dipole_deriv: 0, polarizability_deriv: 32]
+2025-07-17 02:44:17.462 INFO: Total Test set [energy: 0, stress: 0, virials: 0, dipole components: 0, polarizability: 32, head: 32, forces: 0, dipole_deriv: 0, polarizability_deriv: 32]
+2025-07-17 02:44:17.462 INFO: Total number of configurations: train=122, valid=6, tests=[Default_Default: 32],
+2025-07-17 02:44:17.462 WARNING: Validation batch size (10) is larger than the number of validation data (6)
+2025-07-17 02:44:17.463 INFO: Atomic Numbers used: [16, 34, 42, 74]
+2025-07-17 02:44:17.463 INFO: Processing datasets for head 'Default'
+2025-07-17 02:44:17.559 DEBUG: Successfully loaded dataset from ASE files: ['all_subset_160_1234.xyz']
+2025-07-17 02:44:17.559 INFO: Combining 1 list datasets for head 'Default'
+2025-07-17 02:44:17.563 INFO: Head 'Default' training dataset size: 122
+2025-07-17 02:44:17.564 INFO: Computing average number of neighbors
+2025-07-17 02:44:17.701 INFO: Average number of neighbors: 18.978395061728396
+2025-07-17 02:44:17.702 INFO: During training the following quantities will be reported: dipoles, polarizability, dipole_deriv, polarizability_deriv
+2025-07-17 02:44:17.702 INFO: ===========MODEL DETAILS===========
+2025-07-17 02:44:17.702 INFO: Building model
+2025-07-17 02:44:17.702 INFO: Message passing with 128 channels and max_L=2 (128x0e + 128x1o + 128x2e)
+2025-07-17 02:44:17.702 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-07-17 02:44:17.703 INFO: 8 radial and 5 basis functions
+2025-07-17 02:44:17.703 INFO: Radial cutoff: 5.0 A (total receptive field for each atom: 10.0 A)
+2025-07-17 02:44:17.703 INFO: Distance transform for radial basis functions: None
+2025-07-17 02:44:17.703 INFO: Hidden irreps: 128x0e + 128x1o + 128x2e
+2025-07-17 02:44:20.004 DEBUG: AtomicDipolesMACE(
+  (node_embedding): LinearNodeEmbeddingBlock(
+    (linear): Linear(4x0e -> 128x0e | 512 weights)
+  )
+  (radial_embedding): RadialEmbeddingBlock(
+    (bessel_fn): BesselBasis(r_max=5.0, num_basis=8, trainable=False)
+    (cutoff_fn): PolynomialCutoff(p=5, r_max=5.0)
+  )
+  (spherical_harmonics): SphericalHarmonics()
+  (interactions): ModuleList(
+    (0): RealAgnosticInteractionBlock(
+      (linear_up): Linear(128x0e -> 128x0e | 16384 weights)
+      (conv_tp): TensorProduct(128x0e x 1x0e+1x1o+1x2e+1x3o -> 128x0e+128x1o+128x2e+128x3o | 512 paths | 512 weights)
+      (conv_tp_weights): FullyConnectedNet[8, 64, 64, 64, 512]
+      (linear): Linear(128x0e+128x1o+128x2e+128x3o -> 128x0e+128x1o+128x2e+128x3o | 65536 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e+128x1o+128x2e+128x3o x 4x0e -> 128x0e+128x1o+128x2e+128x3o | 262144 paths | 262144 weights)
+      (reshape): reshape_irreps()
+    )
+    (1): RealAgnosticResidualInteractionBlock(
+      (linear_up): Linear(128x0e+128x1o+128x2e -> 128x0e+128x1o+128x2e | 49152 weights)
+      (conv_tp): TensorProduct(128x0e+128x1o+128x2e x 1x0e+1x1o+1x2e+1x3o -> 384x0e+640x1o+640x2e+512x3o | 2176 paths | 2176 weights)
+      (conv_tp_weights): FullyConnectedNet[8, 64, 64, 64, 2176]
+      (linear): Linear(128x0e+128x0e+128x0e+128x1o+128x1o+128x1o+128x1o+128x1o+128x2e+128x2e+128x2e+128x2e+128x2e+128x3o+128x3o+128x3o+128x3o -> 128x0e+128x1o+128x2e+128x3o | 278528 weights)
+      (skip_tp): FullyConnectedTensorProduct(128x0e+128x1o+128x2e x 4x0e -> 128x1o | 65536 paths | 65536 weights)
+      (reshape): reshape_irreps()
+    )
+  )
+  (products): ModuleList(
+    (0): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x4x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (1): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x6x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+          (2): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x7x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x0e+128x1o+128x2e -> 128x0e+128x1o+128x2e | 49152 weights)
+    )
+    (1): EquivariantProductBasisBlock(
+      (symmetric_contractions): SymmetricContraction(
+        (contractions): ModuleList(
+          (0): Contraction(
+            (contractions_weighting): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (contractions_features): ModuleList(
+              (0-1): 2 x GraphModule()
+            )
+            (weights): ParameterList(
+                (0): Parameter containing: [torch.float64 of size 4x6x128 (cuda:0)]
+                (1): Parameter containing: [torch.float64 of size 4x1x128 (cuda:0)]
+            )
+            (graph_opt_main): GraphModule()
+          )
+        )
+      )
+      (linear): Linear(128x1o -> 128x1o | 16384 weights)
+    )
+  )
+  (readouts): ModuleList(
+    (0): LinearDipoleReadoutBlock(
+      (linear): Linear(128x0e+128x1o+128x2e -> 1x0e+1x1o+1x2e | 384 weights)
+    )
+    (1): NonLinearDipoleReadoutBlock(
+      (equivariant_nonlin): Gate (16x0e -> 16x0e)
+      (linear_1): Linear(128x1o -> 16x0e | 0 weights)
+      (linear_2): Linear(16x0e -> 1x0e+1x1o+1x2e | 16 weights)
+    )
+  )
+  (rtp): ReducedTensorProducts(
+      in: 1x1o times 1x1o
+      out: 1x0e+1x2e
+  )
+)
+2025-07-17 02:44:20.006 INFO: Total number of parameters: 1104272
+2025-07-17 02:44:20.006 INFO: 
+2025-07-17 02:44:20.006 INFO: ===========OPTIMIZER INFORMATION===========
+2025-07-17 02:44:20.006 INFO: Using ADAM as parameter optimizer
+2025-07-17 02:44:20.006 INFO: Batch size: 10
+2025-07-17 02:44:20.006 INFO: Number of gradient updates: 9760
+2025-07-17 02:44:20.006 INFO: Learning rate: 0.01, weight decay: 5e-07
+2025-07-17 02:44:20.007 INFO: DipolePolarizabilityDerivLoss(dipole_weight=0.000, polarizability_weight=10.000, dipole_deriv_weight=0.000, polarizability_deriv_weight=1.000)
+2025-07-17 02:44:20.012 WARNING: Cannot find checkpoint with tag 'MoWSSe_susram_ndata_all_subset_160_fold5_run-123' in './checkpoints'
+2025-07-17 02:44:20.012 INFO: Using gradient clipping with tolerance=10.000
+2025-07-17 02:44:20.012 INFO: 
+2025-07-17 02:44:20.012 INFO: ===========TRAINING===========
+2025-07-17 02:44:20.012 INFO: Started training, reporting errors on validation set
+2025-07-17 02:44:20.012 INFO: Loss metrics on validation set
+2025-07-17 02:44:21.237 INFO: Initial: head: Default, loss=240.5899, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=   11.51, RMSE_ALPHA_DERIV=   10.89
+2025-07-17 02:44:50.148 INFO: Epoch 0: head: Default, loss=225.6321, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.01 mDebye / A, RMSE_ALPHA_per_atom=   11.11, RMSE_ALPHA_DERIV=   10.89
+2025-07-17 02:44:50.149 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-0.pt
+2025-07-17 02:45:14.137 INFO: Epoch 1: head: Default, loss=195.1320, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.10 mDebye / A, RMSE_ALPHA_per_atom=    8.24, RMSE_ALPHA_DERIV=   22.16
+2025-07-17 02:45:14.138 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-0.pt
+2025-07-17 02:45:14.139 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-1.pt
+2025-07-17 02:45:38.173 INFO: Epoch 2: head: Default, loss=43.6354, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.09 mDebye / A, RMSE_ALPHA_per_atom=    3.44, RMSE_ALPHA_DERIV=   11.99
+2025-07-17 02:45:38.174 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-1.pt
+2025-07-17 02:45:38.175 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-2.pt
+2025-07-17 02:46:02.178 INFO: Epoch 3: head: Default, loss=24.9575, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.22 mDebye / A, RMSE_ALPHA_per_atom=    2.08, RMSE_ALPHA_DERIV=   10.31
+2025-07-17 02:46:02.179 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-2.pt
+2025-07-17 02:46:02.180 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-3.pt
+2025-07-17 02:46:26.147 INFO: Epoch 4: head: Default, loss=11.2705, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.27 mDebye / A, RMSE_ALPHA_per_atom=    0.89, RMSE_ALPHA_DERIV=    7.73
+2025-07-17 02:46:26.148 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-3.pt
+2025-07-17 02:46:26.149 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-4.pt
+2025-07-17 02:46:50.179 INFO: Epoch 5: head: Default, loss=11.1291, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.29 mDebye / A, RMSE_ALPHA_per_atom=    1.28, RMSE_ALPHA_DERIV=    7.09
+2025-07-17 02:46:50.180 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-4.pt
+2025-07-17 02:46:50.180 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-5.pt
+2025-07-17 02:47:14.159 INFO: Epoch 6: head: Default, loss=11.9317, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.26 mDebye / A, RMSE_ALPHA_per_atom=    1.35, RMSE_ALPHA_DERIV=    7.30
+2025-07-17 02:47:38.067 INFO: Epoch 7: head: Default, loss=7.5251, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.21 mDebye / A, RMSE_ALPHA_per_atom=    0.82, RMSE_ALPHA_DERIV=    6.20
+2025-07-17 02:47:38.068 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-5.pt
+2025-07-17 02:47:38.069 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-7.pt
+2025-07-17 02:48:02.049 INFO: Epoch 8: head: Default, loss=6.3541, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.17 mDebye / A, RMSE_ALPHA_per_atom=    0.70, RMSE_ALPHA_DERIV=    5.77
+2025-07-17 02:48:02.050 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-7.pt
+2025-07-17 02:48:02.055 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-8.pt
+2025-07-17 02:48:26.090 INFO: Epoch 9: head: Default, loss=5.6591, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.13 mDebye / A, RMSE_ALPHA_per_atom=    0.70, RMSE_ALPHA_DERIV=    5.39
+2025-07-17 02:48:26.091 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-8.pt
+2025-07-17 02:48:26.091 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-9.pt
+2025-07-17 02:48:50.211 INFO: Epoch 10: head: Default, loss=5.2967, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.11 mDebye / A, RMSE_ALPHA_per_atom=    0.73, RMSE_ALPHA_DERIV=    5.15
+2025-07-17 02:48:50.211 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-9.pt
+2025-07-17 02:48:50.213 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-10.pt
+2025-07-17 02:49:14.298 INFO: Epoch 11: head: Default, loss=7.4061, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.10 mDebye / A, RMSE_ALPHA_per_atom=    1.13, RMSE_ALPHA_DERIV=    5.63
+2025-07-17 02:49:38.378 INFO: Epoch 12: head: Default, loss=5.3180, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.08 mDebye / A, RMSE_ALPHA_per_atom=    0.88, RMSE_ALPHA_DERIV=    4.92
+2025-07-17 02:50:02.521 INFO: Epoch 13: head: Default, loss=4.5352, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.07 mDebye / A, RMSE_ALPHA_per_atom=    0.79, RMSE_ALPHA_DERIV=    4.57
+2025-07-17 02:50:02.522 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-10.pt
+2025-07-17 02:50:02.523 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-13.pt
+2025-07-17 02:50:26.666 INFO: Epoch 14: head: Default, loss=3.8971, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.06 mDebye / A, RMSE_ALPHA_per_atom=    0.68, RMSE_ALPHA_DERIV=    4.33
+2025-07-17 02:50:26.667 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-13.pt
+2025-07-17 02:50:26.668 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-14.pt
+2025-07-17 02:50:50.817 INFO: Epoch 15: head: Default, loss=3.1256, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.05 mDebye / A, RMSE_ALPHA_per_atom=    0.57, RMSE_ALPHA_DERIV=    3.94
+2025-07-17 02:50:50.818 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-14.pt
+2025-07-17 02:50:50.819 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-15.pt
+2025-07-17 02:51:14.908 INFO: Epoch 16: head: Default, loss=3.4228, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.04 mDebye / A, RMSE_ALPHA_per_atom=    0.65, RMSE_ALPHA_DERIV=    4.03
+2025-07-17 02:51:38.966 INFO: Epoch 17: head: Default, loss=2.6761, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.04 mDebye / A, RMSE_ALPHA_per_atom=    0.27, RMSE_ALPHA_DERIV=    3.91
+2025-07-17 02:51:38.967 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-15.pt
+2025-07-17 02:51:38.968 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-17.pt
+2025-07-17 02:52:03.137 INFO: Epoch 18: head: Default, loss=2.2124, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.03 mDebye / A, RMSE_ALPHA_per_atom=    0.25, RMSE_ALPHA_DERIV=    3.56
+2025-07-17 02:52:03.138 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-17.pt
+2025-07-17 02:52:03.138 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-18.pt
+2025-07-17 02:52:27.266 INFO: Epoch 19: head: Default, loss=2.2041, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.02 mDebye / A, RMSE_ALPHA_per_atom=    0.22, RMSE_ALPHA_DERIV=    3.57
+2025-07-17 02:52:27.267 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-18.pt
+2025-07-17 02:52:27.267 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-19.pt
+2025-07-17 02:52:51.448 INFO: Epoch 20: head: Default, loss=2.6510, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.02 mDebye / A, RMSE_ALPHA_per_atom=    0.60, RMSE_ALPHA_DERIV=    3.51
+2025-07-17 02:53:15.569 INFO: Epoch 21: head: Default, loss=1.9324, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.02 mDebye / A, RMSE_ALPHA_per_atom=    0.27, RMSE_ALPHA_DERIV=    3.30
+2025-07-17 02:53:15.570 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-19.pt
+2025-07-17 02:53:15.572 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-21.pt
+2025-07-17 02:53:39.745 INFO: Epoch 22: head: Default, loss=2.1372, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.02 mDebye / A, RMSE_ALPHA_per_atom=    0.46, RMSE_ALPHA_DERIV=    3.27
+2025-07-17 02:54:03.899 INFO: Epoch 23: head: Default, loss=2.2043, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.01 mDebye / A, RMSE_ALPHA_per_atom=    0.44, RMSE_ALPHA_DERIV=    3.36
+2025-07-17 02:54:28.028 INFO: Epoch 24: head: Default, loss=2.0499, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.01 mDebye / A, RMSE_ALPHA_per_atom=    0.37, RMSE_ALPHA_DERIV=    3.30
+2025-07-17 02:54:52.199 INFO: Epoch 25: head: Default, loss=2.5952, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.01 mDebye / A, RMSE_ALPHA_per_atom=    0.52, RMSE_ALPHA_DERIV=    3.58
+2025-07-17 02:55:16.340 INFO: Epoch 26: head: Default, loss=2.6184, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.01 mDebye / A, RMSE_ALPHA_per_atom=    0.66, RMSE_ALPHA_DERIV=    3.37
+2025-07-17 02:55:40.482 INFO: Epoch 27: head: Default, loss=1.7161, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.01 mDebye / A, RMSE_ALPHA_per_atom=    0.42, RMSE_ALPHA_DERIV=    2.92
+2025-07-17 02:55:40.483 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-21.pt
+2025-07-17 02:55:40.486 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-27.pt
+2025-07-17 02:56:04.666 INFO: Epoch 28: head: Default, loss=1.9304, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.01 mDebye / A, RMSE_ALPHA_per_atom=    0.48, RMSE_ALPHA_DERIV=    3.05
+2025-07-17 02:56:28.806 INFO: Epoch 29: head: Default, loss=1.6924, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.33, RMSE_ALPHA_DERIV=    3.01
+2025-07-17 02:56:28.807 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-27.pt
+2025-07-17 02:56:28.809 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-29.pt
+2025-07-17 02:56:53.013 INFO: Epoch 30: head: Default, loss=1.8818, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.30, RMSE_ALPHA_DERIV=    3.22
+2025-07-17 02:57:17.154 INFO: Epoch 31: head: Default, loss=1.6560, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.29, RMSE_ALPHA_DERIV=    3.02
+2025-07-17 02:57:17.155 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-29.pt
+2025-07-17 02:57:17.157 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-31.pt
+2025-07-17 02:57:41.340 INFO: Epoch 32: head: Default, loss=1.5640, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.34, RMSE_ALPHA_DERIV=    2.87
+2025-07-17 02:57:41.341 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-31.pt
+2025-07-17 02:57:41.341 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-32.pt
+2025-07-17 02:58:05.517 INFO: Epoch 33: head: Default, loss=1.6501, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.31, RMSE_ALPHA_DERIV=    2.99
+2025-07-17 02:58:29.618 INFO: Epoch 34: head: Default, loss=1.2509, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.22, RMSE_ALPHA_DERIV=    2.65
+2025-07-17 02:58:29.619 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-32.pt
+2025-07-17 02:58:29.619 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-34.pt
+2025-07-17 02:58:53.795 INFO: Epoch 35: head: Default, loss=1.4918, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.30, RMSE_ALPHA_DERIV=    2.83
+2025-07-17 02:59:17.933 INFO: Epoch 36: head: Default, loss=1.1300, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    2.57
+2025-07-17 02:59:17.934 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-34.pt
+2025-07-17 02:59:17.935 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-36.pt
+2025-07-17 02:59:42.120 INFO: Epoch 37: head: Default, loss=1.2421, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    2.68
+2025-07-17 03:00:06.232 INFO: Epoch 38: head: Default, loss=1.3353, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    2.77
+2025-07-17 03:00:30.315 INFO: Epoch 39: head: Default, loss=1.2620, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.31, RMSE_ALPHA_DERIV=    2.57
+2025-07-17 03:00:54.434 INFO: Epoch 40: head: Default, loss=1.1723, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.23, RMSE_ALPHA_DERIV=    2.55
+2025-07-17 03:01:18.557 INFO: Epoch 41: head: Default, loss=1.5829, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.40, RMSE_ALPHA_DERIV=    2.82
+2025-07-17 03:01:42.676 INFO: Epoch 42: head: Default, loss=1.5371, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.51, RMSE_ALPHA_DERIV=    2.57
+2025-07-17 03:02:06.828 INFO: Epoch 43: head: Default, loss=1.4365, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.33, RMSE_ALPHA_DERIV=    2.75
+2025-07-17 03:02:30.985 INFO: Epoch 44: head: Default, loss=1.3533, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.32, RMSE_ALPHA_DERIV=    2.67
+2025-07-17 03:02:55.141 INFO: Epoch 45: head: Default, loss=1.4024, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.43, RMSE_ALPHA_DERIV=    2.56
+2025-07-17 03:03:19.260 INFO: Epoch 46: head: Default, loss=1.2422, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.26, RMSE_ALPHA_DERIV=    2.61
+2025-07-17 03:03:43.375 INFO: Epoch 47: head: Default, loss=1.3755, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.29, RMSE_ALPHA_DERIV=    2.72
+2025-07-17 03:04:07.528 INFO: Epoch 48: head: Default, loss=1.2147, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.37, RMSE_ALPHA_DERIV=    2.44
+2025-07-17 03:04:31.630 INFO: Epoch 49: head: Default, loss=1.1136, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    2.52
+2025-07-17 03:04:31.631 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-36.pt
+2025-07-17 03:04:31.633 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-49.pt
+2025-07-17 03:04:55.752 INFO: Epoch 50: head: Default, loss=1.0972, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    2.50
+2025-07-17 03:04:55.753 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-49.pt
+2025-07-17 03:04:55.755 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-50.pt
+2025-07-17 03:05:19.845 INFO: Epoch 51: head: Default, loss=1.6610, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.49, RMSE_ALPHA_DERIV=    2.75
+2025-07-17 03:05:43.926 INFO: Epoch 52: head: Default, loss=1.1122, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    2.56
+2025-07-17 03:06:07.987 INFO: Epoch 53: head: Default, loss=1.2241, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.34, RMSE_ALPHA_DERIV=    2.49
+2025-07-17 03:06:32.044 INFO: Epoch 54: head: Default, loss=1.3055, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.40, RMSE_ALPHA_DERIV=    2.49
+2025-07-17 03:06:56.115 INFO: Epoch 55: head: Default, loss=1.1150, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    2.54
+2025-07-17 03:07:20.186 INFO: Epoch 56: head: Default, loss=1.5710, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.31, RMSE_ALPHA_DERIV=    2.91
+2025-07-17 03:07:44.247 INFO: Epoch 57: head: Default, loss=0.9445, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    2.35
+2025-07-17 03:07:44.248 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-50.pt
+2025-07-17 03:07:44.248 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-57.pt
+2025-07-17 03:08:08.373 INFO: Epoch 58: head: Default, loss=1.2404, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.35, RMSE_ALPHA_DERIV=    2.50
+2025-07-17 03:08:32.448 INFO: Epoch 59: head: Default, loss=0.9349, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    2.32
+2025-07-17 03:08:32.449 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-57.pt
+2025-07-17 03:08:32.449 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-59.pt
+2025-07-17 03:08:56.608 INFO: Epoch 60: head: Default, loss=0.9495, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.27, RMSE_ALPHA_DERIV=    2.22
+2025-07-17 03:09:20.717 INFO: Epoch 61: head: Default, loss=0.9316, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    2.32
+2025-07-17 03:09:20.717 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-59.pt
+2025-07-17 03:09:20.719 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-61.pt
+2025-07-17 03:09:44.851 INFO: Epoch 62: head: Default, loss=1.0075, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.20, RMSE_ALPHA_DERIV=    2.38
+2025-07-17 03:10:08.931 INFO: Epoch 63: head: Default, loss=0.8812, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    2.27
+2025-07-17 03:10:08.932 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-61.pt
+2025-07-17 03:10:08.932 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-63.pt
+2025-07-17 03:10:33.118 INFO: Epoch 64: head: Default, loss=1.0306, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    2.42
+2025-07-17 03:10:57.252 INFO: Epoch 65: head: Default, loss=1.0693, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.29, RMSE_ALPHA_DERIV=    2.36
+2025-07-17 03:11:21.371 INFO: Epoch 66: head: Default, loss=1.1655, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.30, RMSE_ALPHA_DERIV=    2.47
+2025-07-17 03:11:45.502 INFO: Epoch 67: head: Default, loss=1.2283, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.21, RMSE_ALPHA_DERIV=    2.63
+2025-07-17 03:12:09.639 INFO: Epoch 68: head: Default, loss=0.8588, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    2.25
+2025-07-17 03:12:09.641 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-63.pt
+2025-07-17 03:12:09.641 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-68.pt
+2025-07-17 03:12:33.841 INFO: Epoch 69: head: Default, loss=1.1108, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.20, RMSE_ALPHA_DERIV=    2.50
+2025-07-17 03:12:57.984 INFO: Epoch 70: head: Default, loss=1.2960, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.33, RMSE_ALPHA_DERIV=    2.58
+2025-07-17 03:13:22.081 INFO: Epoch 71: head: Default, loss=1.2306, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.36, RMSE_ALPHA_DERIV=    2.46
+2025-07-17 03:13:46.148 INFO: Epoch 72: head: Default, loss=1.4875, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.42, RMSE_ALPHA_DERIV=    2.67
+2025-07-17 03:14:10.231 INFO: Epoch 73: head: Default, loss=1.1384, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.40, RMSE_ALPHA_DERIV=    2.28
+2025-07-17 03:14:34.327 INFO: Epoch 74: head: Default, loss=0.8376, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    2.19
+2025-07-17 03:14:34.328 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-68.pt
+2025-07-17 03:14:34.330 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-74.pt
+2025-07-17 03:14:58.467 INFO: Epoch 75: head: Default, loss=1.2822, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.38, RMSE_ALPHA_DERIV=    2.50
+2025-07-17 03:15:22.587 INFO: Epoch 76: head: Default, loss=0.9821, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.19, RMSE_ALPHA_DERIV=    2.35
+2025-07-17 03:15:46.722 INFO: Epoch 77: head: Default, loss=1.0270, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.24, RMSE_ALPHA_DERIV=    2.36
+2025-07-17 03:16:10.871 INFO: Epoch 78: head: Default, loss=0.9350, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.22, RMSE_ALPHA_DERIV=    2.26
+2025-07-17 03:16:35.026 INFO: Epoch 79: head: Default, loss=0.8695, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.20, RMSE_ALPHA_DERIV=    2.19
+2025-07-17 03:16:59.185 INFO: Epoch 80: head: Default, loss=0.8608, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.22, RMSE_ALPHA_DERIV=    2.16
+2025-07-17 03:17:23.318 INFO: Epoch 81: head: Default, loss=0.7900, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    2.15
+2025-07-17 03:17:23.319 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-74.pt
+2025-07-17 03:17:23.320 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-81.pt
+2025-07-17 03:17:47.498 INFO: Epoch 82: head: Default, loss=0.7708, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    2.10
+2025-07-17 03:17:47.499 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-81.pt
+2025-07-17 03:17:47.501 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-82.pt
+2025-07-17 03:18:11.635 INFO: Epoch 83: head: Default, loss=0.8796, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    2.27
+2025-07-17 03:18:35.729 INFO: Epoch 84: head: Default, loss=0.7429, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    2.07
+2025-07-17 03:18:35.729 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-82.pt
+2025-07-17 03:18:35.730 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-84.pt
+2025-07-17 03:18:59.901 INFO: Epoch 85: head: Default, loss=0.7194, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    2.02
+2025-07-17 03:18:59.902 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-84.pt
+2025-07-17 03:18:59.902 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-85.pt
+2025-07-17 03:19:24.080 INFO: Epoch 86: head: Default, loss=0.7441, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    2.06
+2025-07-17 03:19:48.232 INFO: Epoch 87: head: Default, loss=1.0968, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.46, RMSE_ALPHA_DERIV=    2.12
+2025-07-17 03:20:12.383 INFO: Epoch 88: head: Default, loss=0.7730, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    2.10
+2025-07-17 03:20:36.554 INFO: Epoch 89: head: Default, loss=0.7628, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    2.07
+2025-07-17 03:21:00.722 INFO: Epoch 90: head: Default, loss=0.8889, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.33, RMSE_ALPHA_DERIV=    2.06
+2025-07-17 03:21:24.833 INFO: Epoch 91: head: Default, loss=0.7420, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    2.06
+2025-07-17 03:21:48.988 INFO: Epoch 92: head: Default, loss=0.7955, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    2.13
+2025-07-17 03:22:13.142 INFO: Epoch 93: head: Default, loss=0.7354, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.19, RMSE_ALPHA_DERIV=    2.01
+2025-07-17 03:22:37.277 INFO: Epoch 94: head: Default, loss=0.8267, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.25, RMSE_ALPHA_DERIV=    2.08
+2025-07-17 03:23:01.417 INFO: Epoch 95: head: Default, loss=1.1896, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.34, RMSE_ALPHA_DERIV=    2.45
+2025-07-17 03:23:25.539 INFO: Epoch 96: head: Default, loss=1.0706, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.24, RMSE_ALPHA_DERIV=    2.41
+2025-07-17 03:23:49.639 INFO: Epoch 97: head: Default, loss=0.7833, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    2.14
+2025-07-17 03:24:13.783 INFO: Epoch 98: head: Default, loss=0.6968, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    2.01
+2025-07-17 03:24:13.784 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-85.pt
+2025-07-17 03:24:13.786 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-98.pt
+2025-07-17 03:24:37.965 INFO: Epoch 99: head: Default, loss=0.7550, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    2.07
+2025-07-17 03:25:02.129 INFO: Epoch 100: head: Default, loss=0.7253, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    2.01
+2025-07-17 03:25:26.271 INFO: Epoch 101: head: Default, loss=0.9325, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.37, RMSE_ALPHA_DERIV=    2.05
+2025-07-17 03:25:50.401 INFO: Epoch 102: head: Default, loss=0.9312, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.21, RMSE_ALPHA_DERIV=    2.27
+2025-07-17 03:26:14.543 INFO: Epoch 103: head: Default, loss=0.7402, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    2.09
+2025-07-17 03:26:38.695 INFO: Epoch 104: head: Default, loss=0.6947, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    2.02
+2025-07-17 03:26:38.696 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-98.pt
+2025-07-17 03:26:38.698 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-104.pt
+2025-07-17 03:27:02.886 INFO: Epoch 105: head: Default, loss=0.6850, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    2.01
+2025-07-17 03:27:02.887 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-104.pt
+2025-07-17 03:27:02.887 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-105.pt
+2025-07-17 03:27:27.054 INFO: Epoch 106: head: Default, loss=0.6821, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    2.01
+2025-07-17 03:27:27.055 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-105.pt
+2025-07-17 03:27:27.055 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-106.pt
+2025-07-17 03:27:51.228 INFO: Epoch 107: head: Default, loss=0.6914, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    1.98
+2025-07-17 03:28:15.359 INFO: Epoch 108: head: Default, loss=0.6935, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    2.00
+2025-07-17 03:28:39.505 INFO: Epoch 109: head: Default, loss=0.7321, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    2.03
+2025-07-17 03:29:03.652 INFO: Epoch 110: head: Default, loss=0.6900, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.95
+2025-07-17 03:29:27.761 INFO: Epoch 111: head: Default, loss=0.6000, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.89
+2025-07-17 03:29:27.762 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-106.pt
+2025-07-17 03:29:27.764 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-111.pt
+2025-07-17 03:29:51.942 INFO: Epoch 112: head: Default, loss=0.7091, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.20, RMSE_ALPHA_DERIV=    1.96
+2025-07-17 03:30:16.068 INFO: Epoch 113: head: Default, loss=0.7863, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.31, RMSE_ALPHA_DERIV=    1.93
+2025-07-17 03:30:40.180 INFO: Epoch 114: head: Default, loss=0.6925, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.96
+2025-07-17 03:31:04.340 INFO: Epoch 115: head: Default, loss=0.6507, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.97
+2025-07-17 03:31:28.482 INFO: Epoch 116: head: Default, loss=0.6331, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.93
+2025-07-17 03:31:52.622 INFO: Epoch 117: head: Default, loss=0.6819, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.94
+2025-07-17 03:32:16.766 INFO: Epoch 118: head: Default, loss=0.6652, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.97
+2025-07-17 03:32:40.892 INFO: Epoch 119: head: Default, loss=0.6279, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.92
+2025-07-17 03:33:05.053 INFO: Epoch 120: head: Default, loss=0.6182, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.89
+2025-07-17 03:33:29.219 INFO: Epoch 121: head: Default, loss=0.6721, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.21, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 03:33:53.367 INFO: Epoch 122: head: Default, loss=0.6181, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.91
+2025-07-17 03:34:17.517 INFO: Epoch 123: head: Default, loss=0.6236, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.91
+2025-07-17 03:34:41.669 INFO: Epoch 124: head: Default, loss=0.6272, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.92
+2025-07-17 03:35:05.811 INFO: Epoch 125: head: Default, loss=0.7196, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    2.05
+2025-07-17 03:35:29.957 INFO: Epoch 126: head: Default, loss=0.6108, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.86
+2025-07-17 03:35:54.107 INFO: Epoch 127: head: Default, loss=0.6593, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.94
+2025-07-17 03:36:18.229 INFO: Epoch 128: head: Default, loss=0.9180, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.29, RMSE_ALPHA_DERIV=    2.16
+2025-07-17 03:36:42.324 INFO: Epoch 129: head: Default, loss=0.6468, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.92
+2025-07-17 03:37:06.431 INFO: Epoch 130: head: Default, loss=0.6554, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 03:37:30.557 INFO: Epoch 131: head: Default, loss=0.6298, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 03:37:54.678 INFO: Epoch 132: head: Default, loss=0.6042, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.84
+2025-07-17 03:38:18.791 INFO: Epoch 133: head: Default, loss=0.6120, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 03:38:42.884 INFO: Epoch 134: head: Default, loss=0.6145, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.89
+2025-07-17 03:39:06.993 INFO: Epoch 135: head: Default, loss=0.7492, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.27, RMSE_ALPHA_DERIV=    1.94
+2025-07-17 03:39:31.116 INFO: Epoch 136: head: Default, loss=0.7765, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    2.11
+2025-07-17 03:39:55.219 INFO: Epoch 137: head: Default, loss=0.7593, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    2.05
+2025-07-17 03:40:19.328 INFO: Epoch 138: head: Default, loss=0.7185, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    2.02
+2025-07-17 03:40:43.451 INFO: Epoch 139: head: Default, loss=0.6615, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.96
+2025-07-17 03:41:07.597 INFO: Epoch 140: head: Default, loss=0.7233, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.22, RMSE_ALPHA_DERIV=    1.97
+2025-07-17 03:41:31.761 INFO: Epoch 141: head: Default, loss=0.9127, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.32, RMSE_ALPHA_DERIV=    2.11
+2025-07-17 03:41:55.909 INFO: Epoch 142: head: Default, loss=0.5934, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.83
+2025-07-17 03:41:55.910 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-111.pt
+2025-07-17 03:41:55.912 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-142.pt
+2025-07-17 03:42:20.078 INFO: Epoch 143: head: Default, loss=0.5976, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.88
+2025-07-17 03:42:44.223 INFO: Epoch 144: head: Default, loss=0.6822, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.23, RMSE_ALPHA_DERIV=    1.89
+2025-07-17 03:43:08.338 INFO: Epoch 145: head: Default, loss=0.7548, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.20, RMSE_ALPHA_DERIV=    2.03
+2025-07-17 03:43:32.479 INFO: Epoch 146: head: Default, loss=0.6190, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.91
+2025-07-17 03:43:56.574 INFO: Epoch 147: head: Default, loss=0.5710, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 03:43:56.575 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-142.pt
+2025-07-17 03:43:56.577 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-147.pt
+2025-07-17 03:44:20.716 INFO: Epoch 148: head: Default, loss=0.5388, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 03:44:20.717 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-147.pt
+2025-07-17 03:44:20.719 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-148.pt
+2025-07-17 03:44:44.888 INFO: Epoch 149: head: Default, loss=0.5839, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.82
+2025-07-17 03:45:09.030 INFO: Epoch 150: head: Default, loss=0.6668, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.91
+2025-07-17 03:45:33.174 INFO: Epoch 151: head: Default, loss=0.6414, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.23, RMSE_ALPHA_DERIV=    1.82
+2025-07-17 03:45:57.314 INFO: Epoch 152: head: Default, loss=0.7008, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.22, RMSE_ALPHA_DERIV=    1.93
+2025-07-17 03:46:21.442 INFO: Epoch 153: head: Default, loss=0.5811, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.84
+2025-07-17 03:46:45.595 INFO: Epoch 154: head: Default, loss=0.5520, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 03:47:09.758 INFO: Epoch 155: head: Default, loss=0.6554, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.21, RMSE_ALPHA_DERIV=    1.86
+2025-07-17 03:47:33.927 INFO: Epoch 156: head: Default, loss=0.6025, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.87
+2025-07-17 03:47:58.089 INFO: Epoch 157: head: Default, loss=0.5425, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 03:48:22.251 INFO: Epoch 158: head: Default, loss=0.6178, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.89
+2025-07-17 03:48:46.406 INFO: Epoch 159: head: Default, loss=0.5983, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.86
+2025-07-17 03:49:10.577 INFO: Epoch 160: head: Default, loss=0.6692, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.92
+2025-07-17 03:49:34.733 INFO: Epoch 161: head: Default, loss=0.7351, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.30, RMSE_ALPHA_DERIV=    1.87
+2025-07-17 03:49:58.842 INFO: Epoch 162: head: Default, loss=0.6794, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    1.96
+2025-07-17 03:50:22.996 INFO: Epoch 163: head: Default, loss=0.6602, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.92
+2025-07-17 03:50:47.129 INFO: Epoch 164: head: Default, loss=0.5656, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 03:51:11.239 INFO: Epoch 165: head: Default, loss=0.5463, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 03:51:35.320 INFO: Epoch 166: head: Default, loss=0.5813, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.83
+2025-07-17 03:51:59.449 INFO: Epoch 167: head: Default, loss=0.5595, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 03:52:23.594 INFO: Epoch 168: head: Default, loss=0.5350, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 03:52:23.595 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-148.pt
+2025-07-17 03:52:23.597 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-168.pt
+2025-07-17 03:52:47.760 INFO: Epoch 169: head: Default, loss=0.5769, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.83
+2025-07-17 03:53:11.887 INFO: Epoch 170: head: Default, loss=0.5712, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 03:53:36.006 INFO: Epoch 171: head: Default, loss=0.6029, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 03:54:00.136 INFO: Epoch 172: head: Default, loss=0.6082, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.87
+2025-07-17 03:54:24.277 INFO: Epoch 173: head: Default, loss=0.6190, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.84
+2025-07-17 03:54:48.367 INFO: Epoch 174: head: Default, loss=0.6028, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.84
+2025-07-17 03:55:12.481 INFO: Epoch 175: head: Default, loss=0.5775, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 03:55:36.595 INFO: Epoch 176: head: Default, loss=0.6487, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 03:56:00.730 INFO: Epoch 177: head: Default, loss=0.5535, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 03:56:24.848 INFO: Epoch 178: head: Default, loss=0.5268, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 03:56:24.849 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-168.pt
+2025-07-17 03:56:24.856 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-178.pt
+2025-07-17 03:56:49.007 INFO: Epoch 179: head: Default, loss=0.5785, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 03:57:13.133 INFO: Epoch 180: head: Default, loss=0.5580, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.82
+2025-07-17 03:57:37.275 INFO: Epoch 181: head: Default, loss=0.5768, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.84
+2025-07-17 03:58:01.423 INFO: Epoch 182: head: Default, loss=0.5800, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 03:58:25.548 INFO: Epoch 183: head: Default, loss=0.5928, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.83
+2025-07-17 03:58:49.671 INFO: Epoch 184: head: Default, loss=0.5518, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 03:59:13.805 INFO: Epoch 185: head: Default, loss=0.5216, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 03:59:13.806 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-178.pt
+2025-07-17 03:59:13.808 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-185.pt
+2025-07-17 03:59:38.003 INFO: Epoch 186: head: Default, loss=0.6290, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.21, RMSE_ALPHA_DERIV=    1.82
+2025-07-17 04:00:02.119 INFO: Epoch 187: head: Default, loss=0.5682, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:00:26.242 INFO: Epoch 188: head: Default, loss=0.5678, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:00:50.400 INFO: Epoch 189: head: Default, loss=0.5329, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:01:14.534 INFO: Epoch 190: head: Default, loss=0.5588, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:01:38.677 INFO: Epoch 191: head: Default, loss=0.5937, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.84
+2025-07-17 04:02:02.765 INFO: Epoch 192: head: Default, loss=0.5221, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:02:26.876 INFO: Epoch 193: head: Default, loss=0.5926, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.87
+2025-07-17 04:02:50.942 INFO: Epoch 194: head: Default, loss=0.5687, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 04:03:15.041 INFO: Epoch 195: head: Default, loss=0.5238, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:03:39.110 INFO: Epoch 196: head: Default, loss=0.5450, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.78
+2025-07-17 04:04:03.210 INFO: Epoch 197: head: Default, loss=0.6023, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.20, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:04:27.320 INFO: Epoch 198: head: Default, loss=0.5749, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.82
+2025-07-17 04:04:51.450 INFO: Epoch 199: head: Default, loss=0.6130, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 04:05:15.606 INFO: Epoch 200: head: Default, loss=0.5742, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:05:39.733 INFO: Epoch 201: head: Default, loss=0.5999, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.19, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:06:03.885 INFO: Epoch 202: head: Default, loss=0.5212, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:06:03.886 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-185.pt
+2025-07-17 04:06:03.887 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-202.pt
+2025-07-17 04:06:28.089 INFO: Epoch 203: head: Default, loss=0.5575, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:06:52.234 INFO: Epoch 204: head: Default, loss=0.6229, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.87
+2025-07-17 04:07:16.390 INFO: Epoch 205: head: Default, loss=0.5271, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:07:40.542 INFO: Epoch 206: head: Default, loss=0.5400, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 04:08:04.696 INFO: Epoch 207: head: Default, loss=0.5071, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 04:08:04.696 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-202.pt
+2025-07-17 04:08:04.698 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-207.pt
+2025-07-17 04:08:28.888 INFO: Epoch 208: head: Default, loss=0.5489, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:08:53.048 INFO: Epoch 209: head: Default, loss=0.5786, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:09:17.214 INFO: Epoch 210: head: Default, loss=0.5103, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:09:41.386 INFO: Epoch 211: head: Default, loss=0.5588, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.82
+2025-07-17 04:10:05.549 INFO: Epoch 212: head: Default, loss=0.5519, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:10:29.699 INFO: Epoch 213: head: Default, loss=0.5497, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:10:53.855 INFO: Epoch 214: head: Default, loss=0.5796, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 04:11:18.016 INFO: Epoch 215: head: Default, loss=0.5833, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:11:42.163 INFO: Epoch 216: head: Default, loss=0.5797, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.78
+2025-07-17 04:12:06.295 INFO: Epoch 217: head: Default, loss=0.6824, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.22, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 04:12:30.464 INFO: Epoch 218: head: Default, loss=0.6202, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 04:12:54.626 INFO: Epoch 219: head: Default, loss=0.5973, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.83
+2025-07-17 04:13:18.777 INFO: Epoch 220: head: Default, loss=0.5871, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.82
+2025-07-17 04:13:42.904 INFO: Epoch 221: head: Default, loss=0.5859, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 04:14:07.050 INFO: Epoch 222: head: Default, loss=0.5284, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:14:31.215 INFO: Epoch 223: head: Default, loss=0.5312, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:14:55.356 INFO: Epoch 224: head: Default, loss=0.5080, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 04:15:19.496 INFO: Epoch 225: head: Default, loss=0.5793, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:15:43.645 INFO: Epoch 226: head: Default, loss=0.5390, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.78
+2025-07-17 04:16:07.800 INFO: Epoch 227: head: Default, loss=0.5413, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:16:31.957 INFO: Epoch 228: head: Default, loss=0.5387, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:16:56.118 INFO: Epoch 229: head: Default, loss=0.5188, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:17:20.273 INFO: Epoch 230: head: Default, loss=0.5529, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:17:44.446 INFO: Epoch 231: head: Default, loss=0.5187, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:18:08.598 INFO: Epoch 232: head: Default, loss=0.5474, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:18:32.763 INFO: Epoch 233: head: Default, loss=0.5091, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:18:56.931 INFO: Epoch 234: head: Default, loss=0.5744, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.82
+2025-07-17 04:19:21.094 INFO: Epoch 235: head: Default, loss=0.6223, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 04:19:45.248 INFO: Epoch 236: head: Default, loss=0.5212, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:20:09.414 INFO: Epoch 237: head: Default, loss=0.5580, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 04:20:33.574 INFO: Epoch 238: head: Default, loss=0.5336, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.78
+2025-07-17 04:20:57.739 INFO: Epoch 239: head: Default, loss=0.6106, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.87
+2025-07-17 04:21:21.893 INFO: Epoch 240: head: Default, loss=0.5372, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:21:46.047 INFO: Epoch 241: head: Default, loss=0.6087, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 04:22:10.204 INFO: Epoch 242: head: Default, loss=0.6181, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.90
+2025-07-17 04:22:34.352 INFO: Epoch 243: head: Default, loss=0.5860, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 04:22:58.498 INFO: Epoch 244: head: Default, loss=0.5342, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:23:22.627 INFO: Epoch 245: head: Default, loss=0.5272, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:23:46.754 INFO: Epoch 246: head: Default, loss=0.5842, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.83
+2025-07-17 04:24:10.892 INFO: Epoch 247: head: Default, loss=0.5422, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:24:34.990 INFO: Epoch 248: head: Default, loss=0.5988, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.87
+2025-07-17 04:24:59.126 INFO: Epoch 249: head: Default, loss=0.5320, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:25:23.270 INFO: Epoch 250: head: Default, loss=0.5432, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:25:47.411 INFO: Epoch 251: head: Default, loss=0.4879, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 04:25:47.411 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-207.pt
+2025-07-17 04:25:47.413 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-251.pt
+2025-07-17 04:26:11.597 INFO: Epoch 252: head: Default, loss=0.5674, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:26:35.729 INFO: Epoch 253: head: Default, loss=0.4947, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 04:26:59.886 INFO: Epoch 254: head: Default, loss=0.5644, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:27:23.997 INFO: Epoch 255: head: Default, loss=0.5452, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:27:48.077 INFO: Epoch 256: head: Default, loss=0.5166, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:28:12.216 INFO: Epoch 257: head: Default, loss=0.4817, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 04:28:12.217 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-251.pt
+2025-07-17 04:28:12.219 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-257.pt
+2025-07-17 04:28:36.392 INFO: Epoch 258: head: Default, loss=0.6048, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.89
+2025-07-17 04:29:00.516 INFO: Epoch 259: head: Default, loss=0.4883, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 04:29:24.653 INFO: Epoch 260: head: Default, loss=0.5642, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 04:29:48.724 INFO: Epoch 261: head: Default, loss=0.5221, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:30:12.833 INFO: Epoch 262: head: Default, loss=0.5957, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.19, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:30:36.945 INFO: Epoch 263: head: Default, loss=0.4963, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 04:31:01.070 INFO: Epoch 264: head: Default, loss=0.5622, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.78
+2025-07-17 04:31:25.165 INFO: Epoch 265: head: Default, loss=0.5331, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.78
+2025-07-17 04:31:49.287 INFO: Epoch 266: head: Default, loss=0.5505, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:32:13.370 INFO: Epoch 267: head: Default, loss=0.5213, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:32:37.470 INFO: Epoch 268: head: Default, loss=0.5373, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:33:01.579 INFO: Epoch 269: head: Default, loss=0.5157, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:33:25.696 INFO: Epoch 270: head: Default, loss=0.5571, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:33:49.802 INFO: Epoch 271: head: Default, loss=0.5216, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 04:34:13.912 INFO: Epoch 272: head: Default, loss=0.4976, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 04:34:38.020 INFO: Epoch 273: head: Default, loss=0.5797, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.19, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:35:02.104 INFO: Epoch 274: head: Default, loss=0.5330, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:35:26.216 INFO: Epoch 275: head: Default, loss=0.5876, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.85
+2025-07-17 04:35:50.338 INFO: Epoch 276: head: Default, loss=0.5177, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:36:14.440 INFO: Epoch 277: head: Default, loss=0.5722, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:36:38.538 INFO: Epoch 278: head: Default, loss=0.5080, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 04:37:02.664 INFO: Epoch 279: head: Default, loss=0.5497, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:37:26.800 INFO: Epoch 280: head: Default, loss=0.5488, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:37:50.921 INFO: Epoch 281: head: Default, loss=0.5391, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.78
+2025-07-17 04:38:15.047 INFO: Epoch 282: head: Default, loss=0.5154, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 04:38:39.149 INFO: Epoch 283: head: Default, loss=0.4942, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 04:39:03.290 INFO: Epoch 284: head: Default, loss=0.5680, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.78
+2025-07-17 04:39:27.446 INFO: Epoch 285: head: Default, loss=0.5235, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:39:51.590 INFO: Epoch 286: head: Default, loss=0.5110, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 04:40:15.728 INFO: Epoch 287: head: Default, loss=0.5785, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:40:39.851 INFO: Epoch 288: head: Default, loss=0.5127, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:41:03.984 INFO: Epoch 289: head: Default, loss=0.5588, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:41:28.123 INFO: Epoch 290: head: Default, loss=0.5130, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:41:52.223 INFO: Epoch 291: head: Default, loss=0.6327, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    1.88
+2025-07-17 04:42:16.335 INFO: Epoch 292: head: Default, loss=0.6156, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.86
+2025-07-17 04:42:40.432 INFO: Epoch 293: head: Default, loss=0.5459, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:43:04.572 INFO: Epoch 294: head: Default, loss=0.5610, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:43:28.704 INFO: Epoch 295: head: Default, loss=0.5113, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:43:52.821 INFO: Epoch 296: head: Default, loss=0.5270, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.76
+2025-07-17 04:44:16.948 INFO: Epoch 297: head: Default, loss=0.4817, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 04:44:16.949 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-257.pt
+2025-07-17 04:44:16.952 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-297.pt
+2025-07-17 04:44:41.104 INFO: Epoch 298: head: Default, loss=0.4924, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 04:45:05.254 INFO: Epoch 299: head: Default, loss=0.5124, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:45:29.395 INFO: Epoch 300: head: Default, loss=0.5398, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.77
+2025-07-17 04:45:53.528 INFO: Epoch 301: head: Default, loss=0.5174, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:46:17.676 INFO: Epoch 302: head: Default, loss=0.4885, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 04:46:41.811 INFO: Epoch 303: head: Default, loss=0.5533, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 04:47:05.942 INFO: Epoch 304: head: Default, loss=0.6150, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.26, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:47:30.082 INFO: Epoch 305: head: Default, loss=0.5254, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:47:54.174 INFO: Epoch 306: head: Default, loss=0.5651, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:48:18.300 INFO: Epoch 307: head: Default, loss=0.5451, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:48:42.405 INFO: Epoch 308: head: Default, loss=0.5176, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:49:06.490 INFO: Epoch 309: head: Default, loss=0.5158, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 04:49:30.610 INFO: Epoch 310: head: Default, loss=0.5929, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.80
+2025-07-17 04:49:54.731 INFO: Epoch 311: head: Default, loss=0.5142, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:50:18.818 INFO: Epoch 312: head: Default, loss=0.5060, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 04:50:42.898 INFO: Epoch 313: head: Default, loss=0.5392, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 04:51:07.020 INFO: Epoch 314: head: Default, loss=0.5678, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.79
+2025-07-17 04:51:31.156 INFO: Epoch 315: head: Default, loss=0.5306, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 04:51:55.280 INFO: Epoch 316: head: Default, loss=0.4876, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 04:52:19.387 INFO: Epoch 317: head: Default, loss=0.5309, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 04:52:43.514 INFO: Epoch 318: head: Default, loss=0.5372, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 04:53:07.657 INFO: Epoch 319: head: Default, loss=0.4962, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 04:53:31.775 INFO: Epoch 320: head: Default, loss=0.4759, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 04:53:31.776 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-297.pt
+2025-07-17 04:53:31.778 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-320.pt
+2025-07-17 04:53:55.943 INFO: Epoch 321: head: Default, loss=0.4794, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 04:54:20.078 INFO: Epoch 322: head: Default, loss=0.4878, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 04:54:44.217 INFO: Epoch 323: head: Default, loss=0.4687, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 04:54:44.217 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-320.pt
+2025-07-17 04:54:44.220 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-323.pt
+2025-07-17 04:55:08.401 INFO: Epoch 324: head: Default, loss=0.5066, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 04:55:32.517 INFO: Epoch 325: head: Default, loss=0.4908, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 04:55:56.621 INFO: Epoch 326: head: Default, loss=0.4816, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 04:56:20.731 INFO: Epoch 327: head: Default, loss=0.4741, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 04:56:44.873 INFO: Epoch 328: head: Default, loss=0.4793, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 04:57:09.034 INFO: Epoch 329: head: Default, loss=0.4895, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 04:57:33.177 INFO: Epoch 330: head: Default, loss=0.4849, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 04:57:57.276 INFO: Epoch 331: head: Default, loss=0.4812, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 04:58:21.401 INFO: Epoch 332: head: Default, loss=0.4664, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 04:58:21.402 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-323.pt
+2025-07-17 04:58:21.404 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-332.pt
+2025-07-17 04:58:45.539 INFO: Epoch 333: head: Default, loss=0.4667, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 04:59:09.659 INFO: Epoch 334: head: Default, loss=0.4708, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 04:59:33.782 INFO: Epoch 335: head: Default, loss=0.4679, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 04:59:57.923 INFO: Epoch 336: head: Default, loss=0.5101, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:00:22.037 INFO: Epoch 337: head: Default, loss=0.4971, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 05:00:46.172 INFO: Epoch 338: head: Default, loss=0.4793, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:01:10.297 INFO: Epoch 339: head: Default, loss=0.4951, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:01:34.438 INFO: Epoch 340: head: Default, loss=0.5169, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 05:01:58.573 INFO: Epoch 341: head: Default, loss=0.4913, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:02:22.714 INFO: Epoch 342: head: Default, loss=0.4802, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:02:46.856 INFO: Epoch 343: head: Default, loss=0.4792, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:03:10.969 INFO: Epoch 344: head: Default, loss=0.4801, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:03:35.081 INFO: Epoch 345: head: Default, loss=0.4818, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:03:59.187 INFO: Epoch 346: head: Default, loss=0.4762, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:04:23.324 INFO: Epoch 347: head: Default, loss=0.4872, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:04:47.465 INFO: Epoch 348: head: Default, loss=0.5013, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 05:05:11.597 INFO: Epoch 349: head: Default, loss=0.4868, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:05:35.715 INFO: Epoch 350: head: Default, loss=0.5217, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 05:05:59.851 INFO: Epoch 351: head: Default, loss=0.5071, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 05:06:23.990 INFO: Epoch 352: head: Default, loss=0.5073, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:06:48.094 INFO: Epoch 353: head: Default, loss=0.4844, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:07:12.211 INFO: Epoch 354: head: Default, loss=0.5107, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 05:07:36.336 INFO: Epoch 355: head: Default, loss=0.4934, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:08:00.462 INFO: Epoch 356: head: Default, loss=0.4785, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:08:24.537 INFO: Epoch 357: head: Default, loss=0.4923, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:08:48.674 INFO: Epoch 358: head: Default, loss=0.4768, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:09:12.774 INFO: Epoch 359: head: Default, loss=0.5013, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 05:09:36.886 INFO: Epoch 360: head: Default, loss=0.4780, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:10:01.003 INFO: Epoch 361: head: Default, loss=0.4763, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:10:25.140 INFO: Epoch 362: head: Default, loss=0.4922, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:10:49.283 INFO: Epoch 363: head: Default, loss=0.4879, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:11:13.398 INFO: Epoch 364: head: Default, loss=0.4749, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:11:37.489 INFO: Epoch 365: head: Default, loss=0.4779, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:12:01.596 INFO: Epoch 366: head: Default, loss=0.4754, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:12:25.683 INFO: Epoch 367: head: Default, loss=0.4804, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:12:49.773 INFO: Epoch 368: head: Default, loss=0.4953, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:13:13.898 INFO: Epoch 369: head: Default, loss=0.4796, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:13:37.977 INFO: Epoch 370: head: Default, loss=0.4616, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:13:37.977 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-332.pt
+2025-07-17 05:13:37.980 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-370.pt
+2025-07-17 05:14:02.162 INFO: Epoch 371: head: Default, loss=0.4662, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:14:26.282 INFO: Epoch 372: head: Default, loss=0.4691, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:14:50.378 INFO: Epoch 373: head: Default, loss=0.4859, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:15:14.488 INFO: Epoch 374: head: Default, loss=0.4949, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:15:38.615 INFO: Epoch 375: head: Default, loss=0.4937, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:16:02.729 INFO: Epoch 376: head: Default, loss=0.5010, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 05:16:26.819 INFO: Epoch 377: head: Default, loss=0.4751, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:16:50.908 INFO: Epoch 378: head: Default, loss=0.5239, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.15, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:17:15.014 INFO: Epoch 379: head: Default, loss=0.5062, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:17:39.121 INFO: Epoch 380: head: Default, loss=0.5046, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 05:18:03.214 INFO: Epoch 381: head: Default, loss=0.4859, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:18:27.309 INFO: Epoch 382: head: Default, loss=0.4811, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:18:51.371 INFO: Epoch 383: head: Default, loss=0.4768, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:19:15.443 INFO: Epoch 384: head: Default, loss=0.4675, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:19:39.508 INFO: Epoch 385: head: Default, loss=0.4708, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:20:03.571 INFO: Epoch 386: head: Default, loss=0.4728, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:20:27.665 INFO: Epoch 387: head: Default, loss=0.4875, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:20:51.771 INFO: Epoch 388: head: Default, loss=0.4930, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:21:15.866 INFO: Epoch 389: head: Default, loss=0.4848, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:21:39.956 INFO: Epoch 390: head: Default, loss=0.4741, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:22:04.032 INFO: Epoch 391: head: Default, loss=0.4817, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:22:28.066 INFO: Epoch 392: head: Default, loss=0.4835, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:22:52.183 INFO: Epoch 393: head: Default, loss=0.4707, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:23:16.313 INFO: Epoch 394: head: Default, loss=0.4586, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:23:16.314 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-370.pt
+2025-07-17 05:23:16.317 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-394.pt
+2025-07-17 05:23:40.428 INFO: Epoch 395: head: Default, loss=0.4885, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:24:04.531 INFO: Epoch 396: head: Default, loss=0.5200, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 05:24:28.646 INFO: Epoch 397: head: Default, loss=0.4812, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:24:52.736 INFO: Epoch 398: head: Default, loss=0.4978, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 05:25:16.807 INFO: Epoch 399: head: Default, loss=0.4674, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:25:40.918 INFO: Epoch 400: head: Default, loss=0.4663, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:26:05.014 INFO: Epoch 401: head: Default, loss=0.4748, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:26:29.091 INFO: Epoch 402: head: Default, loss=0.4787, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:26:53.163 INFO: Epoch 403: head: Default, loss=0.4658, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:27:17.257 INFO: Epoch 404: head: Default, loss=0.5106, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 05:27:41.321 INFO: Epoch 405: head: Default, loss=0.4717, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:28:05.416 INFO: Epoch 406: head: Default, loss=0.5177, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:28:29.534 INFO: Epoch 407: head: Default, loss=0.5149, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 05:28:53.633 INFO: Epoch 408: head: Default, loss=0.4790, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:29:17.729 INFO: Epoch 409: head: Default, loss=0.4987, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 05:29:41.844 INFO: Epoch 410: head: Default, loss=0.5261, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 05:30:05.983 INFO: Epoch 411: head: Default, loss=0.5687, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.81
+2025-07-17 05:30:30.074 INFO: Epoch 412: head: Default, loss=0.4691, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:30:54.181 INFO: Epoch 413: head: Default, loss=0.4720, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:31:18.333 INFO: Epoch 414: head: Default, loss=0.4759, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:31:42.460 INFO: Epoch 415: head: Default, loss=0.4740, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:32:06.592 INFO: Epoch 416: head: Default, loss=0.5753, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.20, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 05:32:30.706 INFO: Epoch 417: head: Default, loss=0.5547, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.17, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 05:32:54.792 INFO: Epoch 418: head: Default, loss=0.5256, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.75
+2025-07-17 05:33:18.819 INFO: Epoch 419: head: Default, loss=0.5702, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.83
+2025-07-17 05:33:42.888 INFO: Epoch 420: head: Default, loss=0.4922, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:34:07.000 INFO: Epoch 421: head: Default, loss=0.4854, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:34:31.091 INFO: Epoch 422: head: Default, loss=0.4914, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:34:55.197 INFO: Epoch 423: head: Default, loss=0.4673, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:35:19.297 INFO: Epoch 424: head: Default, loss=0.4603, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:35:43.336 INFO: Epoch 425: head: Default, loss=0.4898, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:36:07.425 INFO: Epoch 426: head: Default, loss=0.4850, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:36:31.468 INFO: Epoch 427: head: Default, loss=0.5119, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.72
+2025-07-17 05:36:55.571 INFO: Epoch 428: head: Default, loss=0.4842, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:37:19.700 INFO: Epoch 429: head: Default, loss=0.4644, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:37:43.785 INFO: Epoch 430: head: Default, loss=0.4627, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 05:38:07.911 INFO: Epoch 431: head: Default, loss=0.4748, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:38:32.022 INFO: Epoch 432: head: Default, loss=0.4680, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:38:56.097 INFO: Epoch 433: head: Default, loss=0.4735, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:39:20.212 INFO: Epoch 434: head: Default, loss=0.4739, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:39:44.336 INFO: Epoch 435: head: Default, loss=0.4649, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:40:08.427 INFO: Epoch 436: head: Default, loss=0.4840, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:40:32.556 INFO: Epoch 437: head: Default, loss=0.4730, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:40:56.637 INFO: Epoch 438: head: Default, loss=0.4764, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:41:20.697 INFO: Epoch 439: head: Default, loss=0.4660, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:41:44.802 INFO: Epoch 440: head: Default, loss=0.4936, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.14, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:42:08.900 INFO: Epoch 441: head: Default, loss=0.4680, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:42:33.030 INFO: Epoch 442: head: Default, loss=0.4497, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 05:42:33.031 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-394.pt
+2025-07-17 05:42:33.034 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-442.pt
+2025-07-17 05:42:57.177 INFO: Epoch 443: head: Default, loss=0.4724, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:43:21.271 INFO: Epoch 444: head: Default, loss=0.4579, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 05:43:45.387 INFO: Epoch 445: head: Default, loss=0.4765, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 05:44:09.531 INFO: Epoch 446: head: Default, loss=0.4776, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:44:33.672 INFO: Epoch 447: head: Default, loss=0.4803, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:44:57.802 INFO: Epoch 448: head: Default, loss=0.4671, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:45:21.920 INFO: Epoch 449: head: Default, loss=0.4830, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:45:46.002 INFO: Epoch 450: head: Default, loss=0.4828, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:46:10.115 INFO: Epoch 451: head: Default, loss=0.4692, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:46:34.164 INFO: Epoch 452: head: Default, loss=0.4701, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:46:58.305 INFO: Epoch 453: head: Default, loss=0.4479, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 05:46:58.306 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-442.pt
+2025-07-17 05:46:58.309 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-453.pt
+2025-07-17 05:47:22.467 INFO: Epoch 454: head: Default, loss=0.4614, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 05:47:46.582 INFO: Epoch 455: head: Default, loss=0.4680, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:48:10.714 INFO: Epoch 456: head: Default, loss=0.5500, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.20, RMSE_ALPHA_DERIV=    1.70
+2025-07-17 05:48:34.847 INFO: Epoch 457: head: Default, loss=0.4927, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:48:58.983 INFO: Epoch 458: head: Default, loss=0.4786, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:49:23.075 INFO: Epoch 459: head: Default, loss=0.4790, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:49:47.172 INFO: Epoch 460: head: Default, loss=0.4825, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 05:50:11.276 INFO: Epoch 461: head: Default, loss=0.4662, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:50:35.365 INFO: Epoch 462: head: Default, loss=0.4965, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:50:59.504 INFO: Epoch 463: head: Default, loss=0.4577, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 05:51:23.628 INFO: Epoch 464: head: Default, loss=0.4647, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 05:51:47.742 INFO: Epoch 465: head: Default, loss=0.4981, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 05:52:11.843 INFO: Epoch 466: head: Default, loss=0.4727, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:52:35.923 INFO: Epoch 467: head: Default, loss=0.4666, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:53:00.024 INFO: Epoch 468: head: Default, loss=0.4703, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:53:24.150 INFO: Epoch 469: head: Default, loss=0.4783, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 05:53:48.237 INFO: Epoch 470: head: Default, loss=0.4645, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:54:12.336 INFO: Epoch 471: head: Default, loss=0.4691, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:54:36.423 INFO: Epoch 472: head: Default, loss=0.4687, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:55:00.489 INFO: Epoch 473: head: Default, loss=0.4592, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 05:55:24.598 INFO: Epoch 474: head: Default, loss=0.4687, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:55:48.730 INFO: Epoch 475: head: Default, loss=0.4697, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:56:12.858 INFO: Epoch 476: head: Default, loss=0.4493, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 05:56:36.955 INFO: Epoch 477: head: Default, loss=0.4576, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 05:57:01.035 INFO: Epoch 478: head: Default, loss=0.4607, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 05:57:25.156 INFO: Epoch 479: head: Default, loss=0.4664, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:57:49.279 INFO: Epoch 480: head: Default, loss=0.4663, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 05:58:13.383 INFO: Epoch 481: head: Default, loss=0.4442, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 05:58:13.384 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-453.pt
+2025-07-17 05:58:13.386 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-481.pt
+2025-07-17 05:58:37.528 INFO: Epoch 482: head: Default, loss=0.4538, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 05:59:01.625 INFO: Epoch 483: head: Default, loss=0.4928, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 05:59:25.704 INFO: Epoch 484: head: Default, loss=0.4583, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 05:59:49.815 INFO: Epoch 485: head: Default, loss=0.4724, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 06:00:13.894 INFO: Epoch 486: head: Default, loss=0.4571, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:00:37.965 INFO: Epoch 487: head: Default, loss=0.4637, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.02, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:01:02.043 INFO: Epoch 488: head: Default, loss=0.4619, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:01:26.117 INFO: Epoch 489: head: Default, loss=0.4795, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 06:01:50.233 INFO: Epoch 490: head: Default, loss=0.4531, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:02:14.356 INFO: Epoch 491: head: Default, loss=0.4825, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 06:02:38.500 INFO: Epoch 492: head: Default, loss=0.4686, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:03:02.645 INFO: Epoch 493: head: Default, loss=0.4641, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:03:26.776 INFO: Epoch 494: head: Default, loss=0.4660, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:03:50.870 INFO: Epoch 495: head: Default, loss=0.4838, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 06:04:14.978 INFO: Epoch 496: head: Default, loss=0.4816, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 06:04:39.105 INFO: Epoch 497: head: Default, loss=0.4532, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:05:03.178 INFO: Epoch 498: head: Default, loss=0.4651, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:05:27.247 INFO: Epoch 499: head: Default, loss=0.4416, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:05:27.248 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-481.pt
+2025-07-17 06:05:27.250 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-499.pt
+2025-07-17 06:05:51.389 INFO: Epoch 500: head: Default, loss=0.4472, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:06:15.484 INFO: Epoch 501: head: Default, loss=0.4691, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:06:39.557 INFO: Epoch 502: head: Default, loss=0.5021, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 06:07:03.643 INFO: Epoch 503: head: Default, loss=0.4710, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:07:27.772 INFO: Epoch 504: head: Default, loss=0.4646, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:07:51.867 INFO: Epoch 505: head: Default, loss=0.4468, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:08:15.939 INFO: Epoch 506: head: Default, loss=0.4609, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:08:40.009 INFO: Epoch 507: head: Default, loss=0.4500, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:09:04.121 INFO: Epoch 508: head: Default, loss=0.4738, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 06:09:28.255 INFO: Epoch 509: head: Default, loss=0.4772, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.10, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:09:52.406 INFO: Epoch 510: head: Default, loss=0.4966, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 06:10:16.498 INFO: Epoch 511: head: Default, loss=0.4519, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:10:40.568 INFO: Epoch 512: head: Default, loss=0.4591, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:11:04.609 INFO: Epoch 513: head: Default, loss=0.4678, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:11:28.655 INFO: Epoch 514: head: Default, loss=0.4661, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:11:52.725 INFO: Epoch 515: head: Default, loss=0.4544, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:12:16.799 INFO: Epoch 516: head: Default, loss=0.4451, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:12:40.877 INFO: Epoch 517: head: Default, loss=0.4569, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:13:04.979 INFO: Epoch 518: head: Default, loss=0.4488, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:13:29.053 INFO: Epoch 519: head: Default, loss=0.4556, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:13:53.148 INFO: Epoch 520: head: Default, loss=0.4462, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:14:17.232 INFO: Epoch 521: head: Default, loss=0.5020, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.69
+2025-07-17 06:14:41.287 INFO: Epoch 522: head: Default, loss=0.4480, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:15:05.316 INFO: Epoch 523: head: Default, loss=0.4783, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 06:15:29.389 INFO: Epoch 524: head: Default, loss=0.4491, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:15:53.436 INFO: Epoch 525: head: Default, loss=0.4693, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:16:17.544 INFO: Epoch 526: head: Default, loss=0.4742, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 06:16:41.611 INFO: Epoch 527: head: Default, loss=0.4472, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:17:05.736 INFO: Epoch 528: head: Default, loss=0.4451, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:17:29.849 INFO: Epoch 529: head: Default, loss=0.4418, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:17:53.961 INFO: Epoch 530: head: Default, loss=0.4475, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:18:18.024 INFO: Epoch 531: head: Default, loss=0.4512, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:18:42.107 INFO: Epoch 532: head: Default, loss=0.4334, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 06:18:42.108 DEBUG: Deleting old checkpoint file: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-499.pt
+2025-07-17 06:18:42.109 DEBUG: Saving checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-532.pt
+2025-07-17 06:19:06.278 INFO: Epoch 533: head: Default, loss=0.4621, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:19:30.411 INFO: Epoch 534: head: Default, loss=0.4510, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:19:54.532 INFO: Epoch 535: head: Default, loss=0.4522, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:20:18.680 INFO: Epoch 536: head: Default, loss=0.4537, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:20:42.843 INFO: Epoch 537: head: Default, loss=0.4602, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:21:06.970 INFO: Epoch 538: head: Default, loss=0.4537, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:21:31.101 INFO: Epoch 539: head: Default, loss=0.4569, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:21:55.233 INFO: Epoch 540: head: Default, loss=0.4632, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:22:19.358 INFO: Epoch 541: head: Default, loss=0.4716, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:22:43.464 INFO: Epoch 542: head: Default, loss=0.4695, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:23:07.575 INFO: Epoch 543: head: Default, loss=0.4738, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:23:31.678 INFO: Epoch 544: head: Default, loss=0.4612, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:23:55.792 INFO: Epoch 545: head: Default, loss=0.4976, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.16, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:24:19.897 INFO: Epoch 546: head: Default, loss=0.5604, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.21, RMSE_ALPHA_DERIV=    1.71
+2025-07-17 06:24:44.016 INFO: Epoch 547: head: Default, loss=0.5073, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.74
+2025-07-17 06:25:08.160 INFO: Epoch 548: head: Default, loss=0.5233, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.73
+2025-07-17 06:25:32.287 INFO: Epoch 549: head: Default, loss=0.4788, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.13, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:25:56.385 INFO: Epoch 550: head: Default, loss=0.4686, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:26:20.487 INFO: Epoch 551: head: Default, loss=0.4751, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 06:26:44.617 INFO: Epoch 552: head: Default, loss=0.4726, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.11, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:27:08.732 INFO: Epoch 553: head: Default, loss=0.4875, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:27:32.810 INFO: Epoch 554: head: Default, loss=0.5161, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.18, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:27:56.934 INFO: Epoch 555: head: Default, loss=0.4690, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:28:21.054 INFO: Epoch 556: head: Default, loss=0.4485, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:28:45.177 INFO: Epoch 557: head: Default, loss=0.4716, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.12, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:29:09.301 INFO: Epoch 558: head: Default, loss=0.4693, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:29:33.440 INFO: Epoch 559: head: Default, loss=0.4685, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:29:57.535 INFO: Epoch 560: head: Default, loss=0.4350, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 06:30:21.652 INFO: Epoch 561: head: Default, loss=0.4564, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:30:45.749 INFO: Epoch 562: head: Default, loss=0.4638, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:31:09.871 INFO: Epoch 563: head: Default, loss=0.4509, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:31:34.000 INFO: Epoch 564: head: Default, loss=0.4566, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:31:58.130 INFO: Epoch 565: head: Default, loss=0.4432, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:32:22.255 INFO: Epoch 566: head: Default, loss=0.4515, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:32:46.404 INFO: Epoch 567: head: Default, loss=0.4456, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:33:10.528 INFO: Epoch 568: head: Default, loss=0.4516, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:33:34.681 INFO: Epoch 569: head: Default, loss=0.4403, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 06:33:58.832 INFO: Epoch 570: head: Default, loss=0.4467, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:34:22.965 INFO: Epoch 571: head: Default, loss=0.4454, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:34:47.082 INFO: Epoch 572: head: Default, loss=0.4532, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:35:11.213 INFO: Epoch 573: head: Default, loss=0.4552, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:35:35.369 INFO: Epoch 574: head: Default, loss=0.4357, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 06:35:59.516 INFO: Epoch 575: head: Default, loss=0.4514, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:36:23.655 INFO: Epoch 576: head: Default, loss=0.4510, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:36:47.796 INFO: Epoch 577: head: Default, loss=0.4504, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:37:11.920 INFO: Epoch 578: head: Default, loss=0.4706, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.67
+2025-07-17 06:37:36.085 INFO: Epoch 579: head: Default, loss=0.4640, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:38:00.224 INFO: Epoch 580: head: Default, loss=0.4603, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:38:24.358 INFO: Epoch 581: head: Default, loss=0.4461, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:38:48.507 INFO: Epoch 582: head: Default, loss=0.4816, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.68
+2025-07-17 06:39:12.660 INFO: Epoch 583: head: Default, loss=0.4648, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:39:36.789 INFO: Epoch 584: head: Default, loss=0.4518, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:40:00.934 INFO: Epoch 585: head: Default, loss=0.4534, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:40:25.060 INFO: Epoch 586: head: Default, loss=0.4409, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:40:49.207 INFO: Epoch 587: head: Default, loss=0.4559, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:41:13.350 INFO: Epoch 588: head: Default, loss=0.4706, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:41:37.495 INFO: Epoch 589: head: Default, loss=0.4494, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:42:01.646 INFO: Epoch 590: head: Default, loss=0.4639, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:42:25.799 INFO: Epoch 591: head: Default, loss=0.4506, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:42:49.960 INFO: Epoch 592: head: Default, loss=0.4430, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:43:14.124 INFO: Epoch 593: head: Default, loss=0.4431, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:43:38.278 INFO: Epoch 594: head: Default, loss=0.4477, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:44:02.414 INFO: Epoch 595: head: Default, loss=0.4409, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:44:26.569 INFO: Epoch 596: head: Default, loss=0.4544, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:44:50.728 INFO: Epoch 597: head: Default, loss=0.4576, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:45:14.873 INFO: Epoch 598: head: Default, loss=0.4433, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:45:39.013 INFO: Epoch 599: head: Default, loss=0.4521, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:46:03.162 INFO: Epoch 600: head: Default, loss=0.4517, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:46:27.299 INFO: Epoch 601: head: Default, loss=0.4457, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:46:51.435 INFO: Epoch 602: head: Default, loss=0.4401, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:47:15.580 INFO: Epoch 603: head: Default, loss=0.4462, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:47:39.724 INFO: Epoch 604: head: Default, loss=0.4433, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:48:03.814 INFO: Epoch 605: head: Default, loss=0.4457, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:48:27.924 INFO: Epoch 606: head: Default, loss=0.4498, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:48:52.062 INFO: Epoch 607: head: Default, loss=0.4382, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:49:16.198 INFO: Epoch 608: head: Default, loss=0.4376, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 06:49:40.349 INFO: Epoch 609: head: Default, loss=0.4438, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:50:04.499 INFO: Epoch 610: head: Default, loss=0.4555, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 06:50:28.626 INFO: Epoch 611: head: Default, loss=0.4523, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:50:52.716 INFO: Epoch 612: head: Default, loss=0.4699, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:51:16.855 INFO: Epoch 613: head: Default, loss=0.4369, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 06:51:40.997 INFO: Epoch 614: head: Default, loss=0.4455, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:52:05.134 INFO: Epoch 615: head: Default, loss=0.4498, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:52:29.264 INFO: Epoch 616: head: Default, loss=0.4461, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:52:53.376 INFO: Epoch 617: head: Default, loss=0.4425, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:53:17.516 INFO: Epoch 618: head: Default, loss=0.4511, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:53:41.634 INFO: Epoch 619: head: Default, loss=0.4659, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.66
+2025-07-17 06:54:05.736 INFO: Epoch 620: head: Default, loss=0.4564, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:54:29.845 INFO: Epoch 621: head: Default, loss=0.4498, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:54:53.955 INFO: Epoch 622: head: Default, loss=0.4357, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 06:55:18.064 INFO: Epoch 623: head: Default, loss=0.4380, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 06:55:42.175 INFO: Epoch 624: head: Default, loss=0.4552, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.09, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:56:06.321 INFO: Epoch 625: head: Default, loss=0.4433, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:56:30.420 INFO: Epoch 626: head: Default, loss=0.4389, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:56:54.527 INFO: Epoch 627: head: Default, loss=0.4441, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:57:18.664 INFO: Epoch 628: head: Default, loss=0.4507, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:57:42.808 INFO: Epoch 629: head: Default, loss=0.4479, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:58:06.936 INFO: Epoch 630: head: Default, loss=0.4448, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 06:58:31.079 INFO: Epoch 631: head: Default, loss=0.4464, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.07, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:58:55.229 INFO: Epoch 632: head: Default, loss=0.4579, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 06:59:19.366 INFO: Epoch 633: head: Default, loss=0.4472, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 06:59:43.497 INFO: Epoch 634: head: Default, loss=0.4487, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:00:07.608 INFO: Epoch 635: head: Default, loss=0.4441, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:00:31.733 INFO: Epoch 636: head: Default, loss=0.4429, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:00:55.845 INFO: Epoch 637: head: Default, loss=0.4520, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.08, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:01:19.979 INFO: Epoch 638: head: Default, loss=0.4357, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 07:01:44.126 INFO: Epoch 639: head: Default, loss=0.4384, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:02:08.277 INFO: Epoch 640: head: Default, loss=0.4453, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:02:32.429 INFO: Epoch 641: head: Default, loss=0.4530, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:02:56.556 INFO: Epoch 642: head: Default, loss=0.4422, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:03:20.690 INFO: Epoch 643: head: Default, loss=0.4490, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:03:44.823 INFO: Epoch 644: head: Default, loss=0.4415, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:04:08.869 INFO: Epoch 645: head: Default, loss=0.4442, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:04:32.975 INFO: Epoch 646: head: Default, loss=0.4444, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:04:57.064 INFO: Epoch 647: head: Default, loss=0.4418, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:05:21.181 INFO: Epoch 648: head: Default, loss=0.4438, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:05:45.279 INFO: Epoch 649: head: Default, loss=0.4380, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:06:09.394 INFO: Epoch 650: head: Default, loss=0.4466, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:06:33.511 INFO: Epoch 651: head: Default, loss=0.4484, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:06:57.625 INFO: Epoch 652: head: Default, loss=0.4417, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:07:21.761 INFO: Epoch 653: head: Default, loss=0.4437, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:07:45.920 INFO: Epoch 654: head: Default, loss=0.4433, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:08:10.067 INFO: Epoch 655: head: Default, loss=0.4443, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:08:34.200 INFO: Epoch 656: head: Default, loss=0.4433, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:08:58.318 INFO: Epoch 657: head: Default, loss=0.4405, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:09:22.442 INFO: Epoch 658: head: Default, loss=0.4412, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:09:46.589 INFO: Epoch 659: head: Default, loss=0.4442, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:10:10.737 INFO: Epoch 660: head: Default, loss=0.4456, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:10:34.878 INFO: Epoch 661: head: Default, loss=0.4441, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:10:59.013 INFO: Epoch 662: head: Default, loss=0.4435, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:11:23.145 INFO: Epoch 663: head: Default, loss=0.4560, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:11:47.290 INFO: Epoch 664: head: Default, loss=0.4562, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.65
+2025-07-17 07:12:11.375 INFO: Epoch 665: head: Default, loss=0.4440, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:12:35.437 INFO: Epoch 666: head: Default, loss=0.4366, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 07:12:59.509 INFO: Epoch 667: head: Default, loss=0.4423, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:13:23.581 INFO: Epoch 668: head: Default, loss=0.4491, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:13:47.636 INFO: Epoch 669: head: Default, loss=0.4576, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:14:11.714 INFO: Epoch 670: head: Default, loss=0.4405, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:14:35.810 INFO: Epoch 671: head: Default, loss=0.4425, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:14:59.881 INFO: Epoch 672: head: Default, loss=0.4453, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:15:23.978 INFO: Epoch 673: head: Default, loss=0.4522, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:15:48.034 INFO: Epoch 674: head: Default, loss=0.4483, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:16:12.122 INFO: Epoch 675: head: Default, loss=0.4523, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:16:36.200 INFO: Epoch 676: head: Default, loss=0.4461, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:17:00.274 INFO: Epoch 677: head: Default, loss=0.4460, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:17:24.336 INFO: Epoch 678: head: Default, loss=0.4466, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:17:48.376 INFO: Epoch 679: head: Default, loss=0.4475, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:18:12.436 INFO: Epoch 680: head: Default, loss=0.4533, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:18:36.490 INFO: Epoch 681: head: Default, loss=0.4457, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:19:00.546 INFO: Epoch 682: head: Default, loss=0.4421, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:19:24.599 INFO: Epoch 683: head: Default, loss=0.4557, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:19:48.649 INFO: Epoch 684: head: Default, loss=0.4390, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:20:12.689 INFO: Epoch 685: head: Default, loss=0.4459, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:20:36.741 INFO: Epoch 686: head: Default, loss=0.4399, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:21:00.780 INFO: Epoch 687: head: Default, loss=0.4442, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:21:24.827 INFO: Epoch 688: head: Default, loss=0.4432, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:21:48.888 INFO: Epoch 689: head: Default, loss=0.4398, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:22:12.983 INFO: Epoch 690: head: Default, loss=0.4424, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:22:37.092 INFO: Epoch 691: head: Default, loss=0.4389, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:23:01.216 INFO: Epoch 692: head: Default, loss=0.4422, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:23:25.339 INFO: Epoch 693: head: Default, loss=0.4430, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:23:49.477 INFO: Epoch 694: head: Default, loss=0.4404, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:24:13.589 INFO: Epoch 695: head: Default, loss=0.4438, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:24:37.659 INFO: Epoch 696: head: Default, loss=0.4391, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:25:01.752 INFO: Epoch 697: head: Default, loss=0.4453, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:25:25.849 INFO: Epoch 698: head: Default, loss=0.4464, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:25:49.926 INFO: Epoch 699: head: Default, loss=0.4443, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:26:13.971 INFO: Epoch 700: head: Default, loss=0.4437, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:26:38.007 INFO: Epoch 701: head: Default, loss=0.4395, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:27:02.062 INFO: Epoch 702: head: Default, loss=0.4411, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:27:26.143 INFO: Epoch 703: head: Default, loss=0.4437, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:27:50.204 INFO: Epoch 704: head: Default, loss=0.4350, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.61
+2025-07-17 07:28:14.243 INFO: Epoch 705: head: Default, loss=0.4497, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:28:38.335 INFO: Epoch 706: head: Default, loss=0.4420, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:29:02.416 INFO: Epoch 707: head: Default, loss=0.4403, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:29:26.485 INFO: Epoch 708: head: Default, loss=0.4448, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:29:50.561 INFO: Epoch 709: head: Default, loss=0.4432, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:30:14.664 INFO: Epoch 710: head: Default, loss=0.4452, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:30:38.778 INFO: Epoch 711: head: Default, loss=0.4389, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:31:02.885 INFO: Epoch 712: head: Default, loss=0.4439, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:31:26.960 INFO: Epoch 713: head: Default, loss=0.4497, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:31:51.011 INFO: Epoch 714: head: Default, loss=0.4396, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:32:15.078 INFO: Epoch 715: head: Default, loss=0.4506, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:32:39.129 INFO: Epoch 716: head: Default, loss=0.4380, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:33:03.215 INFO: Epoch 717: head: Default, loss=0.4406, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:33:27.286 INFO: Epoch 718: head: Default, loss=0.4431, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:33:51.355 INFO: Epoch 719: head: Default, loss=0.4420, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:34:15.435 INFO: Epoch 720: head: Default, loss=0.4452, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:34:39.515 INFO: Epoch 721: head: Default, loss=0.4411, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:35:03.531 INFO: Epoch 722: head: Default, loss=0.4461, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:35:27.570 INFO: Epoch 723: head: Default, loss=0.4415, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:35:51.611 INFO: Epoch 724: head: Default, loss=0.4460, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:36:15.644 INFO: Epoch 725: head: Default, loss=0.4437, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:36:39.699 INFO: Epoch 726: head: Default, loss=0.4488, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:37:03.759 INFO: Epoch 727: head: Default, loss=0.4436, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:37:27.818 INFO: Epoch 728: head: Default, loss=0.4405, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:37:51.913 INFO: Epoch 729: head: Default, loss=0.4489, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:38:16.009 INFO: Epoch 730: head: Default, loss=0.4411, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:38:40.102 INFO: Epoch 731: head: Default, loss=0.4402, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:39:04.203 INFO: Epoch 732: head: Default, loss=0.4470, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:39:28.290 INFO: Epoch 733: head: Default, loss=0.4452, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:39:52.350 INFO: Epoch 734: head: Default, loss=0.4475, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:40:16.420 INFO: Epoch 735: head: Default, loss=0.4463, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:40:40.492 INFO: Epoch 736: head: Default, loss=0.4482, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:41:04.583 INFO: Epoch 737: head: Default, loss=0.4442, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:41:28.655 INFO: Epoch 738: head: Default, loss=0.4440, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:41:52.692 INFO: Epoch 739: head: Default, loss=0.4420, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:42:16.769 INFO: Epoch 740: head: Default, loss=0.4421, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:42:40.870 INFO: Epoch 741: head: Default, loss=0.4376, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:43:04.963 INFO: Epoch 742: head: Default, loss=0.4466, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:43:29.050 INFO: Epoch 743: head: Default, loss=0.4451, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:43:53.179 INFO: Epoch 744: head: Default, loss=0.4428, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:44:17.283 INFO: Epoch 745: head: Default, loss=0.4398, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:44:41.379 INFO: Epoch 746: head: Default, loss=0.4473, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:45:05.432 INFO: Epoch 747: head: Default, loss=0.4421, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:45:29.460 INFO: Epoch 748: head: Default, loss=0.4427, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:45:53.562 INFO: Epoch 749: head: Default, loss=0.4424, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:46:17.647 INFO: Epoch 750: head: Default, loss=0.4420, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:46:41.756 INFO: Epoch 751: head: Default, loss=0.4429, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:47:05.810 INFO: Epoch 752: head: Default, loss=0.4429, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:47:29.897 INFO: Epoch 753: head: Default, loss=0.4419, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:47:53.996 INFO: Epoch 754: head: Default, loss=0.4499, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:48:18.129 INFO: Epoch 755: head: Default, loss=0.4443, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:48:42.267 INFO: Epoch 756: head: Default, loss=0.4446, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:49:06.379 INFO: Epoch 757: head: Default, loss=0.4444, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:49:30.475 INFO: Epoch 758: head: Default, loss=0.4485, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:49:54.588 INFO: Epoch 759: head: Default, loss=0.4496, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:50:18.701 INFO: Epoch 760: head: Default, loss=0.4413, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:50:42.787 INFO: Epoch 761: head: Default, loss=0.4452, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:51:06.824 INFO: Epoch 762: head: Default, loss=0.4414, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:51:30.896 INFO: Epoch 763: head: Default, loss=0.4447, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:51:55.001 INFO: Epoch 764: head: Default, loss=0.4434, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:52:19.127 INFO: Epoch 765: head: Default, loss=0.4444, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:52:43.265 INFO: Epoch 766: head: Default, loss=0.4459, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:53:07.387 INFO: Epoch 767: head: Default, loss=0.4532, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:53:31.534 INFO: Epoch 768: head: Default, loss=0.4450, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:53:55.682 INFO: Epoch 769: head: Default, loss=0.4424, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:54:19.794 INFO: Epoch 770: head: Default, loss=0.4461, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:54:43.910 INFO: Epoch 771: head: Default, loss=0.4498, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:55:07.987 INFO: Epoch 772: head: Default, loss=0.4453, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.06, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:55:32.106 INFO: Epoch 773: head: Default, loss=0.4430, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:55:56.232 INFO: Epoch 774: head: Default, loss=0.4412, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:56:20.365 INFO: Epoch 775: head: Default, loss=0.4437, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:56:44.489 INFO: Epoch 776: head: Default, loss=0.4424, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:57:08.640 INFO: Epoch 777: head: Default, loss=0.4497, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:57:32.755 INFO: Epoch 778: head: Default, loss=0.4452, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:57:56.888 INFO: Epoch 779: head: Default, loss=0.4476, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:58:21.018 INFO: Epoch 780: head: Default, loss=0.4487, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 07:58:45.144 INFO: Epoch 781: head: Default, loss=0.4432, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:59:09.261 INFO: Epoch 782: head: Default, loss=0.4410, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 07:59:33.398 INFO: Epoch 783: head: Default, loss=0.4428, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 07:59:57.476 INFO: Epoch 784: head: Default, loss=0.4450, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:00:21.590 INFO: Epoch 785: head: Default, loss=0.4435, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:00:45.741 INFO: Epoch 786: head: Default, loss=0.4504, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 08:01:09.882 INFO: Epoch 787: head: Default, loss=0.4490, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 08:01:34.028 INFO: Epoch 788: head: Default, loss=0.4381, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.03, RMSE_ALPHA_DERIV=    1.62
+2025-07-17 08:01:58.174 INFO: Epoch 789: head: Default, loss=0.4453, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:02:22.273 INFO: Epoch 790: head: Default, loss=0.4504, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 08:02:46.365 INFO: Epoch 791: head: Default, loss=0.4454, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:03:10.441 INFO: Epoch 792: head: Default, loss=0.4459, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:03:34.529 INFO: Epoch 793: head: Default, loss=0.4478, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.05, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:03:58.565 INFO: Epoch 794: head: Default, loss=0.4477, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:04:22.638 INFO: Epoch 795: head: Default, loss=0.4448, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:04:46.739 INFO: Epoch 796: head: Default, loss=0.4473, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:05:10.858 INFO: Epoch 797: head: Default, loss=0.4440, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.63
+2025-07-17 08:05:34.969 INFO: Epoch 798: head: Default, loss=0.4490, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 08:05:59.068 INFO: Epoch 799: head: Default, loss=0.4507, RMSE_MU_per_atom=0.00 mDebye, RMSE_MU_DERIV=0.00 mDebye / A, RMSE_ALPHA_per_atom=    0.04, RMSE_ALPHA_DERIV=    1.64
+2025-07-17 08:05:59.068 INFO: Training complete
+2025-07-17 08:05:59.068 INFO: 
+2025-07-17 08:05:59.068 INFO: ===========RESULTS===========
+2025-07-17 08:05:59.096 INFO: Loading checkpoint: ./checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123_epoch-532.pt
+2025-07-17 08:05:59.143 INFO: Loaded Stage one model from epoch 532 for evaluation
+2025-07-17 08:05:59.143 INFO: Saving model to checkpoints/MoWSSe_susram_ndata_all_subset_160_fold5_run-123.model
+2025-07-17 08:05:59.400 INFO: Compiling model, saving metadata to MoWSSe_susram_ndata_all_subset_160_fold5_compiled.model
+2025-07-17 08:06:00.209 INFO: Computing metrics for training, validation, and test sets
+2025-07-17 08:06:00.210 INFO: Skipping evaluation for heads: ['pt_head']
+2025-07-17 08:06:00.210 INFO: Evaluating train_Default ...
+2025-07-17 08:06:09.510 INFO: Evaluating valid_Default ...
+2025-07-17 08:06:10.008 INFO: Error-table on TRAIN and VALID:
++---------------+-------------------------+----------------+---------------+------------+-------------------+------------------+
+|  config_type  | RMSE MU / mDebye / atom | rel. MU RMSE % | RMSE MU deriv | RMSE ALPHA | rel. ALPHA RMSE % | RMSE ALPHA deriv |
++---------------+-------------------------+----------------+---------------+------------+-------------------+------------------+
+| train_Default |           0.00          |      0.0       |      0.00     |    0.06    |        0.5        |       0.99       |
+| valid_Default |           0.00          |      0.0       |      0.00     |    0.04    |        0.3        |       1.61       |
++---------------+-------------------------+----------------+---------------+------------+-------------------+------------------+
+2025-07-17 08:06:10.008 INFO: Evaluating Default_Default ...
+2025-07-17 08:06:12.433 INFO: Error-table on TEST:
++-----------------+-------------------------+----------------+---------------+------------+-------------------+------------------+
+|   config_type   | RMSE MU / mDebye / atom | rel. MU RMSE % | RMSE MU deriv | RMSE ALPHA | rel. ALPHA RMSE % | RMSE ALPHA deriv |
++-----------------+-------------------------+----------------+---------------+------------+-------------------+------------------+
+| Default_Default |           0.00          |      0.0       |      0.00     |    0.06    |        0.6        |       1.84       |
++-----------------+-------------------------+----------------+---------------+------------+-------------------+------------------+
+2025-07-17 08:06:12.433 DEBUG: Running inference on train_Default dataset
+2025-07-17 08:06:21.185 DEBUG: Running inference on valid_Default dataset
+2025-07-17 08:06:21.639 DEBUG: Running inference on Default_Default dataset
+2025-07-17 08:06:24.485 DEBUG: Plotting failed: 'Axes' object is not iterable
+2025-07-17 08:06:24.486 INFO: Done
