@@ -1,0 +1,723 @@
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+
+     Program PHONON v.6.8 starts on  3May2025 at  5:42:54 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on      24 processor cores
+     Number of MPI processes:                24
+     Threads/MPI process:                     1
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =      24
+     169718 MiB available memory on the printing compute node when the environment starts
+ 
+     Reading input from MoMoSe_APtest6_d7.400.ph.in
+
+     Reading xml data from directory:
+
+     /tmp/MoMoSe_APtest6_d7.400/MoMoSe_APtest6_d7.400.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PZ
+                           (   1   1   0   0   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min          51      22      6                 8373     2474     390
+     Max          52      23      7                 8386     2491     423
+     Sum        1225     547    163               201103    59583    9817
+ 
+     Using Slab Decomposition
+ 
+     Reading collected, re-writing distributed wavefunctions
+
+     Calculation of q =    0.0000000   0.0000000   0.0000000
+
+     Dielectric properties of MoMoSe_APtest6_d7.400 alloy at Gamma              
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =       6.2783  a.u.
+     unit-cell volume          =    1248.1866 (a.u.)^3
+     number of atoms/cell      =            6
+     number of atomic types    =            2
+     kinetic-energy cut-off    =      50.0000  Ry
+     charge density cut-off    =     450.0000  Ry
+     convergence threshold     =      1.0E-12
+     beta                      =       0.4000
+     number of iterations used =            4
+     Exchange-correlation= PZ
+                           (   1   1   0   0   0   0   0)
+
+
+     celldm(1)=    6.27831  celldm(2)=    0.00000  celldm(3)=    0.00000
+     celldm(4)=    0.00000  celldm(5)=    0.00000  celldm(6)=    0.00000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (  0.5000  0.8660  0.0000 )  
+               a(2) = ( -1.0000  0.0000  0.0000 )  
+               a(3) = (  0.0000  0.0000  5.8240 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  0.0000  1.1547  0.0000 )  
+               b(2) = ( -1.0000  0.5774  0.0000 )  
+               b(3) = (  0.0000  0.0000  0.1717 )  
+
+
+     Atoms inside the unit cell: 
+
+     Cartesian axes
+
+     site n.  atom      mass           positions (alat units)
+        1     Mo  95.9500   tau(    1) = (    0.00000    0.00000    2.91199  )
+        2     Se  78.9710   tau(    2) = (    0.00000    0.57735    3.41604  )
+        3     Se  78.9710   tau(    3) = (    0.00000    0.57735    2.40794  )
+        4     Mo  95.9500   tau(    4) = (    0.37072    2.06149    5.13934  )
+        5     Se  78.9710   tau(    5) = (    0.37072    1.48414    5.64339  )
+        6     Se  78.9710   tau(    6) = (    0.37072    1.48414    4.63529  )
+
+     Computing dynamical matrix for 
+                    q = (   0.0000000   0.0000000   0.0000000 )
+ 
+      2 Sym.Ops. (with q -> -q+G )
+
+
+     G cutoff =  449.3022  (   8379 G-vectors)     FFT grid: ( 45, 45,250)
+     G cutoff =  199.6899  (   2487 G-vectors)  smooth grid: ( 30, 30,180)
+     number of k points=    74
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   0.0138889
+        k(    2) = (  -0.0833333   0.0481125   0.0000000), wk =   0.0277778
+        k(    3) = (  -0.1666667   0.0962250   0.0000000), wk =   0.0277778
+        k(    4) = (  -0.2500000   0.1443376   0.0000000), wk =   0.0277778
+        k(    5) = (  -0.3333333   0.1924501   0.0000000), wk =   0.0277778
+        k(    6) = (  -0.4166667   0.2405626   0.0000000), wk =   0.0277778
+        k(    7) = (   0.5000000  -0.2886751   0.0000000), wk =   0.0138889
+        k(    8) = (  -0.0833333   0.1443376   0.0000000), wk =   0.0277778
+        k(    9) = (  -0.1666667   0.1924501   0.0000000), wk =   0.0277778
+        k(   10) = (  -0.2500000   0.2405626   0.0000000), wk =   0.0277778
+        k(   11) = (  -0.3333333   0.2886751   0.0000000), wk =   0.0277778
+        k(   12) = (  -0.4166667   0.3367877   0.0000000), wk =   0.0277778
+        k(   13) = (  -0.1666667   0.2886751   0.0000000), wk =   0.0277778
+        k(   14) = (  -0.2500000   0.3367877   0.0000000), wk =   0.0277778
+        k(   15) = (  -0.3333333   0.3849002   0.0000000), wk =   0.0277778
+        k(   16) = (  -0.4166667   0.4330127   0.0000000), wk =   0.0277778
+        k(   17) = (  -0.2500000   0.4330127   0.0000000), wk =   0.0277778
+        k(   18) = (  -0.3333333   0.4811252   0.0000000), wk =   0.0277778
+        k(   19) = (  -0.3333333   0.5773503   0.0000000), wk =   0.0277778
+        k(   20) = (   0.0833333   0.0481125   0.0000000), wk =   0.0277778
+        k(   21) = (   0.0000000   0.0962250   0.0000000), wk =   0.0277778
+        k(   22) = (   0.1666667   0.0962250   0.0000000), wk =   0.0277778
+        k(   23) = (   0.0000000   0.1924501   0.0000000), wk =   0.0277778
+        k(   24) = (   0.2500000   0.1443376   0.0000000), wk =   0.0277778
+        k(   25) = (   0.0000000   0.2886751   0.0000000), wk =   0.0277778
+        k(   26) = (   0.3333333   0.1924501   0.0000000), wk =   0.0277778
+        k(   27) = (   0.0000000   0.3849002   0.0000000), wk =   0.0277778
+        k(   28) = (   0.4166667   0.2405626   0.0000000), wk =   0.0277778
+        k(   29) = (   0.0000000   0.4811252   0.0000000), wk =   0.0277778
+        k(   30) = (  -0.5000000  -0.2886751   0.0000000), wk =   0.0138889
+        k(   31) = (  -0.0000000  -0.5773503   0.0000000), wk =   0.0138889
+        k(   32) = (   0.0833333   0.1443376   0.0000000), wk =   0.0277778
+        k(   33) = (  -0.1666667   0.0000000   0.0000000), wk =   0.0277778
+        k(   34) = (   0.1666667   0.1924501   0.0000000), wk =   0.0277778
+        k(   35) = (  -0.2500000  -0.0481125   0.0000000), wk =   0.0277778
+        k(   36) = (   0.0833333   0.2405626   0.0000000), wk =   0.0277778
+        k(   37) = (  -0.2500000   0.0481125   0.0000000), wk =   0.0277778
+        k(   38) = (   0.0833333  -0.2405626   0.0000000), wk =   0.0277778
+        k(   39) = (   0.2500000   0.2405626   0.0000000), wk =   0.0277778
+        k(   40) = (  -0.3333333  -0.0962250   0.0000000), wk =   0.0277778
+        k(   41) = (   0.0833333   0.3367877   0.0000000), wk =   0.0277778
+        k(   42) = (  -0.3333333   0.0962250   0.0000000), wk =   0.0277778
+        k(   43) = (   0.0833333  -0.3367877   0.0000000), wk =   0.0277778
+        k(   44) = (   0.3333333   0.2886751   0.0000000), wk =   0.0277778
+        k(   45) = (  -0.4166667  -0.1443376   0.0000000), wk =   0.0277778
+        k(   46) = (   0.0833333   0.4330127   0.0000000), wk =   0.0277778
+        k(   47) = (  -0.4166667   0.1443376   0.0000000), wk =   0.0277778
+        k(   48) = (   0.0833333  -0.4330127   0.0000000), wk =   0.0277778
+        k(   49) = (   0.4166667   0.3367877   0.0000000), wk =   0.0277778
+        k(   50) = (  -0.5000000  -0.1924501   0.0000000), wk =   0.0277778
+        k(   51) = (   0.0833333   0.5292377   0.0000000), wk =   0.0277778
+        k(   52) = (  -0.5000000   0.1924501   0.0000000), wk =   0.0277778
+        k(   53) = (   0.0833333  -0.5292377   0.0000000), wk =   0.0277778
+        k(   54) = (   0.1666667   0.2886751   0.0000000), wk =   0.0277778
+        k(   55) = (  -0.3333333   0.0000000   0.0000000), wk =   0.0277778
+        k(   56) = (   0.2500000   0.3367877   0.0000000), wk =   0.0277778
+        k(   57) = (  -0.4166667  -0.0481125   0.0000000), wk =   0.0277778
+        k(   58) = (   0.1666667   0.3849002   0.0000000), wk =   0.0277778
+        k(   59) = (  -0.4166667   0.0481125   0.0000000), wk =   0.0277778
+        k(   60) = (   0.1666667  -0.3849002   0.0000000), wk =   0.0277778
+        k(   61) = (   0.3333333   0.3849002   0.0000000), wk =   0.0277778
+        k(   62) = (  -0.5000000  -0.0962250   0.0000000), wk =   0.0277778
+        k(   63) = (   0.1666667   0.4811252   0.0000000), wk =   0.0277778
+        k(   64) = (  -0.5000000   0.0962250   0.0000000), wk =   0.0277778
+        k(   65) = (   0.1666667  -0.4811252   0.0000000), wk =   0.0277778
+        k(   66) = (   0.4166667   0.4330127   0.0000000), wk =   0.0277778
+        k(   67) = (   0.1666667   0.5773503   0.0000000), wk =   0.0277778
+        k(   68) = (   0.2500000   0.4330127   0.0000000), wk =   0.0277778
+        k(   69) = (  -0.5000000   0.0000000   0.0000000), wk =   0.0277778
+        k(   70) = (   0.3333333   0.4811252   0.0000000), wk =   0.0277778
+        k(   71) = (  -0.5833333  -0.0481125   0.0000000), wk =   0.0277778
+        k(   72) = (   0.2500000   0.5292377   0.0000000), wk =   0.0277778
+        k(   73) = (  -0.5833333   0.0481125   0.0000000), wk =   0.0277778
+        k(   74) = (   0.2500000  -0.5292377   0.0000000), wk =   0.0277778
+
+     PseudoPot. # 1 for Mo read from file:
+     /home/theory/phrrpq/sg15_oncv_upf_2020-02-06/Mo_ONCV_PBE-1.2.upf
+     MD5 check sum: 2665c9f4159700498d9a5f7573bd8e9f
+     Pseudo is Norm-conserving, Zval = 14.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+
+     PseudoPot. # 2 for Se read from file:
+     /home/theory/phrrpq/sg15_oncv_upf_2020-02-06/Se_ONCV_PBE-1.2.upf
+     MD5 check sum: e78e48a4f5d8ce1f8dc76ec1271f249c
+     Pseudo is Norm-conserving, Zval =  6.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+
+     Mode symmetry, C_1 (1)     point group:
+
+
+     Electric field:
+     Dielectric constant
+     Born effective charges as d Force / d E
+     Raman tensor
+     Electro-optic tensor
+
+
+     Atomic displacements:
+     There are   18 irreducible representations
+
+     Representation     1      1 modes -  To be done
+
+     Representation     2      1 modes -  To be done
+
+     Representation     3      1 modes -  To be done
+
+     Representation     4      1 modes -  To be done
+
+     Representation     5      1 modes -  To be done
+
+     Representation     6      1 modes -  To be done
+
+     Representation     7      1 modes -  To be done
+
+     Representation     8      1 modes -  To be done
+
+     Representation     9      1 modes -  To be done
+
+     Representation    10      1 modes -  To be done
+
+     Representation    11      1 modes -  To be done
+
+     Representation    12      1 modes -  To be done
+
+     Representation    13      1 modes -  To be done
+
+     Representation    14      1 modes -  To be done
+
+     Representation    15      1 modes -  To be done
+
+     Representation    16      1 modes -  To be done
+
+     Representation    17      1 modes -  To be done
+
+     Representation    18      1 modes -  To be done
+
+
+     PHONON       :      0.53s CPU      1.31s WALL
+
+
+     Electric Fields Calculation
+
+      iter #   1 total cpu time :    63.5 secs   av.it.:  12.6
+      thresh= 1.000E-02 alpha_mix =  0.400 |ddv_scf|^2 =  2.168E-04
+
+      iter #   2 total cpu time :    82.1 secs   av.it.:  15.2
+      thresh= 1.472E-03 alpha_mix =  0.400 |ddv_scf|^2 =  5.044E-04
+
+      iter #   3 total cpu time :    96.2 secs   av.it.:  11.2
+      thresh= 2.246E-03 alpha_mix =  0.400 |ddv_scf|^2 =  4.932E-06
+
+      iter #   4 total cpu time :   123.0 secs   av.it.:  16.1
+      thresh= 2.221E-04 alpha_mix =  0.400 |ddv_scf|^2 =  1.192E-07
+
+      iter #   5 total cpu time :   140.0 secs   av.it.:  14.2
+      thresh= 3.452E-05 alpha_mix =  0.400 |ddv_scf|^2 =  2.544E-08
+
+      iter #   6 total cpu time :   162.1 secs   av.it.:  18.0
+      thresh= 1.595E-05 alpha_mix =  0.400 |ddv_scf|^2 =  4.737E-09
+
+      iter #   7 total cpu time :   183.3 secs   av.it.:  14.6
+      thresh= 6.883E-06 alpha_mix =  0.400 |ddv_scf|^2 =  1.735E-09
+
+      iter #   8 total cpu time :   209.6 secs   av.it.:  18.1
+      thresh= 4.165E-06 alpha_mix =  0.400 |ddv_scf|^2 =  8.226E-10
+
+      iter #   9 total cpu time :   231.7 secs   av.it.:  17.6
+      thresh= 2.868E-06 alpha_mix =  0.400 |ddv_scf|^2 =  1.618E-11
+
+      iter #  10 total cpu time :   252.6 secs   av.it.:  18.0
+      thresh= 4.022E-07 alpha_mix =  0.400 |ddv_scf|^2 =  2.365E-12
+
+      iter #  11 total cpu time :   275.4 secs   av.it.:  17.5
+      thresh= 1.538E-07 alpha_mix =  0.400 |ddv_scf|^2 =  9.162E-13
+
+     End of electric fields calculation
+
+          Dielectric constant in cartesian axis 
+
+          (      11.601214850      -0.005095783      -0.005432862 )
+          (      -0.005095754      11.596117255       0.001503554 )
+          (      -0.005389921       0.001488374       2.444049424 )
+
+          Effective charges (d Force / dE) in cartesian axis
+
+           atom      1   Mo 
+      Ex  (       -1.87120        0.00013        0.00606 )
+      Ey  (        0.00013       -1.87076       -0.00082 )
+      Ez  (        0.00206       -0.00081       -0.28039 )
+           atom      2   Se 
+      Ex  (        0.93454        0.00030       -0.00411 )
+      Ey  (        0.00029        0.93440        0.00130 )
+      Ez  (       -0.00184        0.00067        0.14567 )
+           atom      3   Se 
+      Ex  (        0.93456       -0.00043        0.00071 )
+      Ey  (       -0.00043        0.93426       -0.00022 )
+      Ez  (       -0.00022        0.00014        0.13062 )
+           atom      4   Mo 
+      Ex  (       -1.87196        0.00017        0.00458 )
+      Ey  (        0.00018       -1.87156       -0.00194 )
+      Ez  (        0.00207       -0.00081       -0.27766 )
+           atom      5   Se 
+      Ex  (        0.93428       -0.00043        0.00037 )
+      Ey  (       -0.00043        0.93397       -0.00050 )
+      Ez  (       -0.00022        0.00014        0.12902 )
+           atom      6   Se 
+      Ex  (        0.93444        0.00030       -0.00450 )
+      Ey  (        0.00029        0.93430        0.00103 )
+      Ez  (       -0.00185        0.00067        0.14843 )
+
+     Calling punch_plot_e
+     Writing on file  MoMoSe_APtest6_d7.400.drho                                                                                                                                                                                                                                      
+
+     Computing Pc [DH,Drho] |psi> 
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     one sub-group per band group will be used
+     scalapack distributed-memory algorithm (size of sub-group:  4*  4 procs)
+
+
+     Derivative coefficient:  0.001000    Threshold: 1.00E-12
+     Non-scf  u_k: avg # of iterations = 25.6
+     Non-scf Du_k: avg # of iterations = 57.0
+
+          Dielectric constant from finite-differences
+
+          (      11.603450368      -0.004940014      -0.005233596 )
+          (      -0.004940014      11.598349286       0.001432848 )
+          (      -0.005233596       0.001432848       2.443448919 )
+
+              Electro-optic tensor is defined as 
+            the derivative of the dielectric tensor 
+              with respect to one electric field 
+                 units are Rydberg a.u. 
+
+            to obtain the static chi^2 multiply by 1/2  
+
+            to convert to pm/Volt multiply per 2.7502  
+
+
+          Electro-optic tensor in cartesian axis: 
+
+          (       0.000368277       0.004418777      -0.009844849 )
+          (       0.004418777      -0.000308741      -0.000204344 )
+          (      -0.009844849      -0.000204344       0.000136515 )
+
+          (       0.004418777      -0.000308741      -0.000204344 )
+          (      -0.000308741      -0.003690286      -0.009671730 )
+          (      -0.000204344      -0.009671730      -0.000021408 )
+
+          (      -0.009844849      -0.000204344       0.000136515 )
+          (      -0.000204344      -0.009671730      -0.000021408 )
+          (       0.000136515      -0.000021408      -0.000632023 )
+
+
+          Electro-optic tensor: contribution #   1
+
+          (       0.000370494       0.004299197      -0.009857419 )
+          (       0.004299197      -0.000307990      -0.000204360 )
+          (      -0.009857419      -0.000204360       0.000135077 )
+
+          (       0.004299197      -0.000307990      -0.000204360 )
+          (      -0.000307990      -0.003569531      -0.009684434 )
+          (      -0.000204360      -0.009684434      -0.000022265 )
+
+          (      -0.009857419      -0.000204360       0.000135077 )
+          (      -0.000204360      -0.009684434      -0.000022265 )
+          (       0.000135077      -0.000022265      -0.000689690 )
+
+
+          Electro-optic tensor: contribution #   2
+
+          (      -0.000002218       0.000119580       0.000012570 )
+          (       0.000119580      -0.000000751       0.000000016 )
+          (       0.000012570       0.000000016       0.000001438 )
+
+          (       0.000119580      -0.000000751       0.000000016 )
+          (      -0.000000751      -0.000120755       0.000012704 )
+          (       0.000000016       0.000012704       0.000000857 )
+
+          (       0.000012570       0.000000016       0.000001438 )
+          (       0.000000016       0.000012704       0.000000857 )
+          (       0.000001438       0.000000857       0.000057667 )
+
+
+     Computing Second order response 
+
+
+      iter #   1   av.it.:  20.3
+      thresh= 1.000E-02 alpha_mix =  0.400 |ddv_scf|^2 =  3.036E-03
+
+
+      iter #   2   av.it.:  19.7
+      thresh= 5.510E-03 alpha_mix =  0.400 |ddv_scf|^2 =  2.908E-02
+
+
+      iter #   3   av.it.:  16.3
+      thresh= 1.000E-02 alpha_mix =  0.400 |ddv_scf|^2 =  7.643E-04
+
+
+      iter #   4   av.it.:  18.3
+      thresh= 2.765E-03 alpha_mix =  0.400 |ddv_scf|^2 =  3.124E-04
+
+
+      iter #   5   av.it.:  18.6
+      thresh= 1.768E-03 alpha_mix =  0.400 |ddv_scf|^2 =  4.419E-05
+
+
+      iter #   6   av.it.:  18.0
+      thresh= 6.648E-04 alpha_mix =  0.400 |ddv_scf|^2 =  1.285E-06
+
+
+      iter #   7   av.it.:  20.1
+      thresh= 1.134E-04 alpha_mix =  0.400 |ddv_scf|^2 =  6.119E-07
+
+
+      iter #   8   av.it.:  19.9
+      thresh= 7.823E-05 alpha_mix =  0.400 |ddv_scf|^2 =  8.119E-08
+
+
+      iter #   9   av.it.:  19.8
+      thresh= 2.849E-05 alpha_mix =  0.400 |ddv_scf|^2 =  3.395E-08
+
+
+      iter #  10   av.it.:  19.5
+      thresh= 1.842E-05 alpha_mix =  0.400 |ddv_scf|^2 =  1.299E-09
+
+
+      iter #  11   av.it.:  21.7
+      thresh= 3.604E-06 alpha_mix =  0.400 |ddv_scf|^2 =  1.153E-09
+
+
+      iter #  12   av.it.:  20.9
+      thresh= 3.396E-06 alpha_mix =  0.400 |ddv_scf|^2 =  7.157E-10
+
+
+      iter #  13   av.it.:  20.5
+      thresh= 2.675E-06 alpha_mix =  0.400 |ddv_scf|^2 =  8.369E-11
+
+
+      iter #  14   av.it.:  21.1
+      thresh= 9.148E-07 alpha_mix =  0.400 |ddv_scf|^2 =  1.125E-10
+
+
+      iter #  15   av.it.:  20.2
+      thresh= 1.061E-06 alpha_mix =  0.400 |ddv_scf|^2 =  4.038E-11
+
+
+      iter #  16   av.it.:  19.6
+      thresh= 6.354E-07 alpha_mix =  0.400 |ddv_scf|^2 =  1.875E-11
+
+
+      iter #  17   av.it.:  20.0
+      thresh= 4.330E-07 alpha_mix =  0.400 |ddv_scf|^2 =  7.285E-12
+
+
+      iter #  18   av.it.:  21.0
+      thresh= 2.699E-07 alpha_mix =  0.400 |ddv_scf|^2 =  8.693E-12
+
+
+      iter #  19   av.it.:  20.8
+      thresh= 2.948E-07 alpha_mix =  0.400 |ddv_scf|^2 =  4.583E-12
+
+
+      iter #  20   av.it.:  20.3
+      thresh= 2.141E-07 alpha_mix =  0.400 |ddv_scf|^2 =  2.945E-13
+
+          Raman tensor (au^-1) in cartesian axis 
+
+           atom      1
+          (       0.012511673      -0.416200641       0.012680949 )
+          (      -0.416200641      -0.003407457       0.000326143 )
+          (       0.012680949       0.000326143       0.003698148 )
+
+          (      -0.431596195       0.002155527       0.000492725 )
+          (       0.002155527       0.406230516       0.013145802 )
+          (       0.000492725       0.013145802      -0.001265570 )
+
+          (       0.005858043       0.000788392       0.001574632 )
+          (       0.000788392       0.005848528      -0.000347545 )
+          (       0.001574632      -0.000347545      -0.006994716 )
+
+           atom      2
+          (       0.006454789       0.198155489      -0.001997397 )
+          (       0.198155489      -0.004481237      -0.001267496 )
+          (      -0.001997397      -0.001267496      -0.003104258 )
+
+          (       0.195210885       0.009392471      -0.000900525 )
+          (       0.009392471      -0.196211418      -0.003998606 )
+          (      -0.000900525      -0.003998606       0.000809128 )
+
+          (       0.591240482      -0.010641691      -0.007542626 )
+          (      -0.010641691       0.578745405       0.002142818 )
+          (      -0.007542626       0.002142818       0.173586678 )
+
+           atom      3
+          (       0.000910876       0.200136364      -0.015992101 )
+          (       0.200136364      -0.000661660      -0.000107111 )
+          (      -0.015992101      -0.000107111      -0.000026098 )
+
+          (       0.195803223       0.005040735      -0.000212982 )
+          (       0.005040735      -0.194043235      -0.016589957 )
+          (      -0.000212982      -0.016589957       0.000159117 )
+
+          (      -0.552034935       0.003319382      -0.000426184 )
+          (       0.003319382      -0.545917598       0.000144572 )
+          (      -0.000426184       0.000144572      -0.158059770 )
+
+           atom      4
+          (      -0.012554866       0.416152162      -0.012596720 )
+          (       0.416152162       0.003405635      -0.000319512 )
+          (      -0.012596720      -0.000319512      -0.003699477 )
+
+          (       0.431544751      -0.002171692      -0.000491607 )
+          (      -0.002171692      -0.406216525      -0.013067867 )
+          (      -0.000491607      -0.013067867       0.001265115 )
+
+          (      -0.005765958      -0.000780662      -0.001576820 )
+          (      -0.000780662      -0.005779755       0.000346673 )
+          (      -0.001576820       0.000346673       0.007232911 )
+
+           atom      5
+          (      -0.000908088      -0.200108661       0.015984027 )
+          (      -0.200108661       0.000665163       0.000107125 )
+          (       0.015984027       0.000107125       0.000026550 )
+
+          (      -0.195774164      -0.005039289       0.000214592 )
+          (      -0.005039289       0.194017718       0.016579190 )
+          (       0.000214592       0.016579190      -0.000159157 )
+
+          (       0.552167717      -0.003326333       0.000408144 )
+          (      -0.003326333       0.546042404      -0.000158475 )
+          (       0.000408144      -0.000158475       0.157957146 )
+
+           atom      6
+          (      -0.006460006      -0.198145153       0.001969080 )
+          (      -0.198145153       0.004482280       0.001267089 )
+          (       0.001969080       0.001267089       0.003104280 )
+
+          (      -0.195203034      -0.009393607       0.000901554 )
+          (      -0.009393607       0.196199582       0.003969418 )
+          (       0.000901554       0.003969418      -0.000809203 )
+
+          (      -0.591230246       0.010650832       0.007559536 )
+          (       0.010650832      -0.578714653      -0.002128091 )
+          (       0.007559536      -0.002128091      -0.173795788 )
+
+
+     Raman tensor (A^2)
+
+     atom #    1    pol.  1
+      0.348006442982E+00     -0.115764302354E+02      0.352714788829E+00
+     -0.115764302354E+02     -0.947768631967E-01      0.907151375432E-02
+      0.352714788829E+00      0.907151375432E-02      0.102862290159E+00
+     atom #    1    pol.  2
+     -0.120046505231E+02      0.599549940902E-01      0.137049210886E-01
+      0.599549940902E-01      0.112991157710E+02      0.365644455377E+00
+      0.137049210886E-01      0.365644455377E+00     -0.352012606093E-01
+     atom #    1    pol.  3
+      0.162938777118E+00      0.219287735940E-01      0.437976642330E-01
+      0.219287735940E-01      0.162674136924E+00     -0.966679273601E-02
+      0.437976642330E-01     -0.966679273601E-02     -0.194554823813E+00
+     atom #    2    pol.  1
+      0.179537011212E+00      0.551160418120E+01     -0.555566793762E-01
+      0.551160418120E+01     -0.124643557439E+00     -0.352548318709E-01
+     -0.555566793762E-01     -0.352548318709E-01     -0.863435215281E-01
+     atom #    2    pol.  2
+      0.542970136637E+01      0.261247285315E+00     -0.250476946498E-01
+      0.261247285315E+00     -0.545753072953E+01     -0.111219397641E+00
+     -0.250476946498E-01     -0.111219397641E+00      0.225055268602E-01
+     atom #    2    pol.  3
+      0.164450832478E+02     -0.295993767276E+00     -0.209794691398E+00
+     -0.295993767276E+00      0.160975384007E+02      0.596015080849E-01
+     -0.209794691398E+00      0.596015080849E-01      0.482823395217E+01
+     atom #    3    pol.  1
+      0.253355890821E-01      0.556670131609E+01     -0.444812965182E+00
+      0.556670131609E+01     -0.184037717648E-01     -0.297923541346E-02
+     -0.444812965182E+00     -0.297923541346E-02     -0.725909013458E-03
+     atom #    3    pol.  2
+      0.544617698152E+01      0.140205739953E+00     -0.592400428363E-02
+      0.140205739953E+00     -0.539722371720E+01     -0.461442048232E+00
+     -0.592400428363E-02     -0.461442048232E+00      0.442575945130E-02
+     atom #    3    pol.  3
+     -0.153545989263E+02      0.923270942829E-01     -0.118541063245E-01
+      0.923270942829E-01     -0.151844479926E+02      0.402119034561E-02
+     -0.118541063245E-01      0.402119034561E-02     -0.439636012938E+01
+     atom #    4    pol.  1
+     -0.349207856573E+00      0.115750818078E+02     -0.350372009929E+00
+      0.115750818078E+02      0.947261731463E-01     -0.888708411578E-02
+     -0.350372009929E+00     -0.888708411578E-02     -0.102899268732E+00
+     atom #    4    pol.  2
+      0.120032196370E+02     -0.604046207180E-01     -0.136738242853E-01
+     -0.604046207180E-01     -0.112987266117E+02     -0.363476730496E+00
+     -0.136738242853E-01     -0.363476730496E+00      0.351885845686E-01
+     atom #    4    pol.  3
+     -0.160377485285E+00     -0.217137647586E-01     -0.438585283763E-01
+     -0.217137647586E-01     -0.160761246710E+00      0.964254825189E-02
+     -0.438585283763E-01      0.964254825189E-02      0.201180097385E+00
+     atom #    5    pol.  1
+     -0.252580440878E-01     -0.556593077218E+01      0.444588401471E+00
+     -0.556593077218E+01      0.185012029538E-01      0.297963137922E-02
+      0.444588401471E+00      0.297963137922E-02      0.738473416964E-03
+     atom #    5    pol.  2
+     -0.544536873242E+01     -0.140165517822E+00      0.596878506878E-02
+     -0.140165517822E+00      0.539651398972E+01      0.461142588435E+00
+      0.596878506878E-02      0.461142588435E+00     -0.442687389576E-02
+     atom #    5    pol.  3
+      0.153582921929E+02     -0.925204395061E-01      0.113523503377E-01
+     -0.925204395061E-01      0.151879194243E+02     -0.440790727470E-02
+      0.113523503377E-01     -0.440790727470E-02      0.439350567383E+01
+     atom #    6    pol.  1
+     -0.179682096474E+00     -0.551131668138E+01      0.547690679784E-01
+     -0.551131668138E+01      0.124672556274E+00      0.352435139854E-01
+      0.547690679784E-01      0.352435139854E-01      0.863441196933E-01
+     atom #    6    pol.  2
+     -0.542948301063E+01     -0.261278866695E+00      0.250763244430E-01
+     -0.261278866695E+00      0.545720153663E+01      0.110407549571E+00
+      0.250763244430E-01      0.110407549571E+00     -0.225076132102E-01
+     atom #    6    pol.  3
+     -0.164447985467E+02      0.296248023944E+00      0.210265039529E+00
+      0.296248023944E+00     -0.160966830560E+02     -0.591918699578E-01
+      0.210265039529E+00     -0.591918699578E-01     -0.483405024492E+01
+ 
+     PHONON       :  30m50.17s CPU  36m45.92s WALL
+
+     INITIALIZATION: 
+     phq_setup    :      0.00s CPU      0.00s WALL (       1 calls)
+     phq_init     :      0.19s CPU      0.20s WALL (       1 calls)
+ 
+     phq_init     :      0.19s CPU      0.20s WALL (       1 calls)
+     init_vloc    :      0.04s CPU      0.04s WALL (       1 calls)
+     init_us_1    :      0.00s CPU      0.01s WALL (       1 calls)
+ 
+     DIELECTRIC CONSTANT AND EFFECTIVE CHARGES:
+     solve_e      :    242.01s CPU    275.86s WALL (       1 calls)
+     dielec       :      0.01s CPU      0.02s WALL (       1 calls)
+     zstar_eu     :      6.08s CPU      6.32s WALL (       1 calls)
+ 
+     RAMAN COEFFICIENTS, THIRD-ORDER CHI:
+     dhdrhopsi    :    693.00s CPU    718.05s WALL (       1 calls)
+     el_opt       :      0.02s CPU      0.06s WALL (       1 calls)
+     dvpsi_e2     :      9.13s CPU      9.47s WALL (       1 calls)
+     solve_e2     :    871.00s CPU   1164.72s WALL (       1 calls)
+ 
+ 
+ 
+ 
+     dvqpsi_us    :     30.12s CPU     31.12s WALL (    6660 calls)
+     ortho        :      0.74s CPU      0.76s WALL (    3996 calls)
+     cgsolve      :   1641.22s CPU   1695.67s WALL (   14208 calls)
+     incdrhoscf   :     38.47s CPU     40.74s WALL (   11322 calls)
+     dv_of_drho   :      0.15s CPU      0.15s WALL (     162 calls)
+     mix_pot      :      0.59s CPU      0.63s WALL (      31 calls)
+ 
+     dvqpsi_us    :     30.12s CPU     31.12s WALL (    6660 calls)
+     dvqpsi_us_on :      7.05s CPU      7.20s WALL (    6660 calls)
+ 
+     cgsolve      :   1641.22s CPU   1695.67s WALL (   14208 calls)
+     ch_psi       :   1589.35s CPU   1642.28s WALL (  572950 calls)
+ 
+     ch_psi       :   1589.35s CPU   1642.28s WALL (  572950 calls)
+     h_psi        :   1470.60s CPU   1521.77s WALL (  849488 calls)
+     last         :    151.83s CPU    156.31s WALL (  572950 calls)
+ 
+     h_psi        :   1470.60s CPU   1521.77s WALL (  849488 calls)
+     add_vuspsi   :     69.64s CPU     72.23s WALL (  849488 calls)
+ 
+     incdrhoscf   :     38.47s CPU     40.74s WALL (   11322 calls)
+ 
+ 
+      General routines
+     calbec       :    172.91s CPU    179.11s WALL ( 1716732 calls)
+     fft          :      0.23s CPU      0.24s WALL (     811 calls)
+     ffts         :      0.76s CPU      0.79s WALL (    6982 calls)
+     fftw         :   1270.35s CPU   1316.80s WALL (21417440 calls)
+     davcio       :      2.69s CPU      3.23s WALL (   47997 calls)
+     write_rec    :      0.01s CPU      2.13s WALL (      31 calls)
+ 
+ 
+     PHONON       :  30m50.17s CPU  36m45.92s WALL
+
+ 
+   This run was terminated on:   6:19:40   3May2025            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

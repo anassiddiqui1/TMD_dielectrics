@@ -1,0 +1,2721 @@
+
+     Program PHONON v.6.8 starts on  9Jul2025 at  1:57: 7 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on     192 processor cores
+     Number of MPI processes:               192
+     Threads/MPI process:                     1
+
+     MPI processes distributed on     4 nodes
+     K-points division:     npool     =       4
+     R & G space division:  proc/nbgrp/npool/nimage =      48
+     173855 MiB available memory on the printing compute node when the environment starts
+ 
+     Reading input from MoMoS_2H_T0300_fs65.ph.in
+
+     Reading xml data from directory:
+
+     /tmp/MoMoS_2H_T0300_fs65/MoMoS_2H_T0300_fs65.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PZ
+                           (   1   1   0   0   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         842     375     96               137284    40681    5306
+     Max         843     376     97               137295    40684    5311
+     Sum       40435   18001   4639              6589787  1952707  254753
+ 
+     Using Slab Decomposition
+ 
+     Reading collected, re-writing distributed wavefunctions
+
+     Calculation of q =    0.0000000   0.0000000   0.0000000
+
+     Dielectric properties of MoMoS_2H_T0300_fs65 alloy at Gamma                
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =      36.1275  a.u.
+     unit-cell volume          =   40883.7158 (a.u.)^3
+     number of atoms/cell      =          216
+     number of atomic types    =            2
+     kinetic-energy cut-off    =      50.0000  Ry
+     charge density cut-off    =     450.0000  Ry
+     convergence threshold     =      1.0E-12
+     beta                      =       0.4000
+     number of iterations used =            4
+     Exchange-correlation= PZ
+                           (   1   1   0   0   0   0   0)
+
+
+     celldm(1)=   36.12747  celldm(2)=    0.00000  celldm(3)=    0.00000
+     celldm(4)=    0.00000  celldm(5)=    0.00000  celldm(6)=    0.00000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (  0.5000  0.8660  0.0000 )  
+               a(2) = ( -1.0000  0.0000  0.0000 )  
+               a(3) = (  0.0000  0.0000  1.0012 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  0.0000  1.1547  0.0000 )  
+               b(2) = ( -1.0000  0.5774  0.0000 )  
+               b(3) = (  0.0000  0.0000  0.9988 )  
+
+
+     Atoms inside the unit cell: 
+
+     Cartesian axes
+
+     site n.  atom      mass           positions (alat units)
+        1     Mo  95.9500   tau(    1) = (   -0.00222   -0.00053    0.50514  )
+        2     S   32.0600   tau(    2) = (    0.00344    0.09841    0.58477  )
+        3     S   32.0600   tau(    3) = (   -0.00357    0.09415    0.41785  )
+        4     Mo  95.9500   tau(    4) = (    0.00256    0.09993    0.82324  )
+        5     S   32.0600   tau(    5) = (    0.00756   -0.00160    0.90792  )
+        6     S   32.0600   tau(    6) = (    0.00224    0.00303    0.74338  )
+        7     Mo  95.9500   tau(    7) = (   -0.16869   -0.00291    0.50266  )
+        8     S   32.0600   tau(    8) = (   -0.16774    0.09297    0.58420  )
+        9     S   32.0600   tau(    9) = (   -0.16582    0.09025    0.41896  )
+       10     Mo  95.9500   tau(   10) = (   -0.16205    0.09690    0.82925  )
+       11     S   32.0600   tau(   11) = (   -0.16068   -0.00165    0.91019  )
+       12     S   32.0600   tau(   12) = (   -0.16058   -0.00470    0.74470  )
+       13     Mo  95.9500   tau(   13) = (   -0.33119   -0.00215    0.50089  )
+       14     S   32.0600   tau(   14) = (   -0.33326    0.09855    0.58450  )
+       15     S   32.0600   tau(   15) = (   -0.33874    0.09589    0.41798  )
+       16     Mo  95.9500   tau(   16) = (   -0.33314    0.10296    0.82644  )
+       17     S   32.0600   tau(   17) = (   -0.32817    0.00516    0.90386  )
+       18     S   32.0600   tau(   18) = (   -0.32943    0.00709    0.74553  )
+       19     Mo  95.9500   tau(   19) = (   -0.50125    0.00239    0.50239  )
+       20     S   32.0600   tau(   20) = (   -0.50362    0.09601    0.58083  )
+       21     S   32.0600   tau(   21) = (   -0.49740    0.09465    0.41320  )
+       22     Mo  95.9500   tau(   22) = (   -0.49696    0.10031    0.82627  )
+       23     S   32.0600   tau(   23) = (   -0.49975    0.00479    0.91003  )
+       24     S   32.0600   tau(   24) = (   -0.49661    0.00402    0.74769  )
+       25     Mo  95.9500   tau(   25) = (   -0.66876   -0.00351    0.49781  )
+       26     S   32.0600   tau(   26) = (   -0.66402    0.09335    0.57980  )
+       27     S   32.0600   tau(   27) = (   -0.66628    0.09733    0.41719  )
+       28     Mo  95.9500   tau(   28) = (   -0.66497    0.09900    0.82576  )
+       29     S   32.0600   tau(   29) = (   -0.66691    0.00104    0.90580  )
+       30     S   32.0600   tau(   30) = (   -0.67037    0.00434    0.74152  )
+       31     Mo  95.9500   tau(   31) = (   -0.83032   -0.00319    0.50421  )
+       32     S   32.0600   tau(   32) = (   -0.83144    0.09671    0.58348  )
+       33     S   32.0600   tau(   33) = (   -0.83651    0.08873    0.42181  )
+       34     Mo  95.9500   tau(   34) = (   -0.83297    0.10070    0.82273  )
+       35     S   32.0600   tau(   35) = (   -0.82746    0.00260    0.90659  )
+       36     S   32.0600   tau(   36) = (   -0.83478    0.00196    0.73524  )
+       37     Mo  95.9500   tau(   37) = (    0.08348    0.14260    0.50210  )
+       38     S   32.0600   tau(   38) = (    0.08143    0.24181    0.58486  )
+       39     S   32.0600   tau(   39) = (    0.07906    0.24404    0.41763  )
+       40     Mo  95.9500   tau(   40) = (    0.08735    0.24413    0.82412  )
+       41     S   32.0600   tau(   41) = (    0.08247    0.14635    0.90593  )
+       42     S   32.0600   tau(   42) = (    0.08219    0.15048    0.74175  )
+       43     Mo  95.9500   tau(   43) = (   -0.08591    0.14338    0.50120  )
+       44     S   32.0600   tau(   44) = (   -0.08505    0.23952    0.58522  )
+       45     S   32.0600   tau(   45) = (   -0.08315    0.24012    0.41738  )
+       46     Mo  95.9500   tau(   46) = (   -0.07878    0.24320    0.82255  )
+       47     S   32.0600   tau(   47) = (   -0.08108    0.14583    0.90673  )
+       48     S   32.0600   tau(   48) = (   -0.08339    0.14543    0.74475  )
+       49     Mo  95.9500   tau(   49) = (   -0.25150    0.14342    0.49926  )
+       50     S   32.0600   tau(   50) = (   -0.25155    0.23610    0.58599  )
+       51     S   32.0600   tau(   51) = (   -0.25290    0.23982    0.41621  )
+       52     Mo  95.9500   tau(   52) = (   -0.24834    0.24560    0.82201  )
+       53     S   32.0600   tau(   53) = (   -0.24670    0.14919    0.90426  )
+       54     S   32.0600   tau(   54) = (   -0.25182    0.14537    0.74664  )
+       55     Mo  95.9500   tau(   55) = (   -0.41714    0.14291    0.49935  )
+       56     S   32.0600   tau(   56) = (   -0.41540    0.24019    0.58310  )
+       57     S   32.0600   tau(   57) = (   -0.41389    0.24412    0.42355  )
+       58     Mo  95.9500   tau(   58) = (   -0.41699    0.24464    0.81981  )
+       59     S   32.0600   tau(   59) = (   -0.41052    0.15448    0.90550  )
+       60     S   32.0600   tau(   60) = (   -0.42179    0.14720    0.74141  )
+       61     Mo  95.9500   tau(   61) = (   -0.58259    0.14513    0.49827  )
+       62     S   32.0600   tau(   62) = (   -0.58751    0.23658    0.58597  )
+       63     S   32.0600   tau(   63) = (   -0.58390    0.23879    0.41496  )
+       64     Mo  95.9500   tau(   64) = (   -0.57878    0.24201    0.81832  )
+       65     S   32.0600   tau(   65) = (   -0.57861    0.15047    0.90494  )
+       66     S   32.0600   tau(   66) = (   -0.57689    0.14326    0.73866  )
+       67     Mo  95.9500   tau(   67) = (   -0.75124    0.13947    0.49787  )
+       68     S   32.0600   tau(   68) = (   -0.75433    0.23816    0.57895  )
+       69     S   32.0600   tau(   69) = (   -0.75389    0.23569    0.41726  )
+       70     Mo  95.9500   tau(   70) = (   -0.74724    0.24164    0.81998  )
+       71     S   32.0600   tau(   71) = (   -0.74983    0.14707    0.90402  )
+       72     S   32.0600   tau(   72) = (   -0.74431    0.14473    0.73786  )
+       73     Mo  95.9500   tau(   73) = (    0.16500    0.28773    0.49925  )
+       74     S   32.0600   tau(   74) = (    0.16415    0.37772    0.58260  )
+       75     S   32.0600   tau(   75) = (    0.16744    0.38286    0.41693  )
+       76     Mo  95.9500   tau(   76) = (    0.17069    0.38491    0.82909  )
+       77     S   32.0600   tau(   77) = (    0.17037    0.28791    0.90924  )
+       78     S   32.0600   tau(   78) = (    0.17373    0.29514    0.73841  )
+       79     Mo  95.9500   tau(   79) = (   -0.00217    0.28844    0.50295  )
+       80     S   32.0600   tau(   80) = (   -0.00209    0.38533    0.58753  )
+       81     S   32.0600   tau(   81) = (    0.00170    0.38433    0.42259  )
+       82     Mo  95.9500   tau(   82) = (    0.00487    0.38673    0.82535  )
+       83     S   32.0600   tau(   83) = (    0.00739    0.28811    0.91008  )
+       84     S   32.0600   tau(   84) = (    0.00081    0.29376    0.74204  )
+       85     Mo  95.9500   tau(   85) = (   -0.16919    0.28089    0.50217  )
+       86     S   32.0600   tau(   86) = (   -0.16886    0.37814    0.58151  )
+       87     S   32.0600   tau(   87) = (   -0.17058    0.37897    0.41839  )
+       88     Mo  95.9500   tau(   88) = (   -0.16525    0.38502    0.82314  )
+       89     S   32.0600   tau(   89) = (   -0.16095    0.28668    0.90427  )
+       90     S   32.0600   tau(   90) = (   -0.16026    0.28573    0.73459  )
+       91     Mo  95.9500   tau(   91) = (   -0.32841    0.28856    0.50417  )
+       92     S   32.0600   tau(   92) = (   -0.33328    0.38678    0.58747  )
+       93     S   32.0600   tau(   93) = (   -0.33717    0.38333    0.42002  )
+       94     Mo  95.9500   tau(   94) = (   -0.33193    0.38573    0.81815  )
+       95     S   32.0600   tau(   95) = (   -0.33392    0.29631    0.90198  )
+       96     S   32.0600   tau(   96) = (   -0.33342    0.28788    0.73340  )
+       97     Mo  95.9500   tau(   97) = (   -0.50175    0.28883    0.50533  )
+       98     S   32.0600   tau(   98) = (   -0.50183    0.38609    0.58564  )
+       99     S   32.0600   tau(   99) = (   -0.50011    0.38274    0.42274  )
+      100     Mo  95.9500   tau(  100) = (   -0.50038    0.38887    0.81777  )
+      101     S   32.0600   tau(  101) = (   -0.50001    0.29097    0.90335  )
+      102     S   32.0600   tau(  102) = (   -0.50256    0.29512    0.73567  )
+      103     Mo  95.9500   tau(  103) = (   -0.66879    0.28284    0.50126  )
+      104     S   32.0600   tau(  104) = (   -0.67012    0.38197    0.58064  )
+      105     S   32.0600   tau(  105) = (   -0.67090    0.37876    0.42137  )
+      106     Mo  95.9500   tau(  106) = (   -0.66554    0.39069    0.82142  )
+      107     S   32.0600   tau(  107) = (   -0.66361    0.28796    0.89876  )
+      108     S   32.0600   tau(  108) = (   -0.66480    0.29470    0.73561  )
+      109     Mo  95.9500   tau(  109) = (    0.24592    0.42751    0.50173  )
+      110     S   32.0600   tau(  110) = (    0.24358    0.52672    0.57952  )
+      111     S   32.0600   tau(  111) = (    0.24325    0.52350    0.42011  )
+      112     Mo  95.9500   tau(  112) = (    0.24939    0.53083    0.82658  )
+      113     S   32.0600   tau(  113) = (    0.25407    0.43479    0.91022  )
+      114     S   32.0600   tau(  114) = (    0.25181    0.43872    0.74150  )
+      115     Mo  95.9500   tau(  115) = (    0.08311    0.42937    0.50255  )
+      116     S   32.0600   tau(  116) = (    0.07845    0.52860    0.58635  )
+      117     S   32.0600   tau(  117) = (    0.07986    0.52337    0.41991  )
+      118     Mo  95.9500   tau(  118) = (    0.08311    0.53129    0.82683  )
+      119     S   32.0600   tau(  119) = (    0.08550    0.43221    0.91045  )
+      120     S   32.0600   tau(  120) = (    0.09129    0.43634    0.74573  )
+      121     Mo  95.9500   tau(  121) = (   -0.08583    0.42924    0.49868  )
+      122     S   32.0600   tau(  122) = (   -0.08977    0.52674    0.58028  )
+      123     S   32.0600   tau(  123) = (   -0.08475    0.53040    0.41986  )
+      124     Mo  95.9500   tau(  124) = (   -0.08052    0.53148    0.82390  )
+      125     S   32.0600   tau(  125) = (   -0.07941    0.42879    0.90496  )
+      126     S   32.0600   tau(  126) = (   -0.07883    0.43718    0.74106  )
+      127     Mo  95.9500   tau(  127) = (   -0.25093    0.43329    0.49967  )
+      128     S   32.0600   tau(  128) = (   -0.25237    0.53103    0.58451  )
+      129     S   32.0600   tau(  129) = (   -0.25786    0.52968    0.41321  )
+      130     Mo  95.9500   tau(  130) = (   -0.25222    0.52659    0.82128  )
+      131     S   32.0600   tau(  131) = (   -0.24609    0.43161    0.90343  )
+      132     S   32.0600   tau(  132) = (   -0.24447    0.43691    0.73761  )
+      133     Mo  95.9500   tau(  133) = (   -0.41897    0.43104    0.50233  )
+      134     S   32.0600   tau(  134) = (   -0.42078    0.52996    0.58033  )
+      135     S   32.0600   tau(  135) = (   -0.41594    0.52701    0.41708  )
+      136     Mo  95.9500   tau(  136) = (   -0.41772    0.53220    0.82154  )
+      137     S   32.0600   tau(  137) = (   -0.41671    0.43167    0.90365  )
+      138     S   32.0600   tau(  138) = (   -0.41803    0.43930    0.73489  )
+      139     Mo  95.9500   tau(  139) = (   -0.58539    0.43390    0.50090  )
+      140     S   32.0600   tau(  140) = (   -0.58983    0.52864    0.58252  )
+      141     S   32.0600   tau(  141) = (   -0.58756    0.53059    0.41752  )
+      142     Mo  95.9500   tau(  142) = (   -0.57980    0.52799    0.82537  )
+      143     S   32.0600   tau(  143) = (   -0.58185    0.43158    0.91023  )
+      144     S   32.0600   tau(  144) = (   -0.58692    0.43851    0.73789  )
+      145     Mo  95.9500   tau(  145) = (    0.33067    0.57542    0.49892  )
+      146     S   32.0600   tau(  146) = (    0.33061    0.66733    0.58542  )
+      147     S   32.0600   tau(  147) = (    0.32687    0.66986    0.41952  )
+      148     Mo  95.9500   tau(  148) = (    0.33399    0.67362    0.82590  )
+      149     S   32.0600   tau(  149) = (    0.33742    0.57746    0.91097  )
+      150     S   32.0600   tau(  150) = (    0.33695    0.57914    0.74258  )
+      151     Mo  95.9500   tau(  151) = (    0.15856    0.57643    0.49975  )
+      152     S   32.0600   tau(  152) = (    0.16355    0.67032    0.58457  )
+      153     S   32.0600   tau(  153) = (    0.16455    0.67072    0.41934  )
+      154     Mo  95.9500   tau(  154) = (    0.16552    0.67224    0.82751  )
+      155     S   32.0600   tau(  155) = (    0.16834    0.57680    0.90773  )
+      156     S   32.0600   tau(  156) = (    0.16765    0.57898    0.74396  )
+      157     Mo  95.9500   tau(  157) = (   -0.00473    0.57638    0.50269  )
+      158     S   32.0600   tau(  158) = (   -0.00359    0.67284    0.57977  )
+      159     S   32.0600   tau(  159) = (    0.00116    0.67130    0.41941  )
+      160     Mo  95.9500   tau(  160) = (    0.00093    0.67509    0.82696  )
+      161     S   32.0600   tau(  161) = (    0.00118    0.57718    0.90941  )
+      162     S   32.0600   tau(  162) = (    0.00265    0.58001    0.73935  )
+      163     Mo  95.9500   tau(  163) = (   -0.17182    0.57674    0.49721  )
+      164     S   32.0600   tau(  164) = (   -0.16596    0.67201    0.58116  )
+      165     S   32.0600   tau(  165) = (   -0.16934    0.67409    0.41747  )
+      166     Mo  95.9500   tau(  166) = (   -0.16527    0.67281    0.83332  )
+      167     S   32.0600   tau(  167) = (   -0.16568    0.57048    0.91067  )
+      168     S   32.0600   tau(  168) = (   -0.17144    0.58449    0.74670  )
+      169     Mo  95.9500   tau(  169) = (   -0.33548    0.57359    0.49605  )
+      170     S   32.0600   tau(  170) = (   -0.33491    0.66928    0.58062  )
+      171     S   32.0600   tau(  171) = (   -0.34027    0.66944    0.42050  )
+      172     Mo  95.9500   tau(  172) = (   -0.33031    0.67518    0.82547  )
+      173     S   32.0600   tau(  173) = (   -0.33895    0.57749    0.90522  )
+      174     S   32.0600   tau(  174) = (   -0.33520    0.57680    0.74181  )
+      175     Mo  95.9500   tau(  175) = (   -0.50376    0.57392    0.49976  )
+      176     S   32.0600   tau(  176) = (   -0.50010    0.67218    0.58381  )
+      177     S   32.0600   tau(  177) = (   -0.50135    0.67610    0.41752  )
+      178     Mo  95.9500   tau(  178) = (   -0.50043    0.67441    0.82690  )
+      179     S   32.0600   tau(  179) = (   -0.50006    0.57976    0.90614  )
+      180     S   32.0600   tau(  180) = (   -0.50508    0.57963    0.74055  )
+      181     Mo  95.9500   tau(  181) = (    0.41190    0.71738    0.50258  )
+      182     S   32.0600   tau(  182) = (    0.41692    0.81471    0.58621  )
+      183     S   32.0600   tau(  183) = (    0.41278    0.81577    0.41963  )
+      184     Mo  95.9500   tau(  184) = (    0.42449    0.81830    0.82809  )
+      185     S   32.0600   tau(  185) = (    0.42130    0.72220    0.90863  )
+      186     S   32.0600   tau(  186) = (    0.41626    0.72094    0.74711  )
+      187     Mo  95.9500   tau(  187) = (    0.24675    0.71770    0.50449  )
+      188     S   32.0600   tau(  188) = (    0.24506    0.81702    0.58683  )
+      189     S   32.0600   tau(  189) = (    0.24542    0.81570    0.42207  )
+      190     Mo  95.9500   tau(  190) = (    0.25618    0.81632    0.82517  )
+      191     S   32.0600   tau(  191) = (    0.25275    0.71810    0.90838  )
+      192     S   32.0600   tau(  192) = (    0.25062    0.72002    0.74461  )
+      193     Mo  95.9500   tau(  193) = (    0.08087    0.72129    0.50248  )
+      194     S   32.0600   tau(  194) = (    0.08528    0.81878    0.58577  )
+      195     S   32.0600   tau(  195) = (    0.07712    0.81791    0.42219  )
+      196     Mo  95.9500   tau(  196) = (    0.08475    0.82217    0.82793  )
+      197     S   32.0600   tau(  197) = (    0.08943    0.72579    0.91194  )
+      198     S   32.0600   tau(  198) = (    0.08666    0.72673    0.74544  )
+      199     Mo  95.9500   tau(  199) = (   -0.08465    0.72182    0.49692  )
+      200     S   32.0600   tau(  200) = (   -0.08369    0.81562    0.58483  )
+      201     S   32.0600   tau(  201) = (   -0.08583    0.81948    0.41985  )
+      202     Mo  95.9500   tau(  202) = (   -0.08492    0.81915    0.82538  )
+      203     S   32.0600   tau(  203) = (   -0.08030    0.72797    0.91136  )
+      204     S   32.0600   tau(  204) = (   -0.07790    0.72330    0.74565  )
+      205     Mo  95.9500   tau(  205) = (   -0.25309    0.71938    0.49973  )
+      206     S   32.0600   tau(  206) = (   -0.24645    0.81438    0.58440  )
+      207     S   32.0600   tau(  207) = (   -0.25141    0.81587    0.41728  )
+      208     Mo  95.9500   tau(  208) = (   -0.25051    0.81938    0.82480  )
+      209     S   32.0600   tau(  209) = (   -0.24738    0.72034    0.90894  )
+      210     S   32.0600   tau(  210) = (   -0.24773    0.72175    0.74692  )
+      211     Mo  95.9500   tau(  211) = (   -0.41940    0.72010    0.50050  )
+      212     S   32.0600   tau(  212) = (   -0.41505    0.81286    0.58719  )
+      213     S   32.0600   tau(  213) = (   -0.41767    0.81590    0.42499  )
+      214     Mo  95.9500   tau(  214) = (   -0.41054    0.82024    0.82226  )
+      215     S   32.0600   tau(  215) = (   -0.41407    0.72309    0.90620  )
+      216     S   32.0600   tau(  216) = (   -0.41691    0.72361    0.74477  )
+
+     Computing dynamical matrix for 
+                    q = (   0.0000000   0.0000000   0.0000000 )
+ 
+      2 Sym.Ops. (with q -> -q+G )
+
+
+     G cutoff =14877.4277  ( 137286 G-vectors)     FFT grid: (243,243,250)
+     G cutoff = 6612.1901  (  40683 G-vectors)  smooth grid: (180,180,180)
+     number of k points=     4
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   0.5000000
+        k(    2) = (   0.5000000  -0.2886751   0.0000000), wk =   0.5000000
+        k(    3) = (  -0.5000000  -0.2886751   0.0000000), wk =   0.5000000
+        k(    4) = (  -0.0000000  -0.5773503   0.0000000), wk =   0.5000000
+
+     PseudoPot. # 1 for Mo read from file:
+     /home/theory/phrrpq/sg15_oncv_upf_2020-02-06/Mo_ONCV_PBE-1.2.upf
+     MD5 check sum: 2665c9f4159700498d9a5f7573bd8e9f
+     Pseudo is Norm-conserving, Zval = 14.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+
+     PseudoPot. # 2 for S  read from file:
+     /home/theory/phrrpq/sg15_oncv_upf_2020-02-06/S_ONCV_PBE-1.2.upf
+     MD5 check sum: f9d020296ee6110346977bfd66d424f6
+     Pseudo is Norm-conserving, Zval =  6.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of  602 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+
+     Mode symmetry, C_1 (1)     point group:
+
+
+     Electric field:
+     Dielectric constant
+     Born effective charges as d Force / d E
+     Raman tensor
+     Electro-optic tensor
+
+
+     Atomic displacements:
+     There are  648 irreducible representations
+
+     Representation     1      1 modes -  To be done
+
+     Representation     2      1 modes -  To be done
+
+     Representation     3      1 modes -  To be done
+
+     Representation     4      1 modes -  To be done
+
+     Representation     5      1 modes -  To be done
+
+     Representation     6      1 modes -  To be done
+
+     Representation     7      1 modes -  To be done
+
+     Representation     8      1 modes -  To be done
+
+     Representation     9      1 modes -  To be done
+
+     Representation    10      1 modes -  To be done
+
+     Representation    11      1 modes -  To be done
+
+     Representation    12      1 modes -  To be done
+
+     Representation    13      1 modes -  To be done
+
+     Representation    14      1 modes -  To be done
+
+     Representation    15      1 modes -  To be done
+
+     Representation    16      1 modes -  To be done
+
+     Representation    17      1 modes -  To be done
+
+     Representation    18      1 modes -  To be done
+
+     Representation    19      1 modes -  To be done
+
+     Representation    20      1 modes -  To be done
+
+     Representation    21      1 modes -  To be done
+
+     Representation    22      1 modes -  To be done
+
+     Representation    23      1 modes -  To be done
+
+     Representation    24      1 modes -  To be done
+
+     Representation    25      1 modes -  To be done
+
+     Representation    26      1 modes -  To be done
+
+     Representation    27      1 modes -  To be done
+
+     Representation    28      1 modes -  To be done
+
+     Representation    29      1 modes -  To be done
+
+     Representation    30      1 modes -  To be done
+
+     Representation    31      1 modes -  To be done
+
+     Representation    32      1 modes -  To be done
+
+     Representation    33      1 modes -  To be done
+
+     Representation    34      1 modes -  To be done
+
+     Representation    35      1 modes -  To be done
+
+     Representation    36      1 modes -  To be done
+
+     Representation    37      1 modes -  To be done
+
+     Representation    38      1 modes -  To be done
+
+     Representation    39      1 modes -  To be done
+
+     Representation    40      1 modes -  To be done
+
+     Representation    41      1 modes -  To be done
+
+     Representation    42      1 modes -  To be done
+
+     Representation    43      1 modes -  To be done
+
+     Representation    44      1 modes -  To be done
+
+     Representation    45      1 modes -  To be done
+
+     Representation    46      1 modes -  To be done
+
+     Representation    47      1 modes -  To be done
+
+     Representation    48      1 modes -  To be done
+
+     Representation    49      1 modes -  To be done
+
+     Representation    50      1 modes -  To be done
+
+     Representation    51      1 modes -  To be done
+
+     Representation    52      1 modes -  To be done
+
+     Representation    53      1 modes -  To be done
+
+     Representation    54      1 modes -  To be done
+
+     Representation    55      1 modes -  To be done
+
+     Representation    56      1 modes -  To be done
+
+     Representation    57      1 modes -  To be done
+
+     Representation    58      1 modes -  To be done
+
+     Representation    59      1 modes -  To be done
+
+     Representation    60      1 modes -  To be done
+
+     Representation    61      1 modes -  To be done
+
+     Representation    62      1 modes -  To be done
+
+     Representation    63      1 modes -  To be done
+
+     Representation    64      1 modes -  To be done
+
+     Representation    65      1 modes -  To be done
+
+     Representation    66      1 modes -  To be done
+
+     Representation    67      1 modes -  To be done
+
+     Representation    68      1 modes -  To be done
+
+     Representation    69      1 modes -  To be done
+
+     Representation    70      1 modes -  To be done
+
+     Representation    71      1 modes -  To be done
+
+     Representation    72      1 modes -  To be done
+
+     Representation    73      1 modes -  To be done
+
+     Representation    74      1 modes -  To be done
+
+     Representation    75      1 modes -  To be done
+
+     Representation    76      1 modes -  To be done
+
+     Representation    77      1 modes -  To be done
+
+     Representation    78      1 modes -  To be done
+
+     Representation    79      1 modes -  To be done
+
+     Representation    80      1 modes -  To be done
+
+     Representation    81      1 modes -  To be done
+
+     Representation    82      1 modes -  To be done
+
+     Representation    83      1 modes -  To be done
+
+     Representation    84      1 modes -  To be done
+
+     Representation    85      1 modes -  To be done
+
+     Representation    86      1 modes -  To be done
+
+     Representation    87      1 modes -  To be done
+
+     Representation    88      1 modes -  To be done
+
+     Representation    89      1 modes -  To be done
+
+     Representation    90      1 modes -  To be done
+
+     Representation    91      1 modes -  To be done
+
+     Representation    92      1 modes -  To be done
+
+     Representation    93      1 modes -  To be done
+
+     Representation    94      1 modes -  To be done
+
+     Representation    95      1 modes -  To be done
+
+     Representation    96      1 modes -  To be done
+
+     Representation    97      1 modes -  To be done
+
+     Representation    98      1 modes -  To be done
+
+     Representation    99      1 modes -  To be done
+
+     Representation   100      1 modes -  To be done
+
+     Representation   101      1 modes -  To be done
+
+     Representation   102      1 modes -  To be done
+
+     Representation   103      1 modes -  To be done
+
+     Representation   104      1 modes -  To be done
+
+     Representation   105      1 modes -  To be done
+
+     Representation   106      1 modes -  To be done
+
+     Representation   107      1 modes -  To be done
+
+     Representation   108      1 modes -  To be done
+
+     Representation   109      1 modes -  To be done
+
+     Representation   110      1 modes -  To be done
+
+     Representation   111      1 modes -  To be done
+
+     Representation   112      1 modes -  To be done
+
+     Representation   113      1 modes -  To be done
+
+     Representation   114      1 modes -  To be done
+
+     Representation   115      1 modes -  To be done
+
+     Representation   116      1 modes -  To be done
+
+     Representation   117      1 modes -  To be done
+
+     Representation   118      1 modes -  To be done
+
+     Representation   119      1 modes -  To be done
+
+     Representation   120      1 modes -  To be done
+
+     Representation   121      1 modes -  To be done
+
+     Representation   122      1 modes -  To be done
+
+     Representation   123      1 modes -  To be done
+
+     Representation   124      1 modes -  To be done
+
+     Representation   125      1 modes -  To be done
+
+     Representation   126      1 modes -  To be done
+
+     Representation   127      1 modes -  To be done
+
+     Representation   128      1 modes -  To be done
+
+     Representation   129      1 modes -  To be done
+
+     Representation   130      1 modes -  To be done
+
+     Representation   131      1 modes -  To be done
+
+     Representation   132      1 modes -  To be done
+
+     Representation   133      1 modes -  To be done
+
+     Representation   134      1 modes -  To be done
+
+     Representation   135      1 modes -  To be done
+
+     Representation   136      1 modes -  To be done
+
+     Representation   137      1 modes -  To be done
+
+     Representation   138      1 modes -  To be done
+
+     Representation   139      1 modes -  To be done
+
+     Representation   140      1 modes -  To be done
+
+     Representation   141      1 modes -  To be done
+
+     Representation   142      1 modes -  To be done
+
+     Representation   143      1 modes -  To be done
+
+     Representation   144      1 modes -  To be done
+
+     Representation   145      1 modes -  To be done
+
+     Representation   146      1 modes -  To be done
+
+     Representation   147      1 modes -  To be done
+
+     Representation   148      1 modes -  To be done
+
+     Representation   149      1 modes -  To be done
+
+     Representation   150      1 modes -  To be done
+
+     Representation   151      1 modes -  To be done
+
+     Representation   152      1 modes -  To be done
+
+     Representation   153      1 modes -  To be done
+
+     Representation   154      1 modes -  To be done
+
+     Representation   155      1 modes -  To be done
+
+     Representation   156      1 modes -  To be done
+
+     Representation   157      1 modes -  To be done
+
+     Representation   158      1 modes -  To be done
+
+     Representation   159      1 modes -  To be done
+
+     Representation   160      1 modes -  To be done
+
+     Representation   161      1 modes -  To be done
+
+     Representation   162      1 modes -  To be done
+
+     Representation   163      1 modes -  To be done
+
+     Representation   164      1 modes -  To be done
+
+     Representation   165      1 modes -  To be done
+
+     Representation   166      1 modes -  To be done
+
+     Representation   167      1 modes -  To be done
+
+     Representation   168      1 modes -  To be done
+
+     Representation   169      1 modes -  To be done
+
+     Representation   170      1 modes -  To be done
+
+     Representation   171      1 modes -  To be done
+
+     Representation   172      1 modes -  To be done
+
+     Representation   173      1 modes -  To be done
+
+     Representation   174      1 modes -  To be done
+
+     Representation   175      1 modes -  To be done
+
+     Representation   176      1 modes -  To be done
+
+     Representation   177      1 modes -  To be done
+
+     Representation   178      1 modes -  To be done
+
+     Representation   179      1 modes -  To be done
+
+     Representation   180      1 modes -  To be done
+
+     Representation   181      1 modes -  To be done
+
+     Representation   182      1 modes -  To be done
+
+     Representation   183      1 modes -  To be done
+
+     Representation   184      1 modes -  To be done
+
+     Representation   185      1 modes -  To be done
+
+     Representation   186      1 modes -  To be done
+
+     Representation   187      1 modes -  To be done
+
+     Representation   188      1 modes -  To be done
+
+     Representation   189      1 modes -  To be done
+
+     Representation   190      1 modes -  To be done
+
+     Representation   191      1 modes -  To be done
+
+     Representation   192      1 modes -  To be done
+
+     Representation   193      1 modes -  To be done
+
+     Representation   194      1 modes -  To be done
+
+     Representation   195      1 modes -  To be done
+
+     Representation   196      1 modes -  To be done
+
+     Representation   197      1 modes -  To be done
+
+     Representation   198      1 modes -  To be done
+
+     Representation   199      1 modes -  To be done
+
+     Representation   200      1 modes -  To be done
+
+     Representation   201      1 modes -  To be done
+
+     Representation   202      1 modes -  To be done
+
+     Representation   203      1 modes -  To be done
+
+     Representation   204      1 modes -  To be done
+
+     Representation   205      1 modes -  To be done
+
+     Representation   206      1 modes -  To be done
+
+     Representation   207      1 modes -  To be done
+
+     Representation   208      1 modes -  To be done
+
+     Representation   209      1 modes -  To be done
+
+     Representation   210      1 modes -  To be done
+
+     Representation   211      1 modes -  To be done
+
+     Representation   212      1 modes -  To be done
+
+     Representation   213      1 modes -  To be done
+
+     Representation   214      1 modes -  To be done
+
+     Representation   215      1 modes -  To be done
+
+     Representation   216      1 modes -  To be done
+
+     Representation   217      1 modes -  To be done
+
+     Representation   218      1 modes -  To be done
+
+     Representation   219      1 modes -  To be done
+
+     Representation   220      1 modes -  To be done
+
+     Representation   221      1 modes -  To be done
+
+     Representation   222      1 modes -  To be done
+
+     Representation   223      1 modes -  To be done
+
+     Representation   224      1 modes -  To be done
+
+     Representation   225      1 modes -  To be done
+
+     Representation   226      1 modes -  To be done
+
+     Representation   227      1 modes -  To be done
+
+     Representation   228      1 modes -  To be done
+
+     Representation   229      1 modes -  To be done
+
+     Representation   230      1 modes -  To be done
+
+     Representation   231      1 modes -  To be done
+
+     Representation   232      1 modes -  To be done
+
+     Representation   233      1 modes -  To be done
+
+     Representation   234      1 modes -  To be done
+
+     Representation   235      1 modes -  To be done
+
+     Representation   236      1 modes -  To be done
+
+     Representation   237      1 modes -  To be done
+
+     Representation   238      1 modes -  To be done
+
+     Representation   239      1 modes -  To be done
+
+     Representation   240      1 modes -  To be done
+
+     Representation   241      1 modes -  To be done
+
+     Representation   242      1 modes -  To be done
+
+     Representation   243      1 modes -  To be done
+
+     Representation   244      1 modes -  To be done
+
+     Representation   245      1 modes -  To be done
+
+     Representation   246      1 modes -  To be done
+
+     Representation   247      1 modes -  To be done
+
+     Representation   248      1 modes -  To be done
+
+     Representation   249      1 modes -  To be done
+
+     Representation   250      1 modes -  To be done
+
+     Representation   251      1 modes -  To be done
+
+     Representation   252      1 modes -  To be done
+
+     Representation   253      1 modes -  To be done
+
+     Representation   254      1 modes -  To be done
+
+     Representation   255      1 modes -  To be done
+
+     Representation   256      1 modes -  To be done
+
+     Representation   257      1 modes -  To be done
+
+     Representation   258      1 modes -  To be done
+
+     Representation   259      1 modes -  To be done
+
+     Representation   260      1 modes -  To be done
+
+     Representation   261      1 modes -  To be done
+
+     Representation   262      1 modes -  To be done
+
+     Representation   263      1 modes -  To be done
+
+     Representation   264      1 modes -  To be done
+
+     Representation   265      1 modes -  To be done
+
+     Representation   266      1 modes -  To be done
+
+     Representation   267      1 modes -  To be done
+
+     Representation   268      1 modes -  To be done
+
+     Representation   269      1 modes -  To be done
+
+     Representation   270      1 modes -  To be done
+
+     Representation   271      1 modes -  To be done
+
+     Representation   272      1 modes -  To be done
+
+     Representation   273      1 modes -  To be done
+
+     Representation   274      1 modes -  To be done
+
+     Representation   275      1 modes -  To be done
+
+     Representation   276      1 modes -  To be done
+
+     Representation   277      1 modes -  To be done
+
+     Representation   278      1 modes -  To be done
+
+     Representation   279      1 modes -  To be done
+
+     Representation   280      1 modes -  To be done
+
+     Representation   281      1 modes -  To be done
+
+     Representation   282      1 modes -  To be done
+
+     Representation   283      1 modes -  To be done
+
+     Representation   284      1 modes -  To be done
+
+     Representation   285      1 modes -  To be done
+
+     Representation   286      1 modes -  To be done
+
+     Representation   287      1 modes -  To be done
+
+     Representation   288      1 modes -  To be done
+
+     Representation   289      1 modes -  To be done
+
+     Representation   290      1 modes -  To be done
+
+     Representation   291      1 modes -  To be done
+
+     Representation   292      1 modes -  To be done
+
+     Representation   293      1 modes -  To be done
+
+     Representation   294      1 modes -  To be done
+
+     Representation   295      1 modes -  To be done
+
+     Representation   296      1 modes -  To be done
+
+     Representation   297      1 modes -  To be done
+
+     Representation   298      1 modes -  To be done
+
+     Representation   299      1 modes -  To be done
+
+     Representation   300      1 modes -  To be done
+
+     Representation   301      1 modes -  To be done
+
+     Representation   302      1 modes -  To be done
+
+     Representation   303      1 modes -  To be done
+
+     Representation   304      1 modes -  To be done
+
+     Representation   305      1 modes -  To be done
+
+     Representation   306      1 modes -  To be done
+
+     Representation   307      1 modes -  To be done
+
+     Representation   308      1 modes -  To be done
+
+     Representation   309      1 modes -  To be done
+
+     Representation   310      1 modes -  To be done
+
+     Representation   311      1 modes -  To be done
+
+     Representation   312      1 modes -  To be done
+
+     Representation   313      1 modes -  To be done
+
+     Representation   314      1 modes -  To be done
+
+     Representation   315      1 modes -  To be done
+
+     Representation   316      1 modes -  To be done
+
+     Representation   317      1 modes -  To be done
+
+     Representation   318      1 modes -  To be done
+
+     Representation   319      1 modes -  To be done
+
+     Representation   320      1 modes -  To be done
+
+     Representation   321      1 modes -  To be done
+
+     Representation   322      1 modes -  To be done
+
+     Representation   323      1 modes -  To be done
+
+     Representation   324      1 modes -  To be done
+
+     Representation   325      1 modes -  To be done
+
+     Representation   326      1 modes -  To be done
+
+     Representation   327      1 modes -  To be done
+
+     Representation   328      1 modes -  To be done
+
+     Representation   329      1 modes -  To be done
+
+     Representation   330      1 modes -  To be done
+
+     Representation   331      1 modes -  To be done
+
+     Representation   332      1 modes -  To be done
+
+     Representation   333      1 modes -  To be done
+
+     Representation   334      1 modes -  To be done
+
+     Representation   335      1 modes -  To be done
+
+     Representation   336      1 modes -  To be done
+
+     Representation   337      1 modes -  To be done
+
+     Representation   338      1 modes -  To be done
+
+     Representation   339      1 modes -  To be done
+
+     Representation   340      1 modes -  To be done
+
+     Representation   341      1 modes -  To be done
+
+     Representation   342      1 modes -  To be done
+
+     Representation   343      1 modes -  To be done
+
+     Representation   344      1 modes -  To be done
+
+     Representation   345      1 modes -  To be done
+
+     Representation   346      1 modes -  To be done
+
+     Representation   347      1 modes -  To be done
+
+     Representation   348      1 modes -  To be done
+
+     Representation   349      1 modes -  To be done
+
+     Representation   350      1 modes -  To be done
+
+     Representation   351      1 modes -  To be done
+
+     Representation   352      1 modes -  To be done
+
+     Representation   353      1 modes -  To be done
+
+     Representation   354      1 modes -  To be done
+
+     Representation   355      1 modes -  To be done
+
+     Representation   356      1 modes -  To be done
+
+     Representation   357      1 modes -  To be done
+
+     Representation   358      1 modes -  To be done
+
+     Representation   359      1 modes -  To be done
+
+     Representation   360      1 modes -  To be done
+
+     Representation   361      1 modes -  To be done
+
+     Representation   362      1 modes -  To be done
+
+     Representation   363      1 modes -  To be done
+
+     Representation   364      1 modes -  To be done
+
+     Representation   365      1 modes -  To be done
+
+     Representation   366      1 modes -  To be done
+
+     Representation   367      1 modes -  To be done
+
+     Representation   368      1 modes -  To be done
+
+     Representation   369      1 modes -  To be done
+
+     Representation   370      1 modes -  To be done
+
+     Representation   371      1 modes -  To be done
+
+     Representation   372      1 modes -  To be done
+
+     Representation   373      1 modes -  To be done
+
+     Representation   374      1 modes -  To be done
+
+     Representation   375      1 modes -  To be done
+
+     Representation   376      1 modes -  To be done
+
+     Representation   377      1 modes -  To be done
+
+     Representation   378      1 modes -  To be done
+
+     Representation   379      1 modes -  To be done
+
+     Representation   380      1 modes -  To be done
+
+     Representation   381      1 modes -  To be done
+
+     Representation   382      1 modes -  To be done
+
+     Representation   383      1 modes -  To be done
+
+     Representation   384      1 modes -  To be done
+
+     Representation   385      1 modes -  To be done
+
+     Representation   386      1 modes -  To be done
+
+     Representation   387      1 modes -  To be done
+
+     Representation   388      1 modes -  To be done
+
+     Representation   389      1 modes -  To be done
+
+     Representation   390      1 modes -  To be done
+
+     Representation   391      1 modes -  To be done
+
+     Representation   392      1 modes -  To be done
+
+     Representation   393      1 modes -  To be done
+
+     Representation   394      1 modes -  To be done
+
+     Representation   395      1 modes -  To be done
+
+     Representation   396      1 modes -  To be done
+
+     Representation   397      1 modes -  To be done
+
+     Representation   398      1 modes -  To be done
+
+     Representation   399      1 modes -  To be done
+
+     Representation   400      1 modes -  To be done
+
+     Representation   401      1 modes -  To be done
+
+     Representation   402      1 modes -  To be done
+
+     Representation   403      1 modes -  To be done
+
+     Representation   404      1 modes -  To be done
+
+     Representation   405      1 modes -  To be done
+
+     Representation   406      1 modes -  To be done
+
+     Representation   407      1 modes -  To be done
+
+     Representation   408      1 modes -  To be done
+
+     Representation   409      1 modes -  To be done
+
+     Representation   410      1 modes -  To be done
+
+     Representation   411      1 modes -  To be done
+
+     Representation   412      1 modes -  To be done
+
+     Representation   413      1 modes -  To be done
+
+     Representation   414      1 modes -  To be done
+
+     Representation   415      1 modes -  To be done
+
+     Representation   416      1 modes -  To be done
+
+     Representation   417      1 modes -  To be done
+
+     Representation   418      1 modes -  To be done
+
+     Representation   419      1 modes -  To be done
+
+     Representation   420      1 modes -  To be done
+
+     Representation   421      1 modes -  To be done
+
+     Representation   422      1 modes -  To be done
+
+     Representation   423      1 modes -  To be done
+
+     Representation   424      1 modes -  To be done
+
+     Representation   425      1 modes -  To be done
+
+     Representation   426      1 modes -  To be done
+
+     Representation   427      1 modes -  To be done
+
+     Representation   428      1 modes -  To be done
+
+     Representation   429      1 modes -  To be done
+
+     Representation   430      1 modes -  To be done
+
+     Representation   431      1 modes -  To be done
+
+     Representation   432      1 modes -  To be done
+
+     Representation   433      1 modes -  To be done
+
+     Representation   434      1 modes -  To be done
+
+     Representation   435      1 modes -  To be done
+
+     Representation   436      1 modes -  To be done
+
+     Representation   437      1 modes -  To be done
+
+     Representation   438      1 modes -  To be done
+
+     Representation   439      1 modes -  To be done
+
+     Representation   440      1 modes -  To be done
+
+     Representation   441      1 modes -  To be done
+
+     Representation   442      1 modes -  To be done
+
+     Representation   443      1 modes -  To be done
+
+     Representation   444      1 modes -  To be done
+
+     Representation   445      1 modes -  To be done
+
+     Representation   446      1 modes -  To be done
+
+     Representation   447      1 modes -  To be done
+
+     Representation   448      1 modes -  To be done
+
+     Representation   449      1 modes -  To be done
+
+     Representation   450      1 modes -  To be done
+
+     Representation   451      1 modes -  To be done
+
+     Representation   452      1 modes -  To be done
+
+     Representation   453      1 modes -  To be done
+
+     Representation   454      1 modes -  To be done
+
+     Representation   455      1 modes -  To be done
+
+     Representation   456      1 modes -  To be done
+
+     Representation   457      1 modes -  To be done
+
+     Representation   458      1 modes -  To be done
+
+     Representation   459      1 modes -  To be done
+
+     Representation   460      1 modes -  To be done
+
+     Representation   461      1 modes -  To be done
+
+     Representation   462      1 modes -  To be done
+
+     Representation   463      1 modes -  To be done
+
+     Representation   464      1 modes -  To be done
+
+     Representation   465      1 modes -  To be done
+
+     Representation   466      1 modes -  To be done
+
+     Representation   467      1 modes -  To be done
+
+     Representation   468      1 modes -  To be done
+
+     Representation   469      1 modes -  To be done
+
+     Representation   470      1 modes -  To be done
+
+     Representation   471      1 modes -  To be done
+
+     Representation   472      1 modes -  To be done
+
+     Representation   473      1 modes -  To be done
+
+     Representation   474      1 modes -  To be done
+
+     Representation   475      1 modes -  To be done
+
+     Representation   476      1 modes -  To be done
+
+     Representation   477      1 modes -  To be done
+
+     Representation   478      1 modes -  To be done
+
+     Representation   479      1 modes -  To be done
+
+     Representation   480      1 modes -  To be done
+
+     Representation   481      1 modes -  To be done
+
+     Representation   482      1 modes -  To be done
+
+     Representation   483      1 modes -  To be done
+
+     Representation   484      1 modes -  To be done
+
+     Representation   485      1 modes -  To be done
+
+     Representation   486      1 modes -  To be done
+
+     Representation   487      1 modes -  To be done
+
+     Representation   488      1 modes -  To be done
+
+     Representation   489      1 modes -  To be done
+
+     Representation   490      1 modes -  To be done
+
+     Representation   491      1 modes -  To be done
+
+     Representation   492      1 modes -  To be done
+
+     Representation   493      1 modes -  To be done
+
+     Representation   494      1 modes -  To be done
+
+     Representation   495      1 modes -  To be done
+
+     Representation   496      1 modes -  To be done
+
+     Representation   497      1 modes -  To be done
+
+     Representation   498      1 modes -  To be done
+
+     Representation   499      1 modes -  To be done
+
+     Representation   500      1 modes -  To be done
+
+     Representation   501      1 modes -  To be done
+
+     Representation   502      1 modes -  To be done
+
+     Representation   503      1 modes -  To be done
+
+     Representation   504      1 modes -  To be done
+
+     Representation   505      1 modes -  To be done
+
+     Representation   506      1 modes -  To be done
+
+     Representation   507      1 modes -  To be done
+
+     Representation   508      1 modes -  To be done
+
+     Representation   509      1 modes -  To be done
+
+     Representation   510      1 modes -  To be done
+
+     Representation   511      1 modes -  To be done
+
+     Representation   512      1 modes -  To be done
+
+     Representation   513      1 modes -  To be done
+
+     Representation   514      1 modes -  To be done
+
+     Representation   515      1 modes -  To be done
+
+     Representation   516      1 modes -  To be done
+
+     Representation   517      1 modes -  To be done
+
+     Representation   518      1 modes -  To be done
+
+     Representation   519      1 modes -  To be done
+
+     Representation   520      1 modes -  To be done
+
+     Representation   521      1 modes -  To be done
+
+     Representation   522      1 modes -  To be done
+
+     Representation   523      1 modes -  To be done
+
+     Representation   524      1 modes -  To be done
+
+     Representation   525      1 modes -  To be done
+
+     Representation   526      1 modes -  To be done
+
+     Representation   527      1 modes -  To be done
+
+     Representation   528      1 modes -  To be done
+
+     Representation   529      1 modes -  To be done
+
+     Representation   530      1 modes -  To be done
+
+     Representation   531      1 modes -  To be done
+
+     Representation   532      1 modes -  To be done
+
+     Representation   533      1 modes -  To be done
+
+     Representation   534      1 modes -  To be done
+
+     Representation   535      1 modes -  To be done
+
+     Representation   536      1 modes -  To be done
+
+     Representation   537      1 modes -  To be done
+
+     Representation   538      1 modes -  To be done
+
+     Representation   539      1 modes -  To be done
+
+     Representation   540      1 modes -  To be done
+
+     Representation   541      1 modes -  To be done
+
+     Representation   542      1 modes -  To be done
+
+     Representation   543      1 modes -  To be done
+
+     Representation   544      1 modes -  To be done
+
+     Representation   545      1 modes -  To be done
+
+     Representation   546      1 modes -  To be done
+
+     Representation   547      1 modes -  To be done
+
+     Representation   548      1 modes -  To be done
+
+     Representation   549      1 modes -  To be done
+
+     Representation   550      1 modes -  To be done
+
+     Representation   551      1 modes -  To be done
+
+     Representation   552      1 modes -  To be done
+
+     Representation   553      1 modes -  To be done
+
+     Representation   554      1 modes -  To be done
+
+     Representation   555      1 modes -  To be done
+
+     Representation   556      1 modes -  To be done
+
+     Representation   557      1 modes -  To be done
+
+     Representation   558      1 modes -  To be done
+
+     Representation   559      1 modes -  To be done
+
+     Representation   560      1 modes -  To be done
+
+     Representation   561      1 modes -  To be done
+
+     Representation   562      1 modes -  To be done
+
+     Representation   563      1 modes -  To be done
+
+     Representation   564      1 modes -  To be done
+
+     Representation   565      1 modes -  To be done
+
+     Representation   566      1 modes -  To be done
+
+     Representation   567      1 modes -  To be done
+
+     Representation   568      1 modes -  To be done
+
+     Representation   569      1 modes -  To be done
+
+     Representation   570      1 modes -  To be done
+
+     Representation   571      1 modes -  To be done
+
+     Representation   572      1 modes -  To be done
+
+     Representation   573      1 modes -  To be done
+
+     Representation   574      1 modes -  To be done
+
+     Representation   575      1 modes -  To be done
+
+     Representation   576      1 modes -  To be done
+
+     Representation   577      1 modes -  To be done
+
+     Representation   578      1 modes -  To be done
+
+     Representation   579      1 modes -  To be done
+
+     Representation   580      1 modes -  To be done
+
+     Representation   581      1 modes -  To be done
+
+     Representation   582      1 modes -  To be done
+
+     Representation   583      1 modes -  To be done
+
+     Representation   584      1 modes -  To be done
+
+     Representation   585      1 modes -  To be done
+
+     Representation   586      1 modes -  To be done
+
+     Representation   587      1 modes -  To be done
+
+     Representation   588      1 modes -  To be done
+
+     Representation   589      1 modes -  To be done
+
+     Representation   590      1 modes -  To be done
+
+     Representation   591      1 modes -  To be done
+
+     Representation   592      1 modes -  To be done
+
+     Representation   593      1 modes -  To be done
+
+     Representation   594      1 modes -  To be done
+
+     Representation   595      1 modes -  To be done
+
+     Representation   596      1 modes -  To be done
+
+     Representation   597      1 modes -  To be done
+
+     Representation   598      1 modes -  To be done
+
+     Representation   599      1 modes -  To be done
+
+     Representation   600      1 modes -  To be done
+
+     Representation   601      1 modes -  To be done
+
+     Representation   602      1 modes -  To be done
+
+     Representation   603      1 modes -  To be done
+
+     Representation   604      1 modes -  To be done
+
+     Representation   605      1 modes -  To be done
+
+     Representation   606      1 modes -  To be done
+
+     Representation   607      1 modes -  To be done
+
+     Representation   608      1 modes -  To be done
+
+     Representation   609      1 modes -  To be done
+
+     Representation   610      1 modes -  To be done
+
+     Representation   611      1 modes -  To be done
+
+     Representation   612      1 modes -  To be done
+
+     Representation   613      1 modes -  To be done
+
+     Representation   614      1 modes -  To be done
+
+     Representation   615      1 modes -  To be done
+
+     Representation   616      1 modes -  To be done
+
+     Representation   617      1 modes -  To be done
+
+     Representation   618      1 modes -  To be done
+
+     Representation   619      1 modes -  To be done
+
+     Representation   620      1 modes -  To be done
+
+     Representation   621      1 modes -  To be done
+
+     Representation   622      1 modes -  To be done
+
+     Representation   623      1 modes -  To be done
+
+     Representation   624      1 modes -  To be done
+
+     Representation   625      1 modes -  To be done
+
+     Representation   626      1 modes -  To be done
+
+     Representation   627      1 modes -  To be done
+
+     Representation   628      1 modes -  To be done
+
+     Representation   629      1 modes -  To be done
+
+     Representation   630      1 modes -  To be done
+
+     Representation   631      1 modes -  To be done
+
+     Representation   632      1 modes -  To be done
+
+     Representation   633      1 modes -  To be done
+
+     Representation   634      1 modes -  To be done
+
+     Representation   635      1 modes -  To be done
+
+     Representation   636      1 modes -  To be done
+
+     Representation   637      1 modes -  To be done
+
+     Representation   638      1 modes -  To be done
+
+     Representation   639      1 modes -  To be done
+
+     Representation   640      1 modes -  To be done
+
+     Representation   641      1 modes -  To be done
+
+     Representation   642      1 modes -  To be done
+
+     Representation   643      1 modes -  To be done
+
+     Representation   644      1 modes -  To be done
+
+     Representation   645      1 modes -  To be done
+
+     Representation   646      1 modes -  To be done
+
+     Representation   647      1 modes -  To be done
+
+     Representation   648      1 modes -  To be done
+
+
+     PHONON       :     21.56s CPU     27.67s WALL
+
+
+     Electric Fields Calculation
+
+      iter #   1 total cpu time :  2004.5 secs   av.it.:  12.0
+      thresh= 1.000E-02 alpha_mix =  0.400 |ddv_scf|^2 =  2.726E-07
+
+      iter #   2 total cpu time :  2780.9 secs   av.it.:  24.7
+      thresh= 5.221E-05 alpha_mix =  0.400 |ddv_scf|^2 =  6.946E-07
+
+      iter #   3 total cpu time :  3505.5 secs   av.it.:  22.7
+      thresh= 8.335E-05 alpha_mix =  0.400 |ddv_scf|^2 =  1.340E-08
+
+      iter #   4 total cpu time :  4287.7 secs   av.it.:  24.7
+      thresh= 1.158E-05 alpha_mix =  0.400 |ddv_scf|^2 =  4.012E-09
+
+      iter #   5 total cpu time :  5072.5 secs   av.it.:  24.7
+      thresh= 6.334E-06 alpha_mix =  0.400 |ddv_scf|^2 =  6.052E-10
+
+      iter #   6 total cpu time :  5879.2 secs   av.it.:  25.7
+      thresh= 2.460E-06 alpha_mix =  0.400 |ddv_scf|^2 =  2.947E-11
+
+      iter #   7 total cpu time :  6705.7 secs   av.it.:  26.7
+      thresh= 5.429E-07 alpha_mix =  0.400 |ddv_scf|^2 =  2.179E-11
+
+      iter #   8 total cpu time :  7544.9 secs   av.it.:  27.0
+      thresh= 4.667E-07 alpha_mix =  0.400 |ddv_scf|^2 =  6.292E-12
+
+      iter #   9 total cpu time :  8359.3 secs   av.it.:  26.0
+      thresh= 2.508E-07 alpha_mix =  0.400 |ddv_scf|^2 =  4.745E-12
+
+      iter #  10 total cpu time :  9212.7 secs   av.it.:  27.3
+      thresh= 2.178E-07 alpha_mix =  0.400 |ddv_scf|^2 =  1.380E-11
+
+      iter #  11 total cpu time : 10012.1 secs   av.it.:  25.3
+      thresh= 3.715E-07 alpha_mix =  0.400 |ddv_scf|^2 =  4.017E-13
+
+     End of electric fields calculation
+
+          Dielectric constant in cartesian axis 
+
+          (      10.484746925      -0.017091806      -0.001643142 )
+          (      -0.017091779      10.464456875      -0.001615129 )
+          (      -0.001643232      -0.001615168       2.206206417 )
+
+          Effective charges (d Force / dE) in cartesian axis
+
+           atom      1   Mo 
+      Ex  (       -0.98077        0.13603        0.09459 )
+      Ey  (       -0.14448       -1.00596       -0.08567 )
+      Ez  (       -0.01226        0.00640       -0.20255 )
+           atom      2   S  
+      Ex  (        0.65527        0.00918       -0.16740 )
+      Ey  (       -0.05620        0.57198       -0.27438 )
+      Ez  (        0.01094        0.00881        0.12085 )
+           atom      3   S  
+      Ex  (        0.45107        0.06870       -0.04172 )
+      Ey  (       -0.04405        0.44089        0.03936 )
+      Ez  (       -0.00439        0.01371        0.11086 )
+           atom      4   Mo 
+      Ex  (       -1.17367        0.24041       -0.07570 )
+      Ey  (       -0.12012       -1.21332        0.02418 )
+      Ez  (        0.06651        0.05202       -0.29289 )
+           atom      5   S  
+      Ex  (        0.48694       -0.09892       -0.15650 )
+      Ey  (       -0.09230        0.45250        0.08127 )
+      Ez  (        0.03175        0.00771        0.02048 )
+           atom      6   S  
+      Ex  (        0.66283        0.01680       -0.02947 )
+      Ey  (        0.00210        0.44416        0.04441 )
+      Ez  (        0.04012        0.02452        0.13079 )
+           atom      7   Mo 
+      Ex  (       -0.79370        0.27361       -0.08737 )
+      Ey  (       -0.00012       -1.15971       -0.00480 )
+      Ez  (        0.01099        0.08028       -0.18082 )
+           atom      8   S  
+      Ex  (        0.52201       -0.06330        0.06091 )
+      Ey  (       -0.06714        0.59662        0.17000 )
+      Ez  (        0.02027        0.00742        0.06984 )
+           atom      9   S  
+      Ex  (        0.54480        0.06261        0.20414 )
+      Ey  (        0.04552        0.59837       -0.34053 )
+      Ez  (       -0.00502       -0.00145        0.10549 )
+           atom     10   Mo 
+      Ex  (       -1.16588        0.05399        0.08189 )
+      Ey  (       -0.17495       -1.42267        0.10794 )
+      Ez  (        0.08333        0.05878       -0.33075 )
+           atom     11   S  
+      Ex  (        0.50670        0.08476        0.06335 )
+      Ey  (        0.08018        0.39196        0.03906 )
+      Ez  (       -0.00669       -0.02591        0.06350 )
+           atom     12   S  
+      Ex  (        0.47167       -0.08888        0.05905 )
+      Ey  (       -0.06589        0.47198       -0.16555 )
+      Ez  (       -0.01621       -0.02228        0.09698 )
+           atom     13   Mo 
+      Ex  (       -0.93493       -0.11520        0.02090 )
+      Ey  (        0.02665       -0.94436       -0.07423 )
+      Ez  (        0.02520        0.05685       -0.17325 )
+           atom     14   S  
+      Ex  (        0.55246       -0.01139        0.01120 )
+      Ey  (        0.13129        0.50187       -0.16971 )
+      Ez  (        0.01013        0.01285        0.08593 )
+           atom     15   S  
+      Ex  (        0.60624       -0.03314       -0.23748 )
+      Ey  (        0.12376        0.44819        0.04870 )
+      Ez  (        0.01833       -0.00233        0.11875 )
+           atom     16   Mo 
+      Ex  (       -0.93433       -0.15569       -0.21375 )
+      Ey  (       -0.19986       -0.97391        0.03944 )
+      Ez  (       -0.00623        0.02737       -0.28115 )
+           atom     17   S  
+      Ex  (        0.60825        0.10747       -0.13995 )
+      Ey  (        0.09558        0.56315        0.00006 )
+      Ez  (        0.02583       -0.01309        0.05653 )
+           atom     18   S  
+      Ex  (        0.35338        0.04378        0.21296 )
+      Ey  (        0.03524        0.51381        0.13706 )
+      Ez  (        0.04169       -0.01673        0.08939 )
+           atom     19   Mo 
+      Ex  (       -1.20586        0.02815       -0.22564 )
+      Ey  (       -0.03808       -1.17581        0.08496 )
+      Ez  (       -0.07779       -0.02614       -0.23463 )
+           atom     20   S  
+      Ex  (        0.71899       -0.05070        0.28178 )
+      Ey  (       -0.11026        0.65174       -0.05259 )
+      Ez  (        0.00088        0.02361        0.12887 )
+           atom     21   S  
+      Ex  (        0.32393        0.00504        0.12943 )
+      Ey  (       -0.00793        0.30681       -0.16040 )
+      Ez  (       -0.00308        0.02566        0.05268 )
+           atom     22   Mo 
+      Ex  (       -1.14889        0.08003       -0.13689 )
+      Ey  (        0.01449       -0.96713       -0.08909 )
+      Ez  (       -0.03755       -0.08278       -0.25934 )
+           atom     23   S  
+      Ex  (        0.34734        0.05133        0.32130 )
+      Ey  (        0.02091        0.42376        0.02882 )
+      Ez  (       -0.01672       -0.03032        0.03239 )
+           atom     24   S  
+      Ex  (        0.60306       -0.09179        0.00999 )
+      Ey  (       -0.11218        0.73514        0.09366 )
+      Ez  (       -0.04656       -0.03139        0.09947 )
+           atom     25   Mo 
+      Ex  (       -1.17477        0.18139        0.02946 )
+      Ey  (        0.00770       -0.85946        0.15469 )
+      Ez  (       -0.00227        0.04386       -0.22481 )
+           atom     26   S  
+      Ex  (        0.50549       -0.05165       -0.33064 )
+      Ey  (       -0.02753        0.63361        0.05507 )
+      Ez  (       -0.03835        0.01777        0.08409 )
+           atom     27   S  
+      Ex  (        0.50035        0.01737        0.29626 )
+      Ey  (       -0.00815        0.49277        0.17964 )
+      Ez  (       -0.01734       -0.02534        0.10431 )
+           atom     28   Mo 
+      Ex  (       -1.46515       -0.00823       -0.02561 )
+      Ey  (        0.14198       -1.24202       -0.03634 )
+      Ez  (       -0.03881        0.01704       -0.32565 )
+           atom     29   S  
+      Ex  (        0.69863       -0.01268        0.08475 )
+      Ey  (       -0.06564        0.54980       -0.00151 )
+      Ez  (        0.00965       -0.03490        0.07737 )
+           atom     30   S  
+      Ex  (        0.58086        0.04499       -0.24935 )
+      Ey  (       -0.02439        0.57190        0.29234 )
+      Ez  (        0.01358       -0.03193        0.09326 )
+           atom     31   Mo 
+      Ex  (       -1.13508        0.06721       -0.02866 )
+      Ey  (        0.00717       -1.04060       -0.09666 )
+      Ez  (        0.01292        0.04442       -0.23602 )
+           atom     32   S  
+      Ex  (        0.54949        0.08794        0.16405 )
+      Ey  (        0.13952        0.51921       -0.16688 )
+      Ez  (        0.01396        0.05457        0.11108 )
+           atom     33   S  
+      Ex  (        0.58297       -0.05514       -0.15675 )
+      Ey  (        0.05042        0.74817       -0.21042 )
+      Ez  (        0.01984        0.02319        0.11242 )
+           atom     34   Mo 
+      Ex  (       -1.08222       -0.09557        0.16520 )
+      Ey  (       -0.04244       -1.51731        0.04275 )
+      Ez  (       -0.08171        0.00588       -0.33047 )
+           atom     35   S  
+      Ex  (        0.65040       -0.00307       -0.26857 )
+      Ey  (        0.03501        0.53870       -0.30848 )
+      Ez  (       -0.04010       -0.03421        0.04893 )
+           atom     36   S  
+      Ex  (        0.35130       -0.00903        0.01389 )
+      Ey  (       -0.00840        0.19891        0.14057 )
+      Ez  (       -0.00875        0.00366        0.10793 )
+           atom     37   Mo 
+      Ex  (       -1.30702       -0.26696       -0.01142 )
+      Ey  (       -0.05942       -1.34276       -0.02891 )
+      Ez  (        0.01852        0.04579       -0.15528 )
+           atom     38   S  
+      Ex  (        0.47413        0.01167        0.01884 )
+      Ey  (        0.06825        0.46880       -0.03173 )
+      Ez  (        0.02025       -0.00199        0.14125 )
+           atom     39   S  
+      Ex  (        0.54034       -0.01862       -0.07000 )
+      Ey  (        0.07887        0.47103        0.16984 )
+      Ez  (        0.02197       -0.01992        0.10340 )
+           atom     40   Mo 
+      Ex  (       -1.14710       -0.06619       -0.03172 )
+      Ey  (        0.29255       -0.85530        0.30398 )
+      Ez  (       -0.07972       -0.03766       -0.29508 )
+           atom     41   S  
+      Ex  (        0.62085        0.07072        0.13494 )
+      Ey  (        0.08576        0.73719       -0.09645 )
+      Ez  (       -0.03315       -0.00969        0.06613 )
+           atom     42   S  
+      Ex  (        0.59929       -0.08553       -0.14635 )
+      Ey  (       -0.05378        0.60882        0.01088 )
+      Ez  (       -0.02935        0.00452        0.09971 )
+           atom     43   Mo 
+      Ex  (       -0.88961        0.14318       -0.10548 )
+      Ey  (        0.25733       -0.89585        0.09062 )
+      Ez  (        0.00108       -0.02078       -0.16229 )
+           atom     44   S  
+      Ex  (        0.50242       -0.01664       -0.17327 )
+      Ey  (       -0.08624        0.52600       -0.16979 )
+      Ez  (        0.01761       -0.02280        0.11477 )
+           atom     45   S  
+      Ex  (        0.53630       -0.01521        0.28546 )
+      Ey  (       -0.11365        0.47089        0.17911 )
+      Ez  (        0.00858       -0.00905        0.07464 )
+           atom     46   Mo 
+      Ex  (       -1.31194        0.16792       -0.10828 )
+      Ey  (        0.14512       -1.06135       -0.02912 )
+      Ez  (        0.08989       -0.05847       -0.25867 )
+           atom     47   S  
+      Ex  (        0.48559       -0.09183        0.07659 )
+      Ey  (       -0.02977        0.62146       -0.12899 )
+      Ez  (        0.04724        0.04094        0.06686 )
+           atom     48   S  
+      Ex  (        0.73043       -0.06264       -0.11990 )
+      Ey  (        0.04017        0.63263        0.05919 )
+      Ez  (        0.05515        0.03153        0.13462 )
+           atom     49   Mo 
+      Ex  (       -0.77026       -0.34346       -0.03494 )
+      Ey  (       -0.43562       -1.11328       -0.13565 )
+      Ez  (       -0.00231       -0.08462       -0.19113 )
+           atom     50   S  
+      Ex  (        0.44538        0.02356        0.15006 )
+      Ey  (        0.05500        0.65669        0.19233 )
+      Ez  (       -0.00503       -0.00505        0.13184 )
+           atom     51   S  
+      Ex  (        0.48319        0.07267       -0.25690 )
+      Ey  (        0.08930        0.47993        0.09818 )
+      Ez  (        0.00038       -0.02829        0.05687 )
+           atom     52   Mo 
+      Ex  (       -0.91442       -0.22984        0.05932 )
+      Ey  (       -0.23352       -0.90554        0.17454 )
+      Ez  (        0.06775       -0.01663       -0.23546 )
+           atom     53   S  
+      Ex  (        0.48127        0.07890       -0.10230 )
+      Ey  (        0.19517        0.62230       -0.04117 )
+      Ez  (        0.00101        0.04562        0.10640 )
+           atom     54   S  
+      Ex  (        0.73857        0.00352        0.03277 )
+      Ey  (        0.04989        0.74394       -0.09073 )
+      Ez  (        0.00707        0.01149        0.10999 )
+           atom     55   Mo 
+      Ex  (       -1.29041       -0.05154       -0.06414 )
+      Ey  (        0.24012       -0.74103        0.03966 )
+      Ez  (        0.07619        0.00177       -0.18435 )
+           atom     56   S  
+      Ex  (        0.47220        0.03313       -0.13517 )
+      Ey  (       -0.00464        0.57200       -0.03077 )
+      Ez  (        0.00511       -0.03377        0.11806 )
+           atom     57   S  
+      Ex  (        0.85532        0.07415        0.17077 )
+      Ey  (        0.00850        0.58132        0.26176 )
+      Ez  (        0.02060       -0.03906        0.10574 )
+           atom     58   Mo 
+      Ex  (       -1.18164       -0.28829        0.06702 )
+      Ey  (        0.10829       -1.15895        0.08056 )
+      Ez  (       -0.01103        0.02564       -0.22039 )
+           atom     59   S  
+      Ex  (        0.43010        0.04040       -0.05746 )
+      Ey  (        0.08979        0.58276       -0.30899 )
+      Ez  (        0.02239        0.01717        0.07525 )
+           atom     60   S  
+      Ex  (        0.66322        0.03290       -0.28424 )
+      Ey  (       -0.00306        0.46233       -0.06474 )
+      Ez  (        0.01413       -0.01989        0.07861 )
+           atom     61   Mo 
+      Ex  (       -1.17734        0.04175       -0.00485 )
+      Ey  (       -0.00120       -1.23752       -0.32103 )
+      Ez  (       -0.07755       -0.08228       -0.15741 )
+           atom     62   S  
+      Ex  (        0.28341       -0.05633        0.13674 )
+      Ey  (       -0.06891        0.49282        0.17148 )
+      Ez  (       -0.03487       -0.01437        0.14582 )
+           atom     63   S  
+      Ex  (        0.37579       -0.00035       -0.03599 )
+      Ey  (       -0.01117        0.40298        0.10020 )
+      Ez  (       -0.00192       -0.01392        0.04287 )
+           atom     64   Mo 
+      Ex  (       -1.03510       -0.05202       -0.05436 )
+      Ey  (       -0.10942       -0.82319       -0.11111 )
+      Ez  (       -0.09146        0.06624       -0.21951 )
+           atom     65   S  
+      Ex  (        0.38731       -0.02432        0.04830 )
+      Ey  (       -0.10527        0.58941       -0.14605 )
+      Ez  (        0.00917        0.03146        0.09240 )
+           atom     66   S  
+      Ex  (        0.55860       -0.03853        0.18944 )
+      Ey  (       -0.04153        0.30370       -0.27229 )
+      Ez  (       -0.01349       -0.00999        0.06382 )
+           atom     67   Mo 
+      Ex  (       -0.74556        0.11824       -0.05886 )
+      Ey  (       -0.15282       -1.02030       -0.02116 )
+      Ez  (       -0.04170       -0.01704       -0.13098 )
+           atom     68   S  
+      Ex  (        0.55739        0.00763        0.20324 )
+      Ey  (       -0.00762        0.68202       -0.01883 )
+      Ez  (       -0.03169       -0.01041        0.13108 )
+           atom     69   S  
+      Ex  (        0.48450        0.06002       -0.07886 )
+      Ey  (       -0.01390        0.43997       -0.03175 )
+      Ez  (       -0.04062       -0.05256        0.10769 )
+           atom     70   Mo 
+      Ex  (       -1.07401        0.07068        0.16611 )
+      Ey  (        0.05847       -0.72731       -0.01277 )
+      Ez  (        0.02368        0.02288       -0.28318 )
+           atom     71   S  
+      Ex  (        0.47634        0.07646        0.00884 )
+      Ey  (       -0.01739        0.73766        0.06612 )
+      Ez  (       -0.03775        0.05457        0.08814 )
+           atom     72   S  
+      Ex  (        0.58726       -0.02895        0.22801 )
+      Ey  (       -0.09013        0.50816       -0.25452 )
+      Ez  (       -0.02978        0.04644        0.07920 )
+           atom     73   Mo 
+      Ex  (       -1.02728       -0.34920        0.09926 )
+      Ey  (       -0.03359       -1.18915        0.01299 )
+      Ez  (       -0.02500       -0.07056       -0.05993 )
+           atom     74   S  
+      Ex  (        0.53523        0.02815        0.02089 )
+      Ey  (        0.10897        0.65099        0.23255 )
+      Ez  (       -0.03950       -0.04891        0.14574 )
+           atom     75   S  
+      Ex  (        0.46460        0.06821        0.05734 )
+      Ey  (        0.12810        0.47153        0.11419 )
+      Ez  (       -0.03884       -0.01559        0.09886 )
+           atom     76   Mo 
+      Ex  (       -1.09708       -0.10123       -0.21157 )
+      Ey  (       -0.13024       -1.27124       -0.01972 )
+      Ez  (        0.00935       -0.07688       -0.27186 )
+           atom     77   S  
+      Ex  (        0.50753       -0.07562       -0.02864 )
+      Ey  (        0.03699        0.42766        0.03853 )
+      Ez  (        0.00300       -0.03587        0.05194 )
+           atom     78   S  
+      Ex  (        0.44815       -0.03784        0.19037 )
+      Ey  (        0.01784        0.43480        0.21769 )
+      Ez  (        0.01299       -0.04623        0.04742 )
+           atom     79   Mo 
+      Ex  (       -1.16798       -0.09740       -0.01932 )
+      Ey  (        0.02554       -1.02195       -0.01797 )
+      Ez  (        0.03468        0.00270       -0.12815 )
+           atom     80   S  
+      Ex  (        0.44079       -0.02053       -0.00873 )
+      Ey  (        0.02578        0.38066       -0.15756 )
+      Ez  (       -0.00039       -0.01856        0.11575 )
+           atom     81   S  
+      Ex  (        0.73758        0.07142        0.24032 )
+      Ey  (        0.04053        0.82010        0.10709 )
+      Ez  (       -0.02492        0.02328        0.14770 )
+           atom     82   Mo 
+      Ex  (       -0.65096       -0.00332        0.05770 )
+      Ey  (        0.16706       -1.03516        0.00494 )
+      Ez  (       -0.03177       -0.03105       -0.21376 )
+           atom     83   S  
+      Ex  (        0.38457       -0.03841       -0.19602 )
+      Ey  (       -0.09595        0.45497        0.03568 )
+      Ez  (       -0.02347       -0.03617        0.02912 )
+           atom     84   S  
+      Ex  (        0.67084       -0.06810       -0.12157 )
+      Ey  (       -0.15921        0.53606       -0.05409 )
+      Ez  (        0.01005       -0.03555        0.10100 )
+           atom     85   Mo 
+      Ex  (       -0.91695        0.10505       -0.01229 )
+      Ey  (       -0.30672       -0.99397        0.04330 )
+      Ez  (        0.06649       -0.01106       -0.17522 )
+           atom     86   S  
+      Ex  (        0.72400        0.06117        0.02518 )
+      Ey  (        0.01162        0.59133        0.26214 )
+      Ez  (        0.03023        0.03902        0.11044 )
+           atom     87   S  
+      Ex  (        0.43489       -0.03007       -0.14638 )
+      Ey  (       -0.05238        0.63347       -0.32715 )
+      Ez  (        0.02937        0.01563        0.07945 )
+           atom     88   Mo 
+      Ex  (       -0.88102       -0.04245       -0.06020 )
+      Ey  (       -0.27930       -1.07504       -0.16045 )
+      Ez  (        0.03670        0.00315       -0.22456 )
+           atom     89   S  
+      Ex  (        0.61175       -0.02957       -0.23237 )
+      Ey  (        0.04389        0.57726        0.34316 )
+      Ez  (        0.01473       -0.03740        0.07976 )
+           atom     90   S  
+      Ex  (        0.32923       -0.03818        0.30743 )
+      Ey  (        0.00042        0.27486       -0.35800 )
+      Ez  (        0.02949       -0.04570        0.10528 )
+           atom     91   Mo 
+      Ex  (       -0.96853       -0.11082        0.02627 )
+      Ey  (        0.12625       -1.22098        0.03033 )
+      Ez  (        0.04089       -0.04057       -0.19772 )
+           atom     92   S  
+      Ex  (        0.52339        0.00927        0.06197 )
+      Ey  (        0.10348        0.33933       -0.11973 )
+      Ez  (        0.01250        0.01763        0.13793 )
+           atom     93   S  
+      Ex  (        0.52706       -0.08191       -0.30695 )
+      Ey  (        0.03697        0.64255       -0.09065 )
+      Ez  (        0.01367        0.02400        0.09109 )
+           atom     94   Mo 
+      Ex  (       -0.77823       -0.02825        0.04728 )
+      Ey  (        0.38703       -1.16424       -0.19474 )
+      Ez  (        0.01723        0.02996       -0.19730 )
+           atom     95   S  
+      Ex  (        0.53385        0.08033        0.30975 )
+      Ey  (        0.12302        0.77028       -0.08212 )
+      Ez  (        0.01824        0.00582        0.11259 )
+           atom     96   S  
+      Ex  (        0.44672       -0.09025       -0.12157 )
+      Ey  (        0.00955        0.31905       -0.27802 )
+      Ez  (        0.01639       -0.02771        0.07926 )
+           atom     97   Mo 
+      Ex  (       -1.09957       -0.07521       -0.05479 )
+      Ey  (       -0.19749       -1.26232       -0.00350 )
+      Ez  (        0.01318       -0.05144       -0.18371 )
+           atom     98   S  
+      Ex  (        0.56421        0.06290        0.06183 )
+      Ey  (       -0.01799        0.42391       -0.05538 )
+      Ez  (        0.01343        0.00323        0.15313 )
+           atom     99   S  
+      Ex  (        0.66165        0.08312        0.08581 )
+      Ey  (        0.01118        0.76804       -0.21354 )
+      Ez  (       -0.00357        0.01724        0.09405 )
+           atom    100   Mo 
+      Ex  (       -1.02494        0.16241        0.17303 )
+      Ey  (        0.10521       -1.18627       -0.01743 )
+      Ez  (       -0.02377       -0.03615       -0.16029 )
+           atom    101   S  
+      Ex  (        0.50448       -0.00978        0.10616 )
+      Ey  (       -0.00644        0.65496       -0.09639 )
+      Ez  (       -0.01260        0.01217        0.10292 )
+           atom    102   S  
+      Ex  (        0.59754       -0.04498       -0.13635 )
+      Ey  (       -0.01863        0.42000        0.22779 )
+      Ez  (       -0.02034        0.00549        0.09991 )
+           atom    103   Mo 
+      Ex  (       -1.15903        0.06869       -0.05844 )
+      Ey  (        0.12690       -0.88895       -0.00600 )
+      Ez  (       -0.10769       -0.10313       -0.10052 )
+           atom    104   S  
+      Ex  (        0.53409       -0.00557       -0.12162 )
+      Ey  (        0.05530        0.49805       -0.01407 )
+      Ez  (       -0.02083       -0.01343        0.16097 )
+           atom    105   S  
+      Ex  (        0.57601       -0.08279       -0.07447 )
+      Ey  (       -0.01253        0.65300       -0.12492 )
+      Ez  (        0.01680        0.00849        0.07687 )
+           atom    106   Mo 
+      Ex  (       -1.65647       -0.15397        0.07084 )
+      Ey  (       -0.07952       -0.94164       -0.12225 )
+      Ez  (        0.01063       -0.10345       -0.23776 )
+           atom    107   S  
+      Ex  (        0.77535       -0.03156       -0.08122 )
+      Ey  (        0.00435        0.71816        0.09799 )
+      Ez  (       -0.02240        0.00219        0.06254 )
+           atom    108   S  
+      Ex  (        0.42197        0.04652        0.01048 )
+      Ey  (        0.08032        0.24747        0.23218 )
+      Ez  (       -0.03731       -0.01483        0.11273 )
+           atom    109   Mo 
+      Ex  (       -0.93192       -0.19554        0.09350 )
+      Ey  (       -0.23023       -0.83448        0.03284 )
+      Ez  (       -0.03992        0.04783       -0.09833 )
+           atom    110   S  
+      Ex  (        0.57144        0.05570        0.04704 )
+      Ey  (        0.02236        0.45093       -0.17970 )
+      Ez  (       -0.02298        0.01789        0.09644 )
+           atom    111   S  
+      Ex  (        0.41493        0.03624       -0.13147 )
+      Ey  (       -0.01689        0.50216       -0.08023 )
+      Ez  (       -0.01824        0.04793        0.10425 )
+           atom    112   Mo 
+      Ex  (       -1.14720       -0.20032       -0.11490 )
+      Ey  (       -0.11442       -1.21898        0.07315 )
+      Ez  (        0.00928        0.03157       -0.26303 )
+           atom    113   S  
+      Ex  (        0.50351       -0.12082        0.00597 )
+      Ey  (        0.07107        0.51109        0.00595 )
+      Ez  (        0.03679        0.00015        0.08641 )
+           atom    114   S  
+      Ex  (        0.57584        0.02694       -0.09398 )
+      Ey  (        0.19721        0.53720        0.05445 )
+      Ez  (       -0.00529       -0.01366        0.08757 )
+           atom    115   Mo 
+      Ex  (       -1.38594       -0.09190        0.01912 )
+      Ey  (       -0.08555       -1.55928       -0.16733 )
+      Ez  (       -0.03140       -0.04132       -0.19492 )
+           atom    116   S  
+      Ex  (        0.40586        0.08315        0.00302 )
+      Ey  (        0.10953        0.38785        0.08265 )
+      Ez  (        0.03737       -0.01160        0.10433 )
+           atom    117   S  
+      Ex  (        0.55389       -0.09067       -0.19139 )
+      Ey  (       -0.04159        0.53346       -0.33125 )
+      Ez  (       -0.00812        0.00524        0.10461 )
+           atom    118   Mo 
+      Ex  (       -1.04559       -0.08469       -0.14403 )
+      Ey  (        0.02341       -1.26350        0.20841 )
+      Ez  (       -0.10685        0.01170       -0.26770 )
+           atom    119   S  
+      Ex  (        0.35423        0.09260       -0.08021 )
+      Ey  (        0.10367        0.55877       -0.08049 )
+      Ez  (       -0.04947       -0.01188        0.06489 )
+           atom    120   S  
+      Ex  (        0.70183       -0.05148        0.45157 )
+      Ey  (       -0.05380        0.65468        0.05234 )
+      Ez  (       -0.02382        0.00087        0.05844 )
+           atom    121   Mo 
+      Ex  (       -1.10578        0.40910        0.01560 )
+      Ey  (       -0.16181       -1.03217       -0.10694 )
+      Ez  (        0.00812       -0.01154       -0.21211 )
+           atom    122   S  
+      Ex  (        0.65609       -0.18855        0.12681 )
+      Ey  (       -0.10711        0.64017        0.06746 )
+      Ez  (       -0.01127       -0.04216        0.13328 )
+           atom    123   S  
+      Ex  (        0.66423       -0.03012        0.19258 )
+      Ey  (        0.07214        0.46661        0.16930 )
+      Ez  (       -0.02350       -0.02951        0.07026 )
+           atom    124   Mo 
+      Ex  (       -0.72349        0.02582        0.02961 )
+      Ey  (       -0.38349       -0.93344        0.20603 )
+      Ez  (        0.03260       -0.01109       -0.23263 )
+           atom    125   S  
+      Ex  (        0.56548        0.05620        0.08913 )
+      Ey  (       -0.09153        0.75356        0.14562 )
+      Ez  (        0.02674        0.01578        0.09445 )
+           atom    126   S  
+      Ex  (        0.50050        0.09812       -0.07975 )
+      Ey  (        0.03121        0.43322       -0.04227 )
+      Ez  (        0.02800        0.01701        0.07955 )
+           atom    127   Mo 
+      Ex  (       -0.79514       -0.38809        0.15783 )
+      Ey  (        0.01577       -1.04184        0.00405 )
+      Ez  (        0.04844        0.09843       -0.19582 )
+           atom    128   S  
+      Ex  (        0.51341       -0.01563        0.00926 )
+      Ey  (        0.05061        0.40540       -0.12096 )
+      Ez  (       -0.02320       -0.00853        0.09654 )
+           atom    129   S  
+      Ex  (        0.35758       -0.01911       -0.26789 )
+      Ey  (        0.09759        0.40895        0.01017 )
+      Ez  (        0.00421        0.01463        0.06558 )
+           atom    130   Mo 
+      Ex  (       -0.94452       -0.09775        0.17622 )
+      Ey  (       -0.15946       -1.23276        0.03196 )
+      Ez  (       -0.00574       -0.01470       -0.27198 )
+           atom    131   S  
+      Ex  (        0.49283        0.09324       -0.10389 )
+      Ey  (        0.15448        0.79839       -0.00058 )
+      Ez  (        0.00356        0.05947        0.09930 )
+           atom    132   S  
+      Ex  (        0.58282       -0.09685        0.23383 )
+      Ey  (       -0.01773        0.43729        0.27813 )
+      Ez  (       -0.00549        0.07861        0.07769 )
+           atom    133   Mo 
+      Ex  (       -1.30248        0.06861       -0.22892 )
+      Ey  (        0.15973       -0.76225        0.14312 )
+      Ez  (        0.04627        0.08833       -0.17898 )
+           atom    134   S  
+      Ex  (        0.68799       -0.03028        0.06513 )
+      Ey  (        0.00727        0.62692       -0.35084 )
+      Ez  (        0.04171       -0.00184        0.13766 )
+           atom    135   S  
+      Ex  (        0.47514       -0.07144        0.19228 )
+      Ey  (       -0.05313        0.51046        0.13020 )
+      Ez  (        0.03894        0.02145        0.08092 )
+           atom    136   Mo 
+      Ex  (       -0.95767        0.07511        0.07725 )
+      Ey  (       -0.09492       -0.98609        0.25030 )
+      Ez  (        0.13749        0.01708       -0.21606 )
+           atom    137   S  
+      Ex  (        0.59741        0.06433       -0.05730 )
+      Ey  (       -0.01446        0.57978        0.25773 )
+      Ez  (       -0.00934       -0.01779        0.09246 )
+           atom    138   S  
+      Ex  (        0.30569       -0.02197        0.06005 )
+      Ey  (       -0.12008        0.45581        0.11836 )
+      Ez  (        0.02422        0.02834        0.05829 )
+           atom    139   Mo 
+      Ex  (       -1.23297        0.08108       -0.10370 )
+      Ey  (       -0.14162       -1.40694        0.07919 )
+      Ez  (       -0.03067        0.05758       -0.20034 )
+           atom    140   S  
+      Ex  (        0.49050       -0.04077        0.27168 )
+      Ey  (       -0.15252        0.66799       -0.00102 )
+      Ez  (       -0.01682       -0.00429        0.13557 )
+           atom    141   S  
+      Ex  (        0.48374        0.06370       -0.14817 )
+      Ey  (       -0.06700        0.58375        0.12894 )
+      Ez  (       -0.03175        0.00363        0.06105 )
+           atom    142   Mo 
+      Ex  (       -1.07666        0.26739       -0.07089 )
+      Ey  (        0.10770       -1.05067        0.07821 )
+      Ez  (       -0.05645       -0.03404       -0.17940 )
+           atom    143   S  
+      Ex  (        0.43973       -0.06412        0.05633 )
+      Ey  (       -0.13098        0.30499        0.25728 )
+      Ez  (       -0.00638       -0.02144        0.06192 )
+           atom    144   S  
+      Ex  (        0.52580        0.04005       -0.28663 )
+      Ey  (       -0.04757        0.60083       -0.05183 )
+      Ez  (       -0.02386       -0.03236        0.09116 )
+           atom    145   Mo 
+      Ex  (       -1.11222        0.21710       -0.03087 )
+      Ey  (        0.01129       -1.19047       -0.15531 )
+      Ez  (       -0.06422       -0.00421       -0.17730 )
+           atom    146   S  
+      Ex  (        0.45359       -0.11064        0.07001 )
+      Ey  (        0.03770        0.62112        0.19949 )
+      Ez  (        0.01534       -0.01006        0.12057 )
+           atom    147   S  
+      Ex  (        0.63874       -0.13720       -0.20547 )
+      Ey  (        0.01435        0.53399       -0.01496 )
+      Ez  (       -0.00525       -0.00573        0.08206 )
+           atom    148   Mo 
+      Ex  (       -0.79458        0.34121       -0.19223 )
+      Ey  (       -0.22239       -1.19086       -0.06980 )
+      Ez  (       -0.08367        0.04875       -0.25771 )
+           atom    149   S  
+      Ex  (        0.30525        0.00956       -0.10785 )
+      Ey  (       -0.02797        0.42499        0.02120 )
+      Ez  (       -0.01890        0.01354        0.06071 )
+           atom    150   S  
+      Ex  (        0.50643       -0.06329        0.29976 )
+      Ey  (       -0.05085        0.44442       -0.10316 )
+      Ez  (       -0.01902        0.01664        0.09860 )
+           atom    151   Mo 
+      Ex  (       -0.82265       -0.08797        0.11515 )
+      Ey  (       -0.05087       -0.76659        0.07100 )
+      Ez  (        0.01332        0.00306       -0.16642 )
+           atom    152   S  
+      Ex  (        0.50531        0.04444       -0.14424 )
+      Ey  (       -0.01805        0.53088        0.07683 )
+      Ez  (       -0.01211       -0.03532        0.09720 )
+           atom    153   S  
+      Ex  (        0.65766        0.05928        0.23050 )
+      Ey  (        0.00595        0.40311        0.05114 )
+      Ez  (       -0.02589       -0.00784        0.09720 )
+           atom    154   Mo 
+      Ex  (       -1.34991       -0.26076        0.04082 )
+      Ey  (        0.01448       -1.05545        0.03253 )
+      Ez  (        0.02553        0.03447       -0.29835 )
+           atom    155   S  
+      Ex  (        0.61414        0.07036       -0.10207 )
+      Ey  (        0.04479        0.70841        0.14594 )
+      Ez  (        0.00152       -0.01907        0.08651 )
+           atom    156   S  
+      Ex  (        0.57664        0.08999        0.11518 )
+      Ey  (        0.00916        0.55848       -0.18096 )
+      Ez  (       -0.01224       -0.02030        0.08038 )
+           atom    157   Mo 
+      Ex  (       -1.25625       -0.14523        0.11095 )
+      Ey  (        0.22947       -0.97327       -0.01389 )
+      Ez  (        0.03052        0.01425       -0.27619 )
+           atom    158   S  
+      Ex  (        0.78411       -0.11350        0.10391 )
+      Ey  (       -0.13007        0.61483       -0.08266 )
+      Ez  (       -0.01895        0.02886        0.10861 )
+           atom    159   S  
+      Ex  (        0.47815        0.11420        0.13908 )
+      Ey  (        0.06116        0.53344       -0.06751 )
+      Ez  (       -0.02726        0.03201        0.08333 )
+           atom    160   Mo 
+      Ex  (       -1.04058        0.09544       -0.00148 )
+      Ey  (       -0.11304       -0.82158       -0.06745 )
+      Ez  (        0.03075       -0.04836       -0.27721 )
+           atom    161   S  
+      Ex  (        0.53882       -0.01053        0.01883 )
+      Ey  (        0.08050        0.58730        0.02191 )
+      Ez  (       -0.00893       -0.02607        0.00788 )
+           atom    162   S  
+      Ex  (        0.43278       -0.03048        0.09466 )
+      Ey  (        0.04164        0.33663       -0.09039 )
+      Ez  (        0.00021       -0.01045        0.10866 )
+           atom    163   Mo 
+      Ex  (       -0.92143       -0.21433       -0.04147 )
+      Ey  (        0.00168       -1.00595       -0.14272 )
+      Ez  (       -0.04418       -0.02960       -0.24274 )
+           atom    164   S  
+      Ex  (        0.58326        0.01140       -0.21020 )
+      Ey  (        0.02953        0.65482        0.04334 )
+      Ez  (        0.02014        0.01367        0.11587 )
+           atom    165   S  
+      Ex  (        0.46121       -0.02357        0.06259 )
+      Ey  (       -0.04360        0.55023        0.06986 )
+      Ez  (        0.03748        0.02770        0.07326 )
+           atom    166   Mo 
+      Ex  (       -0.90032       -0.06015        0.07385 )
+      Ey  (        0.25926       -0.96168        0.21369 )
+      Ez  (        0.03239        0.00885       -0.27447 )
+           atom    167   S  
+      Ex  (        0.49661       -0.03665        0.06868 )
+      Ey  (        0.13288        0.23240        0.35637 )
+      Ez  (        0.00671       -0.07695        0.04401 )
+           atom    168   S  
+      Ex  (        0.52708       -0.11766       -0.42380 )
+      Ey  (        0.11861        0.86005        0.14374 )
+      Ez  (       -0.02843       -0.08575        0.07008 )
+           atom    169   Mo 
+      Ex  (       -1.30677        0.14210        0.03918 )
+      Ey  (        0.13137       -1.12492        0.14992 )
+      Ez  (        0.03441        0.03689       -0.20329 )
+           atom    170   S  
+      Ex  (        0.47230       -0.04715        0.09986 )
+      Ey  (       -0.03383        0.61940        0.11905 )
+      Ez  (       -0.02157       -0.02646        0.10476 )
+           atom    171   S  
+      Ex  (        0.64546       -0.00493       -0.20341 )
+      Ey  (        0.04554        0.55681       -0.21351 )
+      Ez  (       -0.00928       -0.02111        0.09967 )
+           atom    172   Mo 
+      Ex  (       -0.85283        0.16016       -0.21504 )
+      Ey  (        0.08008       -1.01346       -0.30383 )
+      Ez  (       -0.09010       -0.02596       -0.30528 )
+           atom    173   S  
+      Ex  (        0.58267        0.09633        0.26061 )
+      Ey  (        0.01944        0.54622       -0.19451 )
+      Ez  (        0.01080       -0.03705        0.04981 )
+           atom    174   S  
+      Ex  (        0.49668        0.14968       -0.04075 )
+      Ey  (       -0.03007        0.63363        0.00260 )
+      Ez  (        0.03648        0.00702        0.09911 )
+           atom    175   Mo 
+      Ex  (       -0.80883        0.18288        0.00491 )
+      Ey  (        0.36241       -1.25684       -0.16866 )
+      Ez  (        0.07624        0.03589       -0.20575 )
+           atom    176   S  
+      Ex  (        0.47267        0.01255       -0.19179 )
+      Ey  (        0.01284        0.55474       -0.03265 )
+      Ez  (        0.01569        0.03535        0.13034 )
+           atom    177   S  
+      Ex  (        0.40057       -0.11037        0.11232 )
+      Ey  (       -0.05554        0.42251        0.17261 )
+      Ez  (        0.02018        0.02490        0.07729 )
+           atom    178   Mo 
+      Ex  (       -1.08241        0.33822        0.10836 )
+      Ey  (        0.21161       -1.29905        0.04239 )
+      Ez  (        0.04012        0.08457       -0.27277 )
+           atom    179   S  
+      Ex  (        0.65863       -0.06745        0.08970 )
+      Ey  (       -0.03851        0.55453       -0.24695 )
+      Ez  (        0.00725       -0.01657        0.12569 )
+           atom    180   S  
+      Ex  (        0.42602       -0.02399       -0.28649 )
+      Ey  (       -0.00172        0.48244        0.06430 )
+      Ez  (        0.02628        0.01571        0.04560 )
+           atom    181   Mo 
+      Ex  (       -0.92752        0.31825        0.03859 )
+      Ey  (        0.26919       -1.15141       -0.05817 )
+      Ez  (        0.03341        0.02559       -0.19977 )
+           atom    182   S  
+      Ex  (        0.51153       -0.03080       -0.11028 )
+      Ey  (       -0.09508        0.54200        0.12696 )
+      Ez  (        0.01882        0.02436        0.10085 )
+           atom    183   S  
+      Ex  (        0.45670        0.03801        0.10805 )
+      Ey  (       -0.04176        0.56831       -0.08533 )
+      Ez  (        0.01490       -0.00274        0.09624 )
+           atom    184   Mo 
+      Ex  (       -1.06938       -0.01412        0.30027 )
+      Ey  (        0.21231       -0.96741        0.06144 )
+      Ez  (        0.08354        0.02476       -0.26568 )
+           atom    185   S  
+      Ex  (        0.49162        0.04593        0.06203 )
+      Ey  (       -0.04230        0.56606        0.06030 )
+      Ez  (       -0.00818        0.00951        0.08817 )
+           atom    186   S  
+      Ex  (        0.55151       -0.03415       -0.18741 )
+      Ey  (       -0.19324        0.70058       -0.04210 )
+      Ez  (       -0.03269        0.02412        0.09085 )
+           atom    187   Mo 
+      Ex  (       -1.64096       -0.09721       -0.05690 )
+      Ey  (       -0.02037       -1.15255        0.09377 )
+      Ez  (       -0.03275       -0.01691       -0.24533 )
+           atom    188   S  
+      Ex  (        0.54316       -0.08589        0.23286 )
+      Ey  (       -0.04403        0.40307       -0.01196 )
+      Ez  (       -0.01215        0.03900        0.10112 )
+           atom    189   S  
+      Ex  (        0.61813        0.02068        0.04189 )
+      Ey  (        0.09002        0.72984       -0.11952 )
+      Ez  (        0.02177        0.01002        0.08561 )
+           atom    190   Mo 
+      Ex  (       -1.21878       -0.55632       -0.22732 )
+      Ey  (        0.05155       -0.98119        0.10441 )
+      Ez  (        0.01368       -0.04708       -0.34707 )
+           atom    191   S  
+      Ex  (        0.55478        0.09497        0.25676 )
+      Ey  (        0.00036        0.49679        0.14634 )
+      Ez  (        0.06523        0.02064        0.04264 )
+           atom    192   S  
+      Ex  (        0.54526        0.09031       -0.19737 )
+      Ey  (        0.05588        0.47321       -0.09769 )
+      Ez  (        0.01495        0.01607        0.11856 )
+           atom    193   Mo 
+      Ex  (       -0.94086        0.03923        0.18150 )
+      Ey  (       -0.03134       -1.02104       -0.05843 )
+      Ez  (        0.01247       -0.04968       -0.25563 )
+           atom    194   S  
+      Ex  (        0.51368        0.13075       -0.20563 )
+      Ey  (       -0.06355        0.38517       -0.13403 )
+      Ez  (        0.02311       -0.02400        0.12082 )
+           atom    195   S  
+      Ex  (        0.61616        0.05477       -0.23075 )
+      Ey  (       -0.17672        0.67871        0.04508 )
+      Ez  (        0.02124       -0.03602        0.07531 )
+           atom    196   Mo 
+      Ex  (       -0.58807        0.01211        0.11420 )
+      Ey  (       -0.05269       -1.03152        0.01939 )
+      Ez  (       -0.01364       -0.01909       -0.29479 )
+           atom    197   S  
+      Ex  (        0.41204        0.01861       -0.18161 )
+      Ey  (        0.02067        0.31798       -0.11268 )
+      Ez  (       -0.03879       -0.01456        0.04737 )
+           atom    198   S  
+      Ex  (        0.59419        0.01987       -0.04877 )
+      Ey  (       -0.00143        0.49721        0.20982 )
+      Ez  (       -0.03908        0.00212        0.08609 )
+           atom    199   Mo 
+      Ex  (       -1.11189       -0.06246        0.09344 )
+      Ey  (       -0.02187       -1.11547       -0.05097 )
+      Ez  (       -0.01573        0.01905       -0.28668 )
+           atom    200   S  
+      Ex  (        0.35653       -0.10136        0.00868 )
+      Ey  (       -0.08961        0.40513       -0.02894 )
+      Ez  (       -0.03710       -0.03578        0.09166 )
+           atom    201   S  
+      Ex  (        0.66300        0.00859        0.11598 )
+      Ey  (        0.10965        0.61629        0.15073 )
+      Ez  (       -0.02941       -0.05486        0.10798 )
+           atom    202   Mo 
+      Ex  (       -1.14971        0.13509       -0.29132 )
+      Ey  (       -0.06487       -1.18137        0.11859 )
+      Ez  (        0.01312        0.02485       -0.33509 )
+           atom    203   S  
+      Ex  (        0.41396       -0.07464       -0.08026 )
+      Ey  (       -0.08690        0.55464       -0.41337 )
+      Ez  (        0.05472        0.03437        0.04951 )
+           atom    204   S  
+      Ex  (        0.68170       -0.03451        0.27603 )
+      Ey  (       -0.05572        0.46845       -0.03493 )
+      Ez  (        0.03999        0.04061        0.08566 )
+           atom    205   Mo 
+      Ex  (       -0.94665        0.30432       -0.16807 )
+      Ey  (        0.18981       -1.23527       -0.04197 )
+      Ez  (       -0.00024       -0.03256       -0.28710 )
+           atom    206   S  
+      Ex  (        0.57852        0.05092       -0.16024 )
+      Ey  (       -0.04568        0.53372        0.11492 )
+      Ez  (        0.02124        0.04026        0.11756 )
+           atom    207   S  
+      Ex  (        0.43136       -0.04043        0.06772 )
+      Ey  (       -0.10878        0.47104       -0.09766 )
+      Ez  (        0.02094       -0.00027        0.05606 )
+           atom    208   Mo 
+      Ex  (       -1.47711        0.19072        0.08041 )
+      Ey  (        0.19658       -0.77668        0.29571 )
+      Ez  (       -0.08708        0.08141       -0.29939 )
+           atom    209   S  
+      Ex  (        0.54991        0.13043       -0.12848 )
+      Ey  (        0.03317        0.55645       -0.04267 )
+      Ez  (       -0.05551        0.02361        0.10230 )
+           atom    210   S  
+      Ex  (        0.65948       -0.07195        0.34208 )
+      Ey  (       -0.16641        0.56382       -0.14344 )
+      Ez  (       -0.02459        0.03013        0.04164 )
+           atom    211   Mo 
+      Ex  (       -1.04289       -0.21501        0.08910 )
+      Ey  (       -0.09960       -0.92049       -0.01642 )
+      Ez  (        0.00789       -0.00158       -0.19052 )
+           atom    212   S  
+      Ex  (        0.27812        0.04202        0.01946 )
+      Ey  (        0.00860        0.40148        0.09879 )
+      Ez  (       -0.02881       -0.01820        0.10316 )
+           atom    213   S  
+      Ex  (        0.78954        0.11491        0.06566 )
+      Ey  (        0.04283        0.62800        0.20212 )
+      Ez  (       -0.00268        0.00276        0.10722 )
+           atom    214   Mo 
+      Ex  (       -0.81426        0.12014       -0.13524 )
+      Ey  (        0.11728       -0.57544       -0.09381 )
+      Ez  (       -0.03242        0.04903       -0.20121 )
+           atom    215   S  
+      Ex  (        0.39532       -0.06899        0.19101 )
+      Ey  (       -0.07891        0.53914        0.04096 )
+      Ez  (        0.02462        0.05954        0.05484 )
+           atom    216   S  
+      Ex  (        0.55697       -0.01935       -0.17321 )
+      Ey  (       -0.04669        0.56694        0.00080 )
+      Ez  (        0.02101        0.02507        0.08162 )
+
+     Calling punch_plot_e
+     Writing on file  MoMoS_2H_T0300_fs65.drho                                                                                                                                                                                                                                        
+
+     Computing Pc [DH,Drho] |psi> 
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     one sub-group per band group will be used
+     scalapack distributed-memory algorithm (size of sub-group:  6*  6 procs)
+
+
+     Derivative coefficient:  0.001000    Threshold: 1.00E-12
+     Non-scf  u_k: avg # of iterations = 30.1
+     Non-scf Du_k: avg # of iterations = 69.5
+
+          Dielectric constant from finite-differences
+
+          (      10.472209317      -0.017082195      -0.001564150 )
+          (      -0.017082195      10.451390625      -0.001179851 )
+          (      -0.001564150      -0.001179851       2.193135226 )
+
+              Electro-optic tensor is defined as 
+            the derivative of the dielectric tensor 
+              with respect to one electric field 
+                 units are Rydberg a.u. 
+
+            to obtain the static chi^2 multiply by 1/2  
+
+            to convert to pm/Volt multiply per 2.7502  
+
+
+          Electro-optic tensor in cartesian axis: 
+
+          (       0.421928670      -0.469634441      -0.123898176 )
+          (      -0.469634441       0.265861224      -0.010942887 )
+          (      -0.123898176      -0.010942887      -0.056097528 )
+
+          (      -0.469634441       0.265861224      -0.010942887 )
+          (       0.265861224      -0.698003933      -0.021573602 )
+          (      -0.010942887      -0.021573602       0.016630388 )
+
+          (      -0.123898176      -0.010942887      -0.056097528 )
+          (      -0.010942887      -0.021573602       0.016630388 )
+          (      -0.056097528       0.016630388       0.012877358 )
+
+
+          Electro-optic tensor: contribution #   1
+
+          (       0.423779104      -0.474739752      -0.124192732 )
+          (      -0.474739752       0.266604406      -0.010929304 )
+          (      -0.124192732      -0.010929304      -0.055612695 )
+
+          (      -0.474739752       0.266604406      -0.010929304 )
+          (       0.266604406      -0.693090788      -0.021682231 )
+          (      -0.010929304      -0.021682231       0.015710314 )
+
+          (      -0.124192732      -0.010929304      -0.055612695 )
+          (      -0.010929304      -0.021682231       0.015710314 )
+          (      -0.055612695       0.015710314       0.014231254 )
+
+
+          Electro-optic tensor: contribution #   2
+
+          (      -0.001850434       0.005105311       0.000294556 )
+          (       0.005105311      -0.000743182      -0.000013583 )
+          (       0.000294556      -0.000013583      -0.000484833 )
+
+          (       0.005105311      -0.000743182      -0.000013583 )
+          (      -0.000743182      -0.004913146       0.000108629 )
+          (      -0.000013583       0.000108629       0.000920074 )
+
+          (       0.000294556      -0.000013583      -0.000484833 )
+          (      -0.000013583       0.000108629       0.000920074 )
+          (      -0.000484833       0.000920074      -0.001353895 )
+
+
+     Computing Second order response 
+
+
+      iter #   1   av.it.:  18.7
+      thresh= 1.000E-02 alpha_mix =  0.400 |ddv_scf|^2 =  3.655E-06
+
+
+      iter #   2   av.it.:  27.8
+      thresh= 1.912E-04 alpha_mix =  0.400 |ddv_scf|^2 =  1.812E-05
+
+
+      iter #   3   av.it.:  25.2
+      thresh= 4.257E-04 alpha_mix =  0.400 |ddv_scf|^2 =  2.512E-06
+
+
+      iter #   4   av.it.:  23.7
+      thresh= 1.585E-04 alpha_mix =  0.400 |ddv_scf|^2 =  4.054E-08
+
+
+      iter #   5   av.it.:  25.5
+      thresh= 2.013E-05 alpha_mix =  0.400 |ddv_scf|^2 =  8.363E-09
+
+
+      iter #   6   av.it.:  26.7
+      thresh= 9.145E-06 alpha_mix =  0.400 |ddv_scf|^2 =  5.850E-09
+
+
+      iter #   7   av.it.:  26.3
+      thresh= 7.649E-06 alpha_mix =  0.400 |ddv_scf|^2 =  1.135E-09
+
+
+      iter #   8   av.it.:  27.3
+      thresh= 3.369E-06 alpha_mix =  0.400 |ddv_scf|^2 =  1.354E-09
+
+
+      iter #   9   av.it.:  26.0
+      thresh= 3.680E-06 alpha_mix =  0.400 |ddv_scf|^2 =  6.890E-10
+
+
+      iter #  10   av.it.:  26.3
+      thresh= 2.625E-06 alpha_mix =  0.400 |ddv_scf|^2 =  9.230E-10
+
+
+      iter #  11   av.it.:  25.5
+      thresh= 3.038E-06 alpha_mix =  0.400 |ddv_scf|^2 =  8.184E-10
+
+
+      iter #  12   av.it.:  24.7
+      thresh= 2.861E-06 alpha_mix =  0.400 |ddv_scf|^2 =  1.437E-10
+
+
+      iter #  13   av.it.:  26.3
+      thresh= 1.199E-06 alpha_mix =  0.400 |ddv_scf|^2 =  5.336E-11
+
+
+      iter #  14   av.it.:  24.7
+      thresh= 7.305E-07 alpha_mix =  0.400 |ddv_scf|^2 =  1.289E-11
+
+
+      iter #  15   av.it.:  25.5
+      thresh= 3.590E-07 alpha_mix =  0.400 |ddv_scf|^2 =  8.966E-12
+
+
+      iter #  16   av.it.:  25.5
+      thresh= 2.994E-07 alpha_mix =  0.400 |ddv_scf|^2 =  1.209E-11
+
+
+      iter #  17   av.it.:  25.2
+      thresh= 3.477E-07 alpha_mix =  0.400 |ddv_scf|^2 =  1.873E-11
+
+
+      iter #  18   av.it.:  24.3
+      thresh= 4.328E-07 alpha_mix =  0.400 |ddv_scf|^2 =  3.808E-12
+
+
+      iter #  19   av.it.:  27.8
+      thresh= 1.951E-07 alpha_mix =  0.400 |ddv_scf|^2 =  1.250E-11
+
+
+      iter #  20   av.it.:  25.8
+      thresh= 3.536E-07 alpha_mix =  0.400 |ddv_scf|^2 =  1.174E-12
+
+
+      iter #  21   av.it.:  25.0
+      thresh= 1.083E-07 alpha_mix =  0.400 |ddv_scf|^2 =  2.075E-13
